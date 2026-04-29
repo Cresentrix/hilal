@@ -1,0 +1,126 @@
+/**
+ * Hilal Drawer (slide-in sheet). Native <dialog> with positioning override.
+ *
+ *   <dialog class="hilal-drawer hilal-drawer--end hilal-drawer--md">
+ *     <header class="hilal-drawer__header">
+ *       <h2 class="hilal-drawer__title">Filters</h2>
+ *       <button class="hilal-drawer__close" aria-label="Close">×</button>
+ *     </header>
+ *     <div class="hilal-drawer__body">…</div>
+ *     <footer class="hilal-drawer__footer">…</footer>
+ *   </dialog>
+ *
+ * Sides:  start | end | top | bottom    (RTL: start = right, end = left)
+ * Sizes:  sm | md | lg
+ */
+
+.hilal-drawer {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+  box-shadow: var(--hilal-elevation-5);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-block-size: 100dvh;
+  max-inline-size: 100vw;
+}
+
+.hilal-drawer::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* sides — uses logical insets so RTL flips automatically */
+.hilal-drawer--start {
+  inset-block: 0;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  block-size: 100dvh;
+}
+.hilal-drawer--end {
+  inset-block: 0;
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+  block-size: 100dvh;
+}
+.hilal-drawer--top {
+  inset-inline: 0;
+  inset-block-start: 0;
+  inset-block-end: auto;
+  inline-size: 100vw;
+}
+.hilal-drawer--bottom {
+  inset-inline: 0;
+  inset-block-end: 0;
+  inset-block-start: auto;
+  inline-size: 100vw;
+  border-start-start-radius: var(--hilal-radius-lg);
+  border-start-end-radius: var(--hilal-radius-lg);
+}
+
+/* sizes */
+.hilal-drawer--start.hilal-drawer--sm,
+.hilal-drawer--end.hilal-drawer--sm   { inline-size: min(20rem, 100vw); }
+.hilal-drawer--start.hilal-drawer--md,
+.hilal-drawer--end.hilal-drawer--md   { inline-size: min(28rem, 100vw); }
+.hilal-drawer--start.hilal-drawer--lg,
+.hilal-drawer--end.hilal-drawer--lg   { inline-size: min(40rem, 100vw); }
+
+.hilal-drawer--top.hilal-drawer--sm,
+.hilal-drawer--bottom.hilal-drawer--sm { block-size: min(50dvh, 16rem); }
+.hilal-drawer--top.hilal-drawer--md,
+.hilal-drawer--bottom.hilal-drawer--md { block-size: min(60dvh, 24rem); }
+.hilal-drawer--top.hilal-drawer--lg,
+.hilal-drawer--bottom.hilal-drawer--lg { block-size: min(75dvh, 36rem); }
+
+/* same parts as modal (re-using class names keeps the contract identical) */
+.hilal-drawer__header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-5); padding-block: var(--hilal-spacing-4);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+}
+.hilal-drawer__title {
+  margin: 0; font-size: var(--hilal-font-size-20);
+  font-weight: var(--hilal-font-weight-semibold);
+}
+.hilal-drawer__close {
+  inline-size: 2rem; block-size: 2rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: var(--hilal-radius-md);
+  background: transparent; color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-20); cursor: pointer;
+}
+.hilal-drawer__close:hover  { background: var(--hilal-bg-raised); color: var(--hilal-fg-primary); }
+.hilal-drawer__close:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }
+
+.hilal-drawer__body {
+  padding-inline: var(--hilal-spacing-5); padding-block: var(--hilal-spacing-4);
+  overflow-y: auto;
+}
+.hilal-drawer__footer {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-5); padding-block: var(--hilal-spacing-4);
+  border-block-start: 1px solid var(--hilal-border-subtle);
+}
+
+/* enter animations per side — RTL-aware via logical inset */
+.hilal-drawer--start[open] { animation: hilal-drawer-in-start var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate); }
+.hilal-drawer--end[open]   { animation: hilal-drawer-in-end   var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate); }
+.hilal-drawer--top[open]   { animation: hilal-drawer-in-top   var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate); }
+.hilal-drawer--bottom[open]{ animation: hilal-drawer-in-bottom var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate); }
+
+@keyframes hilal-drawer-in-start  { from { transform: translateX(-100%); } }
+@keyframes hilal-drawer-in-end    { from { transform: translateX(100%); } }
+@keyframes hilal-drawer-in-top    { from { transform: translateY(-100%); } }
+@keyframes hilal-drawer-in-bottom { from { transform: translateY(100%); } }
+
+[dir="rtl"] .hilal-drawer--start[open] { animation-name: hilal-drawer-in-end; }
+[dir="rtl"] .hilal-drawer--end[open]   { animation-name: hilal-drawer-in-start; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hilal-drawer[open] { animation: none; }
+}

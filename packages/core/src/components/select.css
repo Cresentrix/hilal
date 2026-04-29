@@ -1,0 +1,51 @@
+/**
+ * Hilal Select — styled native <select>. v1 uses the platform picker
+ * (great a11y, no keyboard logic to write). A v2 combobox with search
+ * and custom popovers will land separately.
+ *
+ *   <div class="hilal-field hilal-field--md">
+ *     <label class="hilal-field__label">Country</label>
+ *     <div class="hilal-field__control hilal-select-control">
+ *       <select class="hilal-select">
+ *         <option>Kuwait</option>
+ *         <option>UAE</option>
+ *       </select>
+ *       <span class="hilal-select__chevron" aria-hidden>▾</span>
+ *     </div>
+ *   </div>
+ *
+ * Reuses the .hilal-field/.hilal-field__control system from input.css.
+ */
+
+.hilal-select-control {
+  position: relative;
+  cursor: pointer;
+}
+
+.hilal-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--hilal-fg-primary);
+  font: inherit;
+  padding: 0;
+  padding-inline-end: var(--hilal-spacing-6); /* room for chevron */
+  cursor: pointer;
+}
+
+.hilal-select:disabled { color: var(--hilal-fg-disabled); cursor: not-allowed; }
+
+.hilal-select__chevron {
+  position: absolute;
+  inset-inline-end: var(--hilal-spacing-3);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-12);
+}

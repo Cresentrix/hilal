@@ -1,0 +1,112 @@
+/**
+ * Hilal Modal — uses native <dialog> for free focus trap, ESC dismiss, backdrop.
+ *
+ *   <dialog class="hilal-modal hilal-modal--md">
+ *     <header class="hilal-modal__header">
+ *       <h2 class="hilal-modal__title">Confirm</h2>
+ *       <button class="hilal-modal__close" aria-label="Close">×</button>
+ *     </header>
+ *     <div class="hilal-modal__body">…</div>
+ *     <footer class="hilal-modal__footer">
+ *       <button class="hilal-btn hilal-btn--tertiary">Cancel</button>
+ *       <button class="hilal-btn hilal-btn--primary">OK</button>
+ *     </footer>
+ *   </dialog>
+ *
+ * Open imperatively: dialogEl.showModal() / dialogEl.close()
+ * Sizes: sm | md | lg | xl
+ */
+
+.hilal-modal {
+  inline-size: min(calc(100vw - 2rem), 32rem);
+  max-block-size: calc(100vh - 2rem);
+  padding: 0;
+  border: none;
+  border-radius: var(--hilal-radius-lg);
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+  box-shadow: var(--hilal-elevation-5);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.hilal-modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.hilal-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-5);
+  padding-block: var(--hilal-spacing-4);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+}
+
+.hilal-modal__title {
+  margin: 0;
+  font-size: var(--hilal-font-size-20);
+  font-weight: var(--hilal-font-weight-semibold);
+  line-height: 1.4;
+}
+
+.hilal-modal__close {
+  inline-size: 2rem;
+  block-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--hilal-radius-md);
+  background: transparent;
+  color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-20);
+  cursor: pointer;
+  transition: background-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+.hilal-modal__close:hover  { background: var(--hilal-bg-raised); color: var(--hilal-fg-primary); }
+.hilal-modal__close:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }
+
+.hilal-modal__body {
+  padding-inline: var(--hilal-spacing-5);
+  padding-block: var(--hilal-spacing-4);
+  overflow-y: auto;
+}
+
+.hilal-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-5);
+  padding-block: var(--hilal-spacing-4);
+  border-block-start: 1px solid var(--hilal-border-subtle);
+}
+
+/* sizes */
+.hilal-modal--sm { inline-size: min(calc(100vw - 2rem), 24rem); }
+.hilal-modal--md { inline-size: min(calc(100vw - 2rem), 32rem); }
+.hilal-modal--lg { inline-size: min(calc(100vw - 2rem), 48rem); }
+.hilal-modal--xl { inline-size: min(calc(100vw - 2rem), 64rem); }
+
+/* enter animation */
+.hilal-modal[open] {
+  animation: hilal-modal-in var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate);
+}
+.hilal-modal[open]::backdrop {
+  animation: hilal-modal-backdrop-in var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate);
+}
+@keyframes hilal-modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes hilal-modal-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hilal-modal[open], .hilal-modal[open]::backdrop { animation: none; }
+}

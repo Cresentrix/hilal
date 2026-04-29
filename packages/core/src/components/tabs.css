@@ -1,0 +1,122 @@
+/**
+ * Hilal Tabs.
+ *
+ *   <div class="hilal-tabs" data-orientation="horizontal">
+ *     <div class="hilal-tabs__list" role="tablist">
+ *       <button role="tab" class="hilal-tabs__tab" aria-selected="true">Overview</button>
+ *       <button role="tab" class="hilal-tabs__tab">Activity</button>
+ *       <button role="tab" class="hilal-tabs__tab" disabled>Settings</button>
+ *     </div>
+ *     <div role="tabpanel" class="hilal-tabs__panel">…</div>
+ *   </div>
+ *
+ * Variants: line (default) | enclosed | pill
+ * Sizes:    sm | md
+ */
+
+.hilal-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-3);
+}
+
+.hilal-tabs[data-orientation="vertical"] {
+  flex-direction: row;
+}
+
+.hilal-tabs__list {
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-1);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+}
+
+.hilal-tabs[data-orientation="vertical"] > .hilal-tabs__list {
+  flex-direction: column;
+  align-items: stretch;
+  border-block-end: none;
+  border-inline-end: 1px solid var(--hilal-border-subtle);
+}
+
+.hilal-tabs__tab {
+  --indicator-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-2);
+  border: 0;
+  border-block-end: 2px solid var(--indicator-color);
+  background: transparent;
+  color: var(--hilal-fg-tertiary);
+  font: inherit;
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-medium);
+  cursor: pointer;
+  position: relative;
+  transition:
+    color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard),
+    border-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+
+.hilal-tabs__tab:hover:not(:disabled) {
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-tabs__tab[aria-selected="true"] {
+  color: var(--hilal-button-primary-default);
+  --indicator-color: var(--hilal-button-primary-default);
+}
+
+.hilal-tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--hilal-elevation-focus);
+  border-radius: var(--hilal-radius-sm);
+}
+
+.hilal-tabs__tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* enclosed variant */
+.hilal-tabs--enclosed > .hilal-tabs__list { border-block-end: none; gap: 0; }
+.hilal-tabs--enclosed .hilal-tabs__tab {
+  border: 1px solid transparent;
+  border-block-end: none;
+  border-start-start-radius: var(--hilal-radius-md);
+  border-start-end-radius: var(--hilal-radius-md);
+}
+.hilal-tabs--enclosed .hilal-tabs__tab[aria-selected="true"] {
+  border-color: var(--hilal-border-subtle);
+  background: var(--hilal-bg-page);
+  --indicator-color: transparent;
+}
+
+/* pill variant */
+.hilal-tabs--pill > .hilal-tabs__list { border-block-end: none; padding: var(--hilal-spacing-1); background: var(--hilal-bg-raised); border-radius: var(--hilal-radius-full); }
+.hilal-tabs--pill .hilal-tabs__tab {
+  border: 0;
+  border-radius: var(--hilal-radius-full);
+}
+.hilal-tabs--pill .hilal-tabs__tab[aria-selected="true"] {
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+  --indicator-color: transparent;
+}
+
+/* vertical orientation: indicator becomes the inline-end border */
+.hilal-tabs[data-orientation="vertical"] .hilal-tabs__tab {
+  border-block-end: 0;
+  border-inline-end: 2px solid var(--indicator-color);
+  text-align: start;
+  justify-content: flex-start;
+}
+
+.hilal-tabs__panel {
+  outline: none;
+  flex: 1 1 auto;
+}
+
+/* sizes */
+.hilal-tabs--sm .hilal-tabs__tab { font-size: var(--hilal-font-size-13); padding-block: var(--hilal-spacing-1); }

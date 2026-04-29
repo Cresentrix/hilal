@@ -1,0 +1,80 @@
+/**
+ * Hilal Pagination.
+ *
+ *   <nav class="hilal-pagination" aria-label="Pagination">
+ *     <button class="hilal-pagination__btn" data-prev aria-label="Previous">‹</button>
+ *     <button class="hilal-pagination__btn">1</button>
+ *     <button class="hilal-pagination__btn" aria-current="page">2</button>
+ *     <button class="hilal-pagination__btn">3</button>
+ *     <span class="hilal-pagination__ellipsis">…</span>
+ *     <button class="hilal-pagination__btn">12</button>
+ *     <button class="hilal-pagination__btn" data-next aria-label="Next">›</button>
+ *   </nav>
+ *
+ * Sizes: sm | md
+ */
+
+.hilal-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hilal-spacing-1);
+}
+
+.hilal-pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.25rem;
+  block-size: 2.25rem;
+  padding-inline: var(--hilal-spacing-2);
+  border: 1px solid transparent;
+  border-radius: var(--hilal-radius-md);
+  background: transparent;
+  color: var(--hilal-fg-secondary);
+  font: inherit;
+  font-size: var(--hilal-font-size-14);
+  cursor: pointer;
+  transition: background-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+
+.hilal-pagination__btn:hover:not(:disabled) {
+  background: var(--hilal-bg-raised);
+}
+
+.hilal-pagination__btn[aria-current="page"] {
+  background: var(--hilal-button-primary-default);
+  color: var(--hilal-fg-inverse);
+  font-weight: var(--hilal-font-weight-semibold);
+}
+
+.hilal-pagination__btn:focus-visible {
+  outline: none;
+  box-shadow: var(--hilal-elevation-focus);
+}
+
+.hilal-pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* RTL: chevron arrows on prev/next should flip horizontally */
+[dir="rtl"] .hilal-pagination__btn[data-prev] svg,
+[dir="rtl"] .hilal-pagination__btn[data-next] svg { transform: scaleX(-1); }
+
+.hilal-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.25rem;
+  block-size: 2.25rem;
+  color: var(--hilal-fg-tertiary);
+  user-select: none;
+}
+
+/* sm size */
+.hilal-pagination--sm .hilal-pagination__btn,
+.hilal-pagination--sm .hilal-pagination__ellipsis {
+  min-inline-size: 1.75rem;
+  block-size: 1.75rem;
+  font-size: var(--hilal-font-size-13);
+}

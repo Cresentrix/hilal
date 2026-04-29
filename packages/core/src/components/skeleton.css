@@ -1,0 +1,56 @@
+/**
+ * Hilal Skeleton — placeholder shimmer for loading content.
+ *
+ *   <span class="hilal-skeleton hilal-skeleton--text"></span>
+ *   <span class="hilal-skeleton hilal-skeleton--circle" style="--size: 2.5rem"></span>
+ *   <div   class="hilal-skeleton" style="block-size: 8rem"></div>
+ *
+ * Variants:  text | circle | (default rectangle)
+ * Honors @media (prefers-reduced-motion).
+ */
+
+.hilal-skeleton {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--hilal-bg-raised);
+  border-radius: var(--hilal-radius-md);
+  inline-size: 100%;
+  block-size: 1rem;
+}
+
+.hilal-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: hilal-skeleton-shimmer 1400ms infinite;
+}
+
+[dir="rtl"] .hilal-skeleton::after {
+  animation-name: hilal-skeleton-shimmer-rtl;
+}
+
+@keyframes hilal-skeleton-shimmer {
+  100% { transform: translateX(100%); }
+}
+@keyframes hilal-skeleton-shimmer-rtl {
+  100% { transform: translateX(-200%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hilal-skeleton::after { animation: none; }
+}
+
+.hilal-skeleton--text   { block-size: 1em; border-radius: var(--hilal-radius-sm); }
+.hilal-skeleton--circle {
+  border-radius: 50%;
+  inline-size: var(--size, 2.5rem);
+  block-size: var(--size, 2.5rem);
+}

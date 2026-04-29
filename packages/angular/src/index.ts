@@ -26,3 +26,24 @@ export type { HilalBadgeTone, HilalBadgeSize } from './components/badge.componen
 
 export { HilalTooltipComponent } from './components/tooltip.component.js';
 export type { HilalTooltipSide } from './components/tooltip.component.js';
+
+export { HilalSkeletonComponent } from './components/skeleton.component.js';
+export type { HilalSkeletonVariant } from './components/skeleton.component.js';
+
+export { HilalPaginationComponent } from './components/pagination.component.js';
+export type { HilalPaginationSize } from './components/pagination.component.js';
+
+export { HilalTabsComponent, HilalTabDirective } from './components/tabs.component.js';
+export type { HilalTabsVariant, HilalTabsSize, HilalTabsOrientation } from './components/tabs.component.js';
+
+export { HilalModalComponent } from './components/modal.component.js';
+export type { HilalModalSize } from './components/modal.component.js';
+
+export { HilalDrawerComponent } from './components/drawer.component.js';
+export type { HilalDrawerSide, HilalDrawerSize } from './components/drawer.component.js';
+
+export { HilalSelectComponent } from './components/select.component.js';
+export type { HilalSelectSize } from './components/select.component.js';
+
+export { HilalDatepickerComponent } from './components/datepicker.component.js';
+export type { HilalDatepickerKind, HilalDatepickerSize } from './components/datepicker.component.js';
