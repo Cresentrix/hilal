@@ -1,0 +1,75 @@
+/**
+ * Hilal Alert (banner). Inline contextual message.
+ *
+ *   <div class="hilal-alert hilal-alert--success" role="status">
+ *     <span class="hilal-alert__icon" aria-hidden>✓</span>
+ *     <div class="hilal-alert__body">
+ *       <p class="hilal-alert__title">Saved</p>
+ *       <p class="hilal-alert__desc">Your changes have been published.</p>
+ *     </div>
+ *     <button class="hilal-alert__close" aria-label="Dismiss">×</button>
+ *   </div>
+ *
+ * Tones: info | success | warning | danger
+ */
+
+.hilal-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--hilal-spacing-3);
+  padding: var(--hilal-spacing-3) var(--hilal-spacing-4);
+  border-radius: var(--hilal-radius-md);
+  border-inline-start: 4px solid currentColor;
+}
+
+.hilal-alert--info    { background: var(--hilal-color-brand-blue-10); color: var(--hilal-color-brand-blue-700); }
+.hilal-alert--success { background: var(--hilal-color-green-10);      color: var(--hilal-color-green-700); }
+.hilal-alert--warning { background: var(--hilal-color-orange-10);     color: var(--hilal-color-orange-700); }
+.hilal-alert--danger  { background: var(--hilal-color-red-10);        color: var(--hilal-color-red-700); }
+
+.hilal-alert__icon {
+  flex: 0 0 auto;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hilal-alert__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-1);
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-alert__title {
+  margin: 0;
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-semibold);
+  color: inherit;
+}
+
+.hilal-alert__desc {
+  margin: 0;
+  font-size: var(--hilal-font-size-14);
+  color: var(--hilal-fg-secondary);
+}
+
+.hilal-alert__close {
+  flex: 0 0 auto;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--hilal-radius-sm);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: var(--hilal-font-size-16);
+}
+.hilal-alert__close:hover         { background: rgba(0, 0, 0, 0.06); }
+.hilal-alert__close:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }

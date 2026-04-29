@@ -1,0 +1,66 @@
+/**
+ * Hilal Combobox — searchable single-select. Reuses the field/control system.
+ *
+ *   <div class="hilal-field hilal-field--md hilal-combobox" data-state="default">
+ *     <label class="hilal-field__label">Country</label>
+ *     <div class="hilal-field__control hilal-combobox__control">
+ *       <input class="hilal-input hilal-combobox__input"
+ *              role="combobox" aria-expanded="false" aria-autocomplete="list">
+ *       <span class="hilal-select__chevron" aria-hidden>▾</span>
+ *     </div>
+ *     <ul class="hilal-combobox__listbox" role="listbox" hidden>
+ *       <li class="hilal-combobox__option" role="option">Kuwait</li>
+ *       <li class="hilal-combobox__option hilal-combobox__option--active" role="option">UAE</li>
+ *     </ul>
+ *   </div>
+ */
+
+.hilal-combobox {
+  position: relative;
+}
+
+.hilal-combobox__listbox {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: calc(100% + var(--hilal-spacing-1));
+  z-index: 20;
+  margin: 0;
+  padding: var(--hilal-spacing-1);
+  list-style: none;
+  background: var(--hilal-bg-page);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-md);
+  box-shadow: var(--hilal-elevation-3);
+  max-block-size: 16rem;
+  overflow-y: auto;
+}
+
+.hilal-combobox__option {
+  padding-inline: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-2);
+  font-size: var(--hilal-font-size-14);
+  border-radius: var(--hilal-radius-sm);
+  color: var(--hilal-fg-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+}
+
+.hilal-combobox__option--active,
+.hilal-combobox__option[aria-selected="true"] {
+  background: var(--hilal-bg-raised);
+}
+
+.hilal-combobox__option[aria-selected="true"] {
+  font-weight: var(--hilal-font-weight-semibold);
+  color: var(--hilal-button-primary-default);
+}
+
+.hilal-combobox__empty {
+  padding-inline: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-3);
+  font-size: var(--hilal-font-size-13);
+  color: var(--hilal-fg-tertiary);
+  text-align: center;
+}

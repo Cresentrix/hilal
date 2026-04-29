@@ -1,0 +1,70 @@
+/**
+ * Hilal Empty State.
+ *
+ *   <div class="hilal-empty">
+ *     <div class="hilal-empty__icon">
+ *       <svg …/>
+ *     </div>
+ *     <h3 class="hilal-empty__title">No projects yet</h3>
+ *     <p  class="hilal-empty__desc">Create your first project to get started.</p>
+ *     <div class="hilal-empty__actions">
+ *       <button class="hilal-btn hilal-btn--primary">New project</button>
+ *     </div>
+ *   </div>
+ *
+ * Variants: default | compact
+ */
+
+.hilal-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-12);
+  padding-inline: var(--hilal-spacing-6);
+  color: var(--hilal-fg-secondary);
+}
+
+.hilal-empty__icon {
+  inline-size: 3rem;
+  block-size: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--hilal-bg-raised);
+  color: var(--hilal-fg-tertiary);
+  margin-block-end: var(--hilal-spacing-1);
+}
+
+.hilal-empty__title {
+  margin: 0;
+  font-size: var(--hilal-font-size-20);
+  font-weight: var(--hilal-font-weight-semibold);
+  color: var(--hilal-fg-primary);
+  line-height: 1.4;
+}
+
+.hilal-empty__desc {
+  margin: 0;
+  max-inline-size: 28rem;
+  font-size: var(--hilal-font-size-14);
+  color: var(--hilal-fg-secondary);
+  line-height: 1.5;
+}
+
+.hilal-empty__actions {
+  display: flex;
+  gap: var(--hilal-spacing-2);
+  margin-block-start: var(--hilal-spacing-2);
+}
+
+.hilal-empty--compact {
+  padding-block: var(--hilal-spacing-6);
+}
+.hilal-empty--compact .hilal-empty__icon {
+  inline-size: 2rem;
+  block-size: 2rem;
+}
+.hilal-empty--compact .hilal-empty__title { font-size: var(--hilal-font-size-16); }

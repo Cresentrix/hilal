@@ -1,0 +1,108 @@
+/**
+ * Hilal Stepper — visual progress through a multi-step flow.
+ *
+ *   <ol class="hilal-stepper" data-orientation="horizontal">
+ *     <li class="hilal-stepper__step" data-status="complete">
+ *       <span class="hilal-stepper__indicator">✓</span>
+ *       <span class="hilal-stepper__label">Account</span>
+ *     </li>
+ *     <li class="hilal-stepper__step" data-status="current" aria-current="step">
+ *       <span class="hilal-stepper__indicator">2</span>
+ *       <span class="hilal-stepper__label">Profile</span>
+ *     </li>
+ *     <li class="hilal-stepper__step">
+ *       <span class="hilal-stepper__indicator">3</span>
+ *       <span class="hilal-stepper__label">Review</span>
+ *     </li>
+ *   </ol>
+ *
+ * Status:       complete | current | upcoming (default)
+ * Orientation:  horizontal | vertical
+ */
+
+.hilal-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hilal-stepper[data-orientation="vertical"] {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hilal-stepper__step {
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  flex: 1 1 0;
+  position: relative;
+  color: var(--hilal-fg-tertiary);
+}
+
+.hilal-stepper__step:not(:last-child)::after {
+  content: '';
+  flex: 1 1 auto;
+  block-size: 2px;
+  background: var(--hilal-border-subtle);
+  margin-inline: var(--hilal-spacing-2);
+}
+
+.hilal-stepper[data-orientation="vertical"] .hilal-stepper__step {
+  flex-direction: row;
+}
+.hilal-stepper[data-orientation="vertical"] .hilal-stepper__step:not(:last-child)::after {
+  position: absolute;
+  inset-inline-start: 0.875rem;
+  inset-block-start: 2rem;
+  inset-block-end: -2rem;
+  inline-size: 2px;
+  block-size: auto;
+  margin: 0;
+}
+
+.hilal-stepper__indicator {
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--hilal-bg-raised);
+  color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-13);
+  font-weight: var(--hilal-font-weight-semibold);
+  border: 2px solid transparent;
+  flex: 0 0 auto;
+}
+
+.hilal-stepper__label {
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-medium);
+}
+
+/* status: complete */
+.hilal-stepper__step[data-status="complete"] .hilal-stepper__indicator {
+  background: var(--hilal-status-success);
+  color: var(--hilal-fg-inverse);
+}
+.hilal-stepper__step[data-status="complete"]::after {
+  background: var(--hilal-status-success);
+}
+.hilal-stepper__step[data-status="complete"] {
+  color: var(--hilal-fg-secondary);
+}
+
+/* status: current */
+.hilal-stepper__step[data-status="current"] .hilal-stepper__indicator {
+  background: var(--hilal-button-primary-default);
+  color: var(--hilal-fg-inverse);
+  border-color: var(--hilal-color-brand-blue-50);
+  box-shadow: 0 0 0 4px var(--hilal-color-brand-blue-10);
+}
+.hilal-stepper__step[data-status="current"] {
+  color: var(--hilal-fg-primary);
+}

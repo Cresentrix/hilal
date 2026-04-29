@@ -1,0 +1,115 @@
+/**
+ * Hilal Sidebar — vertical navigation for desktop layouts.
+ *
+ *   <aside class="hilal-sidebar">
+ *     <header class="hilal-sidebar__header">…brand…</header>
+ *     <nav class="hilal-sidebar__nav">
+ *       <p class="hilal-sidebar__section">Workspace</p>
+ *       <a class="hilal-sidebar__item" href="/" aria-current="page">
+ *         <span class="hilal-sidebar__icon">…</span>
+ *         <span class="hilal-sidebar__label">Home</span>
+ *       </a>
+ *       <a class="hilal-sidebar__item" href="/projects">
+ *         <span class="hilal-sidebar__icon">…</span>
+ *         <span class="hilal-sidebar__label">Projects</span>
+ *         <span class="hilal-badge hilal-badge--brand">12</span>
+ *       </a>
+ *     </nav>
+ *     <footer class="hilal-sidebar__footer">…</footer>
+ *   </aside>
+ *
+ * Variants: default | collapsed (icon-only rail)
+ */
+
+.hilal-sidebar {
+  display: flex;
+  flex-direction: column;
+  inline-size: 16rem;
+  block-size: 100dvh;
+  border-inline-end: 1px solid var(--hilal-border-subtle);
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+  flex-shrink: 0;
+}
+
+.hilal-sidebar__header,
+.hilal-sidebar__footer {
+  padding: var(--hilal-spacing-4);
+}
+.hilal-sidebar__header { border-block-end: 1px solid var(--hilal-border-subtle); }
+.hilal-sidebar__footer { border-block-start: 1px solid var(--hilal-border-subtle); margin-block-start: auto; }
+
+.hilal-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-1);
+  padding: var(--hilal-spacing-3);
+  overflow-y: auto;
+}
+
+.hilal-sidebar__section {
+  margin: 0;
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: var(--hilal-spacing-2);
+  font-size: var(--hilal-font-size-12);
+  font-weight: var(--hilal-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--hilal-font-letter-spacing-wide);
+  color: var(--hilal-fg-tertiary);
+}
+
+.hilal-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-2);
+  border-radius: var(--hilal-radius-md);
+  color: var(--hilal-fg-secondary);
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-medium);
+  text-decoration: none;
+  transition: background-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+
+.hilal-sidebar__item:hover {
+  background: var(--hilal-bg-raised);
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-sidebar__item[aria-current="page"] {
+  background: var(--hilal-color-brand-blue-10);
+  color: var(--hilal-button-primary-default);
+}
+
+.hilal-sidebar__item:focus-visible {
+  outline: none;
+  box-shadow: var(--hilal-elevation-focus);
+}
+
+.hilal-sidebar__icon {
+  flex: 0 0 auto;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hilal-sidebar__label {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* collapsed: icon-only rail */
+.hilal-sidebar--collapsed { inline-size: 4rem; }
+.hilal-sidebar--collapsed .hilal-sidebar__label,
+.hilal-sidebar--collapsed .hilal-sidebar__section {
+  display: none;
+}
+.hilal-sidebar--collapsed .hilal-sidebar__item {
+  justify-content: center;
+  padding-inline: 0;
+}

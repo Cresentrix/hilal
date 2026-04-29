@@ -1,0 +1,107 @@
+/**
+ * Hilal Toast — transient notifications anchored to a corner.
+ *
+ *   <div class="hilal-toast-region" data-position="top-end" role="region" aria-label="Notifications">
+ *     <div class="hilal-toast hilal-toast--success" role="status">
+ *       <span class="hilal-toast__icon">✓</span>
+ *       <div class="hilal-toast__body">
+ *         <p class="hilal-toast__title">Saved</p>
+ *         <p class="hilal-toast__desc">Changes published.</p>
+ *       </div>
+ *       <button class="hilal-toast__close" aria-label="Dismiss">×</button>
+ *     </div>
+ *   </div>
+ *
+ * Tones:     info | success | warning | danger
+ * Positions: top-start | top | top-end | bottom-start | bottom | bottom-end
+ */
+
+.hilal-toast-region {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-2);
+  pointer-events: none;
+  max-inline-size: 24rem;
+  inline-size: calc(100vw - 2rem);
+  padding: var(--hilal-spacing-4);
+}
+
+.hilal-toast-region[data-position="top-start"]    { inset-block-start: 0; inset-inline-start: 0; align-items: flex-start; }
+.hilal-toast-region[data-position="top"]          { inset-block-start: 0; inset-inline: 0; margin-inline: auto; align-items: stretch; }
+.hilal-toast-region[data-position="top-end"]      { inset-block-start: 0; inset-inline-end: 0; align-items: flex-end; }
+.hilal-toast-region[data-position="bottom-start"] { inset-block-end: 0; inset-inline-start: 0; align-items: flex-start; flex-direction: column-reverse; }
+.hilal-toast-region[data-position="bottom"]       { inset-block-end: 0; inset-inline: 0; margin-inline: auto; align-items: stretch; flex-direction: column-reverse; }
+.hilal-toast-region[data-position="bottom-end"]   { inset-block-end: 0; inset-inline-end: 0; align-items: flex-end; flex-direction: column-reverse; }
+
+.hilal-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--hilal-spacing-3);
+  padding: var(--hilal-spacing-3) var(--hilal-spacing-4);
+  border-radius: var(--hilal-radius-lg);
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+  box-shadow: var(--hilal-elevation-3);
+  border-inline-start: 4px solid currentColor;
+  inline-size: 100%;
+  animation: hilal-toast-in var(--hilal-motion-duration-base) var(--hilal-motion-easing-decelerate);
+}
+
+.hilal-toast--info    { color: var(--hilal-color-brand-blue-700); }
+.hilal-toast--success { color: var(--hilal-color-green-700); }
+.hilal-toast--warning { color: var(--hilal-color-orange-700); }
+.hilal-toast--danger  { color: var(--hilal-color-red-700); }
+
+.hilal-toast__icon {
+  flex: 0 0 auto;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hilal-toast__body {
+  flex: 1 1 auto;
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-toast__title {
+  margin: 0;
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-semibold);
+  color: inherit;
+}
+
+.hilal-toast__desc {
+  margin: 0;
+  margin-block-start: 2px;
+  font-size: var(--hilal-font-size-13);
+  color: var(--hilal-fg-secondary);
+}
+
+.hilal-toast__close {
+  flex: 0 0 auto;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--hilal-radius-sm);
+  background: transparent;
+  color: var(--hilal-fg-tertiary);
+  cursor: pointer;
+  font-size: var(--hilal-font-size-16);
+}
+.hilal-toast__close:hover         { background: var(--hilal-bg-raised); color: var(--hilal-fg-primary); }
+.hilal-toast__close:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }
+
+@keyframes hilal-toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .hilal-toast { animation: none; } }
