@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, computed, signal } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type HilalButtonVariant = 'primary' | 'secondary' | 'tertiary';
@@ -26,7 +26,7 @@ export type HilalButtonSize = 'sm' | 'md' | 'lg';
     </button>
   `,
 })
-export class HilalButton {
+export class HilalButtonComponent {
   @Input() variant: HilalButtonVariant = 'primary';
   @Input() size: HilalButtonSize = 'md';
   @Input() disabled = false;

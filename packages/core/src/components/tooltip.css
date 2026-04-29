@@ -1,0 +1,91 @@
+/**
+ * Hilal Tooltip — CSS-only baseline (hover/focus driven).
+ *
+ *   <span class="hilal-tooltip" data-side="top">
+ *     <button class="hilal-btn">Help</button>
+ *     <span class="hilal-tooltip__content" role="tooltip">Click for help</span>
+ *   </span>
+ *
+ * Sides: top (default) | bottom | start | end
+ *
+ * Note: this is the framework-agnostic baseline. The React package will provide
+ * a Radix-backed tooltip with proper positioning, dismissal, and a11y. The
+ * CSS-only version here is good enough for static markup and small surfaces.
+ */
+
+.hilal-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.hilal-tooltip__content {
+  position: absolute;
+  z-index: 10;
+  inline-size: max-content;
+  max-inline-size: 16rem;
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: var(--hilal-spacing-1);
+  border-radius: var(--hilal-radius-sm);
+  background: var(--hilal-color-neutral-900);
+  color: var(--hilal-fg-inverse);
+  font-size: var(--hilal-font-size-13);
+  font-weight: var(--hilal-font-weight-regular);
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(2px);
+  transition:
+    opacity   var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard),
+    transform var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+
+/* show on hover/focus of the trigger */
+.hilal-tooltip:hover > .hilal-tooltip__content,
+.hilal-tooltip:focus-within > .hilal-tooltip__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* sides */
+.hilal-tooltip[data-side="top"] > .hilal-tooltip__content,
+.hilal-tooltip:not([data-side]) > .hilal-tooltip__content {
+  inset-block-end: calc(100% + var(--hilal-spacing-2));
+  inset-inline-start: 50%;
+  transform: translate(-50%, 2px);
+}
+.hilal-tooltip[data-side="top"]:hover > .hilal-tooltip__content,
+.hilal-tooltip[data-side="top"]:focus-within > .hilal-tooltip__content,
+.hilal-tooltip:not([data-side]):hover > .hilal-tooltip__content,
+.hilal-tooltip:not([data-side]):focus-within > .hilal-tooltip__content {
+  transform: translate(-50%, 0);
+}
+
+.hilal-tooltip[data-side="bottom"] > .hilal-tooltip__content {
+  inset-block-start: calc(100% + var(--hilal-spacing-2));
+  inset-inline-start: 50%;
+  transform: translate(-50%, -2px);
+}
+.hilal-tooltip[data-side="bottom"]:hover > .hilal-tooltip__content,
+.hilal-tooltip[data-side="bottom"]:focus-within > .hilal-tooltip__content {
+  transform: translate(-50%, 0);
+}
+
+.hilal-tooltip[data-side="start"] > .hilal-tooltip__content {
+  inset-inline-end: calc(100% + var(--hilal-spacing-2));
+  inset-block-start: 50%;
+  transform: translate(2px, -50%);
+}
+.hilal-tooltip[data-side="start"]:hover > .hilal-tooltip__content,
+.hilal-tooltip[data-side="start"]:focus-within > .hilal-tooltip__content {
+  transform: translate(0, -50%);
+}
+
+.hilal-tooltip[data-side="end"] > .hilal-tooltip__content {
+  inset-inline-start: calc(100% + var(--hilal-spacing-2));
+  inset-block-start: 50%;
+  transform: translate(-2px, -50%);
+}
+.hilal-tooltip[data-side="end"]:hover > .hilal-tooltip__content,
+.hilal-tooltip[data-side="end"]:focus-within > .hilal-tooltip__content {
+  transform: translate(0, -50%);
+}

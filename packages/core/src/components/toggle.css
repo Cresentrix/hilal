@@ -1,0 +1,85 @@
+/**
+ * Hilal Toggle (Switch).
+ *
+ *   <label class="hilal-toggle hilal-toggle--md">
+ *     <input type="checkbox" role="switch" class="hilal-toggle__input">
+ *     <span class="hilal-toggle__track" aria-hidden="true">
+ *       <span class="hilal-toggle__thumb"></span>
+ *     </span>
+ *     <span class="hilal-toggle__label">Notifications</span>
+ *   </label>
+ *
+ * Sizes: sm | md
+ * RTL: thumb travel direction is mirrored automatically (uses logical inset-inline-start).
+ */
+
+.hilal-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-toggle__input {
+  position: absolute;
+  inline-size: 1px; block-size: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+.hilal-toggle__track {
+  position: relative;
+  inline-size: 2.5rem;
+  block-size: 1.5rem;
+  border-radius: var(--hilal-radius-full);
+  background: var(--hilal-color-neutral-300);
+  transition: background-color var(--hilal-motion-duration-base) var(--hilal-motion-easing-standard);
+}
+
+.hilal-toggle__thumb {
+  position: absolute;
+  inset-block-start: 0.125rem;
+  inset-inline-start: 0.125rem;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border-radius: 50%;
+  background: var(--hilal-bg-page);
+  box-shadow: var(--hilal-elevation-1);
+  transition: inset-inline-start var(--hilal-motion-duration-base) var(--hilal-motion-easing-standard);
+}
+
+.hilal-toggle__input:checked + .hilal-toggle__track {
+  background: var(--hilal-button-primary-default);
+}
+.hilal-toggle__input:checked + .hilal-toggle__track .hilal-toggle__thumb {
+  inset-inline-start: calc(100% - 1.375rem);
+}
+
+.hilal-toggle__input:focus-visible + .hilal-toggle__track {
+  box-shadow: var(--hilal-elevation-focus);
+}
+
+.hilal-toggle__input:disabled + .hilal-toggle__track {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.hilal-toggle:has(.hilal-toggle__input:disabled) {
+  cursor: not-allowed;
+  color: var(--hilal-fg-disabled);
+}
+
+.hilal-toggle__label {
+  font-size: var(--hilal-font-size-16);
+}
+
+/* sizes */
+.hilal-toggle--sm .hilal-toggle__track  { inline-size: 2rem; block-size: 1.25rem; }
+.hilal-toggle--sm .hilal-toggle__thumb  { inline-size: 1rem; block-size: 1rem; }
+.hilal-toggle--sm .hilal-toggle__input:checked + .hilal-toggle__track .hilal-toggle__thumb {
+  inset-inline-start: calc(100% - 1.125rem);
+}
+.hilal-toggle--sm .hilal-toggle__label  { font-size: var(--hilal-font-size-14); }

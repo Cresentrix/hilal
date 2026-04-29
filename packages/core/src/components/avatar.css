@@ -1,0 +1,79 @@
+/**
+ * Hilal Avatar.
+ *
+ *   <span class="hilal-avatar hilal-avatar--md">
+ *     <img class="hilal-avatar__img" src="…" alt="Mohamed">
+ *   </span>
+ *
+ *   <span class="hilal-avatar hilal-avatar--md hilal-avatar--initials">MM</span>
+ *
+ *   <span class="hilal-avatar hilal-avatar--md" data-status="online"> … </span>
+ *
+ * Sizes: xs | sm | md | lg | xl
+ * Status dot: online | offline | busy | away
+ */
+
+.hilal-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--hilal-bg-raised);
+  color: var(--hilal-fg-primary);
+  font-weight: var(--hilal-font-weight-semibold);
+  font-size: var(--hilal-font-size-14);
+  user-select: none;
+}
+
+.hilal-avatar__img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.hilal-avatar--initials {
+  background: var(--hilal-color-brand-blue-100);
+  color: var(--hilal-color-brand-blue-800);
+  text-transform: uppercase;
+}
+
+/* sizes */
+.hilal-avatar--xs { inline-size: 1.5rem;  block-size: 1.5rem;  font-size: var(--hilal-font-size-12); }
+.hilal-avatar--sm { inline-size: 2rem;    block-size: 2rem;    font-size: var(--hilal-font-size-13); }
+.hilal-avatar--md { inline-size: 2.5rem;  block-size: 2.5rem;  font-size: var(--hilal-font-size-14); }
+.hilal-avatar--lg { inline-size: 3rem;    block-size: 3rem;    font-size: var(--hilal-font-size-16); }
+.hilal-avatar--xl { inline-size: 4rem;    block-size: 4rem;    font-size: var(--hilal-font-size-20); }
+
+/* status dot — a pseudo-element placed at the bottom-end (RTL-safe) */
+.hilal-avatar[data-status]::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inline-size: 25%;
+  block-size: 25%;
+  min-inline-size: 0.5rem;
+  min-block-size: 0.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--hilal-bg-page);
+}
+
+.hilal-avatar[data-status="online"]::after  { background: var(--hilal-status-success); }
+.hilal-avatar[data-status="offline"]::after { background: var(--hilal-color-neutral-400); }
+.hilal-avatar[data-status="busy"]::after    { background: var(--hilal-status-error); }
+.hilal-avatar[data-status="away"]::after    { background: var(--hilal-status-warning); }
+
+/* avatar group — overlapping pile */
+.hilal-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+.hilal-avatar-group > .hilal-avatar {
+  border: 2px solid var(--hilal-bg-page);
+  margin-inline-start: -0.5rem;
+}
+.hilal-avatar-group > .hilal-avatar:first-child { margin-inline-start: 0; }

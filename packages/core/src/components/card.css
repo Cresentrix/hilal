@@ -1,0 +1,68 @@
+/**
+ * Hilal Card — generic surface with optional header/body/footer slots.
+ *
+ *   <article class="hilal-card hilal-card--elevated hilal-card--md">
+ *     <header class="hilal-card__header">…</header>
+ *     <div    class="hilal-card__body">…</div>
+ *     <footer class="hilal-card__footer">…</footer>
+ *   </article>
+ *
+ * Variants:  default | elevated | outlined | ghost
+ * Padding:   none | sm | md | lg
+ */
+
+.hilal-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--hilal-bg-page);
+  border-radius: var(--hilal-radius-lg);
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-card--default  { border: 1px solid var(--hilal-border-subtle); }
+.hilal-card--elevated { box-shadow: var(--hilal-elevation-2); }
+.hilal-card--outlined { border: 1px solid var(--hilal-border-default); }
+.hilal-card--ghost    { background: transparent; }
+
+/* padding scale — the body inherits the same inline padding by default */
+.hilal-card--sm > .hilal-card__header,
+.hilal-card--sm > .hilal-card__body,
+.hilal-card--sm > .hilal-card__footer { padding: var(--hilal-spacing-3); }
+
+.hilal-card--md > .hilal-card__header,
+.hilal-card--md > .hilal-card__body,
+.hilal-card--md > .hilal-card__footer { padding: var(--hilal-spacing-4); }
+
+.hilal-card--lg > .hilal-card__header,
+.hilal-card--lg > .hilal-card__body,
+.hilal-card--lg > .hilal-card__footer { padding: var(--hilal-spacing-6); }
+
+.hilal-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hilal-spacing-2);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+  font-weight: var(--hilal-font-weight-semibold);
+}
+
+.hilal-card__body {
+  flex: 1 1 auto;
+}
+
+.hilal-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  border-block-start: 1px solid var(--hilal-border-subtle);
+}
+
+/* interactive cards (clickable surfaces) */
+.hilal-card--interactive {
+  cursor: pointer;
+  transition:
+    transform   var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard),
+    box-shadow  var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+.hilal-card--interactive:hover  { box-shadow: var(--hilal-elevation-3); }
+.hilal-card--interactive:active { transform: translateY(1px); }

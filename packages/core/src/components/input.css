@@ -1,0 +1,85 @@
+/**
+ * Hilal Input — text input + supporting label/hint/icons.
+ *
+ *   <div class="hilal-field hilal-field--md" data-state="default">
+ *     <label class="hilal-field__label">Email</label>
+ *     <div class="hilal-field__control">
+ *       <span class="hilal-field__icon hilal-field__icon--leading">…</span>
+ *       <input class="hilal-input" type="email" placeholder="you@example.com">
+ *       <span class="hilal-field__icon hilal-field__icon--trailing">…</span>
+ *     </div>
+ *     <p class="hilal-field__hint">Helper text</p>
+ *   </div>
+ *
+ * Sizes:  sm | md | lg     States (data-state on .hilal-field):  default | error | success | disabled
+ */
+
+.hilal-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-1);
+  font-family: inherit;
+}
+
+.hilal-field__label {
+  font-size: var(--hilal-font-size-14);
+  font-weight: var(--hilal-font-weight-medium);
+  color: var(--hilal-fg-secondary);
+}
+
+.hilal-field__control {
+  display: flex;
+  align-items: center;
+  gap: var(--hilal-spacing-2);
+  border: 1px solid var(--hilal-border-default);
+  border-radius: var(--hilal-radius-md);
+  background: var(--hilal-bg-page);
+  padding-inline: var(--hilal-spacing-3);
+  transition:
+    border-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard),
+    box-shadow   var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+
+.hilal-field__control:focus-within {
+  border-color: var(--hilal-border-focus);
+  box-shadow: var(--hilal-elevation-focus);
+}
+
+.hilal-field[data-state="error"] .hilal-field__control       { border-color: var(--hilal-border-error); }
+.hilal-field[data-state="success"] .hilal-field__control     { border-color: var(--hilal-border-success); }
+.hilal-field[data-state="disabled"] .hilal-field__control    { background: var(--hilal-bg-disabled); cursor: not-allowed; }
+
+.hilal-field__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hilal-fg-tertiary);
+  flex-shrink: 0;
+}
+
+.hilal-input {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--hilal-fg-primary);
+  font-family: inherit;
+  padding-block: 0;
+}
+
+.hilal-input::placeholder { color: var(--hilal-fg-disabled); }
+.hilal-input:disabled     { color: var(--hilal-fg-disabled); cursor: not-allowed; }
+
+.hilal-field__hint {
+  margin: 0;
+  font-size: var(--hilal-font-size-13);
+  color: var(--hilal-fg-tertiary);
+}
+.hilal-field[data-state="error"]   .hilal-field__hint { color: var(--hilal-status-error); }
+.hilal-field[data-state="success"] .hilal-field__hint { color: var(--hilal-status-success); }
+
+/* sizes */
+.hilal-field--sm .hilal-field__control { block-size: 2rem;   font-size: var(--hilal-font-size-14); }
+.hilal-field--md .hilal-field__control { block-size: 2.5rem; font-size: var(--hilal-font-size-16); }
+.hilal-field--lg .hilal-field__control { block-size: 3rem;   font-size: var(--hilal-font-size-16); }

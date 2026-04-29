@@ -1,0 +1,43 @@
+/**
+ * Hilal Badge — small status pill.
+ *
+ *   <span class="hilal-badge hilal-badge--success">Active</span>
+ *   <span class="hilal-badge hilal-badge--info hilal-badge--dot"></span>
+ *
+ * Tones:  neutral | info | success | warning | danger | brand
+ * Sizes:  sm | md
+ * Variant `--dot` renders a pure 8px circle (status indicator with no label).
+ */
+
+.hilal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hilal-spacing-1);
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: 0.125rem;
+  font-family: inherit;
+  font-size: var(--hilal-font-size-12);
+  font-weight: var(--hilal-font-weight-medium);
+  line-height: 1;
+  border-radius: var(--hilal-radius-full);
+  white-space: nowrap;
+}
+
+/* tones */
+.hilal-badge--neutral { background: var(--hilal-bg-raised);              color: var(--hilal-fg-secondary); }
+.hilal-badge--info    { background: var(--hilal-color-brand-blue-10);    color: var(--hilal-color-brand-blue-700); }
+.hilal-badge--success { background: var(--hilal-color-green-10);         color: var(--hilal-color-green-700); }
+.hilal-badge--warning { background: var(--hilal-color-orange-10);        color: var(--hilal-color-orange-700); }
+.hilal-badge--danger  { background: var(--hilal-color-red-10);           color: var(--hilal-color-red-700); }
+.hilal-badge--brand   { background: var(--hilal-color-brand-blue-50);    color: var(--hilal-color-brand-blue-800); }
+
+/* sizes */
+.hilal-badge--md { font-size: var(--hilal-font-size-13); padding-block: 0.25rem; }
+
+/* dot variant — fixed 0.5rem pill */
+.hilal-badge--dot {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  padding: 0;
+  gap: 0;
+}
