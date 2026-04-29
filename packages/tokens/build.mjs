@@ -51,4 +51,14 @@ const sd = new StyleDictionary({
 
 await sd.cleanAllPlatforms();
 await sd.buildAllPlatforms();
-console.log('✔ tokens built');
+
+// copy hand-written theme files (dark, density, motion) into dist/themes/
+import { readdir, copyFile, mkdir } from 'node:fs/promises';
+const THEME_SRC = `${ROOT}/src/themes`;
+const THEME_DST = `${ROOT}/dist/themes`;
+await mkdir(THEME_DST, { recursive: true });
+for (const f of await readdir(THEME_SRC)) {
+  if (f.endsWith('.css')) await copyFile(`${THEME_SRC}/${f}`, `${THEME_DST}/${f}`);
+}
+
+console.log('✔ tokens + themes built');

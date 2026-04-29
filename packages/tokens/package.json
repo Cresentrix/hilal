@@ -31,7 +31,10 @@
     },
     "./css": "./dist/css/tokens.css",
     "./scss": "./dist/scss/tokens.scss",
-    "./json": "./dist/json/tokens.json"
+    "./json": "./dist/json/tokens.json",
+    "./themes/dark": "./dist/themes/dark.css",
+    "./themes/density": "./dist/themes/density.css",
+    "./themes/motion": "./dist/themes/motion.css"
   },
   "scripts": {
     "build": "node ./build.mjs",

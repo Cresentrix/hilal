@@ -1,0 +1,160 @@
+/**
+ * Hilal — dark theme.
+ *
+ * Layered on top of the default tokens.css. Activate by setting
+ * data-theme="dark" on any ancestor (typically <html> or <body>).
+ *
+ *   <link rel="stylesheet" href="@hilal/tokens/dist/css/tokens.css">
+ *   <link rel="stylesheet" href="@hilal/tokens/dist/themes/dark.css">
+ *
+ * Overrides only the semantic alias layer; the base palette stays
+ * the same so brand color references continue to resolve.
+ */
+
+[data-theme="dark"] {
+  /* foreground */
+  --hilal-fg-primary:    #fafafa;
+  --hilal-fg-secondary:  #e0e0e0;
+  --hilal-fg-tertiary:   #9e9e9e;
+  --hilal-fg-disabled:   #616161;
+  --hilal-fg-inverse:    #121212;
+  --hilal-fg-link:       #4db8dd;
+
+  /* background */
+  --hilal-bg-page:       #121212;
+  --hilal-bg-subtle:     #1a1a1a;
+  --hilal-bg-raised:     #2f2f2f;
+  --hilal-bg-overlay:    #424242;
+  --hilal-bg-disabled:   #1a1a1a;
+  --hilal-bg-inverse:    #fafafa;
+
+  /* border */
+  --hilal-border-default:  #424242;
+  --hilal-border-subtle:   #2f2f2f;
+  --hilal-border-focus:    #26a3d1;
+  --hilal-border-error:    #ff5c5c;
+  --hilal-border-success:  #2eff84;
+  --hilal-border-disabled: #2f2f2f;
+
+  /* button — primary tones swap to lighter shades for contrast on dark surfaces */
+  --hilal-button-primary-default:  #26a3d1;
+  --hilal-button-primary-hover:    #4db8dd;
+  --hilal-button-primary-pressed:  #80cce9;
+  --hilal-button-primary-focused:  #b3e0f5;
+  --hilal-button-primary-disabled: #424242;
+
+  --hilal-button-secondary-bg:       #2f2f2f;
+  --hilal-button-secondary-text:     #e0e0e0;
+  --hilal-button-secondary-border:   #616161;
+  --hilal-button-secondary-focused:  #b3e0f5;
+  --hilal-button-secondary-disabled: #2f2f2f;
+
+  --hilal-button-tertiary-bg:       transparent;
+  --hilal-button-tertiary-text:     #4db8dd;
+  --hilal-button-tertiary-border:   transparent;
+  --hilal-button-tertiary-focused:  #4db8dd;
+  --hilal-button-tertiary-disabled: #424242;
+
+  /* status — slightly lighter for dark backgrounds */
+  --hilal-status-info:    #4db8dd;
+  --hilal-status-success: #2eff84;
+  --hilal-status-warning: #ffad60;
+  --hilal-status-error:   #ff5c5c;
+
+  /* overlays */
+  --hilal-overlay-modal:   #2f2f2f;
+  --hilal-overlay-scrim:   rgba(0, 0, 0, 0.6);
+  --hilal-overlay-tooltip: #fafafa;
+
+  /* elevation — softer on dark */
+  --hilal-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.50);
+  --hilal-elevation-2: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --hilal-elevation-3: 0 4px 12px rgba(0, 0, 0, 0.50);
+  --hilal-elevation-4: 0 8px 16px rgba(0, 0, 0, 0.55);
+  --hilal-elevation-5: 0 12px 24px rgba(0, 0, 0, 0.60);
+  --hilal-elevation-focus: 0 0 0 3px rgba(38, 163, 209, 0.40);
+}
+
+/* prefers-color-scheme support — only when no explicit theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --hilal-fg-primary:    #fafafa;
+    --hilal-fg-secondary:  #e0e0e0;
+    --hilal-fg-tertiary:   #9e9e9e;
+    --hilal-fg-disabled:   #616161;
+    --hilal-fg-inverse:    #121212;
+    --hilal-fg-link:       #4db8dd;
+
+    --hilal-bg-page:       #121212;
+    --hilal-bg-subtle:     #1a1a1a;
+    --hilal-bg-raised:     #2f2f2f;
+    --hilal-bg-overlay:    #424242;
+    --hilal-bg-disabled:   #1a1a1a;
+    --hilal-bg-inverse:    #fafafa;
+
+    --hilal-border-default:  #424242;
+    --hilal-border-subtle:   #2f2f2f;
+    --hilal-border-focus:    #26a3d1;
+    --hilal-border-error:    #ff5c5c;
+    --hilal-border-success:  #2eff84;
+    --hilal-border-disabled: #2f2f2f;
+
+    --hilal-button-primary-default:  #26a3d1;
+    --hilal-button-primary-hover:    #4db8dd;
+    --hilal-button-primary-pressed:  #80cce9;
+    --hilal-button-primary-focused:  #b3e0f5;
+    --hilal-button-primary-disabled: #424242;
+
+    --hilal-button-secondary-bg:       #2f2f2f;
+    --hilal-button-secondary-text:     #e0e0e0;
+    --hilal-button-secondary-border:   #616161;
+    --hilal-button-secondary-focused:  #b3e0f5;
+    --hilal-button-secondary-disabled: #2f2f2f;
+
+    --hilal-button-tertiary-bg:       transparent;
+    --hilal-button-tertiary-text:     #4db8dd;
+    --hilal-button-tertiary-border:   transparent;
+    --hilal-button-tertiary-focused:  #4db8dd;
+    --hilal-button-tertiary-disabled: #424242;
+
+    --hilal-status-info:    #4db8dd;
+    --hilal-status-success: #2eff84;
+    --hilal-status-warning: #ffad60;
+    --hilal-status-error:   #ff5c5c;
+
+    --hilal-overlay-modal:   #2f2f2f;
+    --hilal-overlay-scrim:   rgba(0, 0, 0, 0.6);
+    --hilal-overlay-tooltip: #fafafa;
+
+    --hilal-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.50);
+    --hilal-elevation-2: 0 2px 6px rgba(0, 0, 0, 0.45);
+    --hilal-elevation-3: 0 4px 12px rgba(0, 0, 0, 0.50);
+    --hilal-elevation-4: 0 8px 16px rgba(0, 0, 0, 0.55);
+    --hilal-elevation-5: 0 12px 24px rgba(0, 0, 0, 0.60);
+    --hilal-elevation-focus: 0 0 0 3px rgba(38, 163, 209, 0.40);
+  }
+}
+
+/* explicit light theme override (back to defaults if nested inside a dark scope) */
+[data-theme="light"] {
+  --hilal-fg-primary:    #212121;
+  --hilal-fg-secondary:  #2f2f2f;
+  --hilal-fg-tertiary:   #616161;
+  --hilal-fg-disabled:   #9e9e9e;
+  --hilal-fg-inverse:    #ffffff;
+  --hilal-fg-link:       #0074ac;
+
+  --hilal-bg-page:     #ffffff;
+  --hilal-bg-subtle:   #f5f5f5;
+  --hilal-bg-raised:   #eeeeee;
+  --hilal-bg-overlay:  #2f2f2f;
+  --hilal-bg-disabled: #f5f5f5;
+  --hilal-bg-inverse:  #212121;
+
+  --hilal-border-default:  #bdbdbd;
+  --hilal-border-subtle:   #e0e0e0;
+  --hilal-border-focus:    #006399;
+  --hilal-border-error:    #c00000;
+  --hilal-border-success:  #00a344;
+  --hilal-border-disabled: #eeeeee;
+}

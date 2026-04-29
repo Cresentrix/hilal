@@ -81,3 +81,24 @@ export type {
 
 export { HilalComboboxComponent } from './components/combobox.component.js';
 export type { HilalComboboxOption } from './components/combobox.component.js';
+
+// ---------- patterns ----------
+export { HilalPageHeaderComponent } from './patterns/page-header.component.js';
+export type { HilalBreadcrumbItem } from './patterns/page-header.component.js';
+
+export { HilalFormSectionComponent } from './patterns/form-section.component.js';
+
+export { HilalDataListComponent } from './patterns/data-list.component.js';
+export type { HilalDataListItem } from './patterns/data-list.component.js';
+
+export { HilalAuthFormComponent } from './patterns/auth-form.component.js';
+export type { HilalAuthMode, HilalAuthFormValues } from './patterns/auth-form.component.js';
+
+export { HilalConfirmDialogComponent } from './patterns/confirm-dialog.component.js';
+
+export { HilalSearchHeaderComponent } from './patterns/search-header.component.js';
+
+export { HilalFilterBarComponent } from './patterns/filter-bar.component.js';
+export type { HilalFilterPill } from './patterns/filter-bar.component.js';
+
+export { HilalDashboardShellComponent } from './patterns/dashboard-shell.component.js';

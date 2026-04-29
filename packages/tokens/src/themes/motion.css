@@ -1,0 +1,38 @@
+/**
+ * Hilal — motion presets.
+ *
+ *   <div data-motion="subtle">…</div>     half-speed transitions
+ *   <div data-motion="expressive">…</div> longer, more pronounced motion
+ *   <div data-motion="off">…</div>        zero-duration (effectively disabled)
+ *
+ * Users with prefers-reduced-motion: reduce automatically get the "off"
+ * preset applied at the document root, regardless of any data-motion value.
+ */
+
+[data-motion="subtle"] {
+  --hilal-motion-duration-fast: 90ms;
+  --hilal-motion-duration-base: 140ms;
+  --hilal-motion-duration-slow: 220ms;
+}
+
+[data-motion="expressive"] {
+  --hilal-motion-duration-fast: 160ms;
+  --hilal-motion-duration-base: 280ms;
+  --hilal-motion-duration-slow: 440ms;
+}
+
+[data-motion="off"] {
+  --hilal-motion-duration-instant: 0ms;
+  --hilal-motion-duration-fast: 0ms;
+  --hilal-motion-duration-base: 0ms;
+  --hilal-motion-duration-slow: 0ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hilal-motion-duration-instant: 0ms;
+    --hilal-motion-duration-fast: 0ms;
+    --hilal-motion-duration-base: 0ms;
+    --hilal-motion-duration-slow: 0ms;
+  }
+}

@@ -1,0 +1,35 @@
+/**
+ * Hilal — density modifiers.
+ *
+ *   <div data-density="compact">…</div>
+ *
+ * Three densities: compact (16px form rows), cozy (default; 20px), spacious (24px).
+ * Density only adjusts spacing-related tokens — type sizes are unchanged.
+ *
+ * Activate by setting data-density on any ancestor (typically <html> or
+ * a settings-page wrapper). Default is "cozy" (the values in tokens.css).
+ */
+
+[data-density="compact"] {
+  --hilal-spacing-1: 0.125rem;
+  --hilal-spacing-2: 0.25rem;
+  --hilal-spacing-3: 0.5rem;
+  --hilal-spacing-4: 0.75rem;
+  --hilal-spacing-5: 1rem;
+  --hilal-spacing-6: 1.25rem;
+  --hilal-spacing-8: 1.75rem;
+  --hilal-spacing-10: 2.25rem;
+  --hilal-spacing-12: 2.75rem;
+}
+
+[data-density="spacious"] {
+  --hilal-spacing-1: 0.375rem;
+  --hilal-spacing-2: 0.625rem;
+  --hilal-spacing-3: 1rem;
+  --hilal-spacing-4: 1.25rem;
+  --hilal-spacing-5: 1.5rem;
+  --hilal-spacing-6: 1.875rem;
+  --hilal-spacing-8: 2.5rem;
+  --hilal-spacing-10: 3.25rem;
+  --hilal-spacing-12: 4rem;
+}
