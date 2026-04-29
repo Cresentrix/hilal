@@ -1,0 +1,56 @@
+{
+  "name": "@hilal/react",
+  "version": "0.0.1",
+  "description": "Hilal React 19 component library. Thin wrappers over @hilal/core CSS — same DOM as the Angular and Blade packages.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cresentrix/hilal.git",
+    "directory": "packages/react"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --external react,react-dom",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch --external react,react-dom",
+    "clean": "rm -rf dist",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@hilal/core": "workspace:*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@hilal/core": "workspace:*",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  }
+}

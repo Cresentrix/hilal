@@ -1,0 +1,12 @@
+{
+  "name": "@hilal/blade-internal",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Internal placeholder so the Blade package is part of the pnpm workspace for tooling. The published artifact is on Packagist as hilal/blade.",
+  "scripts": {
+    "build": "echo 'php package — not built by node'",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "echo 'no ts'"
+  }
+}

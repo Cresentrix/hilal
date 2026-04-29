@@ -1,0 +1,39 @@
+# env / secrets
+.env
+.env.local
+.env.*.local
+
+# node
+node_modules/
+*.log
+.pnpm-debug.log*
+.npm/
+
+# build outputs
+dist/
+build/
+out/
+.next/
+.turbo/
+storybook-static/
+*.tsbuildinfo
+
+# php / composer
+vendor/
+composer.lock
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# figma sync working files (raw dumps are huge & contain implementation detail)
+tools/figma-sync/mcp/raw/
+tools/figma-sync/api/raw/
+tools/figma-sync/api/report/
+
+# coverage
+coverage/
+.nyc_output/

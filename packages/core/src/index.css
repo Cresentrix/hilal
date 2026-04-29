@@ -1,0 +1,7 @@
+/**
+ * @hilal/core — entry point.
+ * Imports tokens (CSS variables) + reset + every component's styles.
+ */
+@import '@hilal/tokens/dist/css/tokens.css';
+@import './reset.css';
+@import './components/button.css';

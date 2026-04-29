@@ -1,0 +1,14 @@
+{
+  "name": "@hilal/figma-sync",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Pulls token values from the Hilal Figma file and writes them to packages/tokens/src/",
+  "type": "module",
+  "scripts": {
+    "sync": "node sync.mjs",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "echo 'no ts'",
+    "build": "echo 'no build'"
+  }
+}

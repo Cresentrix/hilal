@@ -1,0 +1,47 @@
+{
+  "name": "@hilal/tokens",
+  "version": "0.0.1",
+  "description": "Hilal design tokens — single source of truth, built to CSS variables, SCSS, JS, JSON (W3C DTCG), and a Tailwind preset.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/tokens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cresentrix/hilal.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/Cresentrix/hilal/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "main": "./dist/js/tokens.cjs",
+  "module": "./dist/js/tokens.mjs",
+  "types": "./dist/js/tokens.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/js/tokens.d.ts",
+      "import": "./dist/js/tokens.mjs",
+      "require": "./dist/js/tokens.cjs"
+    },
+    "./css": "./dist/css/tokens.css",
+    "./scss": "./dist/scss/tokens.scss",
+    "./json": "./dist/json/tokens.json"
+  },
+  "scripts": {
+    "build": "node ./build.mjs",
+    "dev": "node ./build.mjs --watch",
+    "clean": "rm -rf dist",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "echo 'no ts'"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.2.0"
+  }
+}

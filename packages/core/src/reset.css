@@ -1,0 +1,43 @@
+/**
+ * Hilal lightweight reset. Opt-in — load via `@hilal/core/reset` if you want it.
+ * Inspired by modern-normalize + Josh Comeau's CSS reset, with a few RTL-friendly tweaks.
+ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: var(--hilal-font-family-sans);
+  font-size: var(--hilal-font-size-base);
+  line-height: var(--hilal-font-line-height-normal);
+  color: var(--hilal-fg-default);
+  background: var(--hilal-bg-default);
+}
+
+[lang="ar"], [dir="rtl"] {
+  font-family: var(--hilal-font-family-arabic);
+  /* Arabic benefits from a slightly looser line-height */
+  line-height: calc(var(--hilal-font-line-height-normal) + 0.1);
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-inline-size: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--hilal-accent-default);
+  outline-offset: 2px;
+}

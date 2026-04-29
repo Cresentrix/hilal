@@ -1,0 +1,31 @@
+{
+  "name": "hilal",
+  "private": true,
+  "description": "Hilal — a bilingual (Latin + Arabic), multi-stack design system. Tokens once, components for React, Angular, and Laravel Blade.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Cresentrix/hilal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cresentrix/hilal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cresentrix/hilal/issues"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "sync:figma": "node tools/figma-sync/sync.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "typescript": "^5.6.0"
+  }
+}

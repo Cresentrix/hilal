@@ -1,0 +1,44 @@
+{
+  "name": "@hilal/core",
+  "version": "0.0.1",
+  "description": "Hilal core CSS — framework-agnostic component styles. Imported by every framework wrapper (@hilal/react, @hilal/angular, hilal/blade).",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cresentrix/hilal.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./dist/hilal.css",
+    "./reset": "./dist/reset.css",
+    "./components/*": "./dist/components/*.css"
+  },
+  "scripts": {
+    "build": "node ./build.mjs",
+    "dev": "node ./build.mjs --watch",
+    "clean": "rm -rf dist",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "echo 'no ts'"
+  },
+  "peerDependencies": {
+    "@hilal/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@hilal/tokens": "workspace:*",
+    "postcss": "^8.4.0",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.0",
+    "postcss-logical": "^7.0.0",
+    "cssnano": "^7.0.0"
+  }
+}

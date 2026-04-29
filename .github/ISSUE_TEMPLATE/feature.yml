@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest a new component, prop, or capability.
+labels: ["enhancement", "needs triage"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Target package
+      options:
+        - "@hilal/tokens"
+        - "@hilal/core"
+        - "@hilal/react"
+        - "@hilal/angular"
+        - hilal/blade
+        - docs
+        - new package
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Explain the use case or pain point.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API or behavior
+      description: Code snippet, prop signature, or design reference.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

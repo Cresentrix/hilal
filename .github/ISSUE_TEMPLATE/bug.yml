@@ -1,0 +1,64 @@
+name: Bug report
+description: Something is broken or behaves unexpectedly.
+labels: ["bug", "needs triage"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected package
+      options:
+        - "@hilal/tokens"
+        - "@hilal/core"
+        - "@hilal/icons"
+        - "@hilal/react"
+        - "@hilal/angular"
+        - hilal/blade
+        - docs
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including any console errors.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Steps, code snippet, or a CodeSandbox/StackBlitz link.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: Browser / OS / Framework version
+      placeholder: "Chrome 130, macOS 15, React 19.0.0"
+
+  - type: checkboxes
+    id: rtl
+    attributes:
+      label: Locale
+      options:
+        - label: Reproduces in Latin / LTR
+        - label: Reproduces in Arabic / RTL
