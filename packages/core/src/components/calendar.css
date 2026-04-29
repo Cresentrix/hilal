@@ -164,3 +164,76 @@
 .hilal-calendar__year:hover                            { background: var(--hilal-bg-raised); }
 .hilal-calendar__year[aria-selected="true"]            { background: var(--hilal-button-primary-default); color: var(--hilal-fg-inverse); }
 .hilal-calendar__year:focus-visible                    { outline: none; box-shadow: var(--hilal-elevation-focus); }
+
+/* ----- multi-month + presets ----- */
+
+.hilal-calendar-wrap {
+  display: inline-flex;
+  flex-direction: row;
+  gap: var(--hilal-spacing-3);
+  background: var(--hilal-bg-page);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-lg);
+  padding: var(--hilal-spacing-3);
+  font-family: inherit;
+}
+
+.hilal-calendar-wrap > .hilal-calendar {
+  border: 0;
+  padding: 0;
+  inline-size: 16rem;
+}
+
+.hilal-calendar-wrap__months {
+  display: flex;
+  flex-direction: row;
+  gap: var(--hilal-spacing-4);
+}
+
+@media (max-width: 640px) {
+  .hilal-calendar-wrap                      { flex-direction: column; }
+  .hilal-calendar-wrap__months              { flex-direction: column; }
+}
+
+.hilal-calendar-presets {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 8rem;
+  border-inline-end: 1px solid var(--hilal-border-subtle);
+  padding-inline-end: var(--hilal-spacing-3);
+}
+
+@media (max-width: 640px) {
+  .hilal-calendar-presets {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-inline-end: 0;
+    border-block-end: 1px solid var(--hilal-border-subtle);
+    padding-inline-end: 0;
+    padding-block-end: var(--hilal-spacing-3);
+  }
+}
+
+.hilal-calendar-preset {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--hilal-spacing-3);
+  padding-block: var(--hilal-spacing-2);
+  border: 0;
+  border-radius: var(--hilal-radius-md);
+  background: transparent;
+  color: var(--hilal-fg-secondary);
+  font: inherit;
+  font-size: var(--hilal-font-size-13);
+  cursor: pointer;
+  text-align: start;
+  white-space: nowrap;
+}
+.hilal-calendar-preset:hover         { background: var(--hilal-bg-raised); color: var(--hilal-fg-primary); }
+.hilal-calendar-preset:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }
+.hilal-calendar-preset[aria-pressed="true"] {
+  background: var(--hilal-color-brand-blue-10);
+  color: var(--hilal-button-primary-default);
+  font-weight: var(--hilal-font-weight-semibold);
+}

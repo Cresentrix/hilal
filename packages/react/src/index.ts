@@ -67,7 +67,7 @@ export { ToastProvider, useToast } from './components/toast.js';
 export type { Toast, ToastProviderProps, ToastTone, ToastPosition } from './components/toast.js';
 
 export { Calendar } from './components/calendar.js';
-export type { CalendarProps, Weekday, CalendarMode, DateRange } from './components/calendar.js';
+export type { CalendarProps, Weekday, CalendarMode, DateRange, CalendarPreset } from './components/calendar.js';
 
 export { Combobox } from './components/combobox.js';
 export type { ComboboxProps, ComboboxOption } from './components/combobox.js';
