@@ -1,0 +1,226 @@
+{
+  "Inter__600__64": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 64,
+    "lineHeightPx": 77.45454406738281,
+    "letterSpacing": 0
+  },
+  "Inter__400__36": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 36,
+    "lineHeightPx": 43.568180084228516,
+    "letterSpacing": 0
+  },
+  "Inter__400__32": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 32,
+    "lineHeightPx": 46.840633392333984,
+    "letterSpacing": 0
+  },
+  "Inter__600__32": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 32,
+    "lineHeightPx": 38.727272033691406,
+    "letterSpacing": 0
+  },
+  "Inter__500__20": {
+    "family": "Inter",
+    "weight": 500,
+    "size": 20,
+    "lineHeightPx": 24,
+    "letterSpacing": 0.15000000596046448
+  },
+  "Inter__400__16": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 16,
+    "lineHeightPx": 24,
+    "letterSpacing": 0.5
+  },
+  "Noto Kufi Arabic__500__20": {
+    "family": "Noto Kufi Arabic",
+    "weight": 500,
+    "size": 20,
+    "lineHeightPx": 24,
+    "letterSpacing": 0.15000000596046448
+  },
+  "Noto Kufi Arabic__400__16": {
+    "family": "Noto Kufi Arabic",
+    "weight": 400,
+    "size": 16,
+    "lineHeightPx": 24,
+    "letterSpacing": 0.5
+  },
+  "Inter__700__24": {
+    "family": "Inter",
+    "weight": 700,
+    "size": 24,
+    "lineHeightPx": 32,
+    "letterSpacing": 0
+  },
+  "Inter__600__20": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 20,
+    "lineHeightPx": 28,
+    "letterSpacing": 0
+  },
+  "Inter__400__15": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 15,
+    "lineHeightPx": 22,
+    "letterSpacing": 0
+  },
+  "Inter__400__13": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 13,
+    "lineHeightPx": 20,
+    "letterSpacing": 0
+  },
+  "Inter__500__12": {
+    "family": "Inter",
+    "weight": 500,
+    "size": 12,
+    "lineHeightPx": 16,
+    "letterSpacing": 0
+  },
+  "Inter__600__14": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 14,
+    "lineHeightPx": 20,
+    "letterSpacing": 0
+  },
+  "Inter__600__16": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 16,
+    "lineHeightPx": 24,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__700__24": {
+    "family": "Noto Kufi Arabic",
+    "weight": 700,
+    "size": 24,
+    "lineHeightPx": 34,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__600__20": {
+    "family": "Noto Kufi Arabic",
+    "weight": 600,
+    "size": 20,
+    "lineHeightPx": 30,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__400__15": {
+    "family": "Noto Kufi Arabic",
+    "weight": 400,
+    "size": 15,
+    "lineHeightPx": 26,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__400__13": {
+    "family": "Noto Kufi Arabic",
+    "weight": 400,
+    "size": 13,
+    "lineHeightPx": 22,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__500__12": {
+    "family": "Noto Kufi Arabic",
+    "weight": 500,
+    "size": 12,
+    "lineHeightPx": 18,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__600__14": {
+    "family": "Noto Kufi Arabic",
+    "weight": 600,
+    "size": 14,
+    "lineHeightPx": 22,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__600__16": {
+    "family": "Noto Kufi Arabic",
+    "weight": 600,
+    "size": 16,
+    "lineHeightPx": 26,
+    "letterSpacing": 0
+  },
+  "Inter__600__128": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 128,
+    "lineHeightPx": 154.90908813476562,
+    "letterSpacing": 0
+  },
+  "Inter__400__14": {
+    "family": "Inter",
+    "weight": 400,
+    "size": 14,
+    "lineHeightPx": 20,
+    "letterSpacing": 0
+  },
+  "Inter__600__96": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 96,
+    "lineHeightPx": 116.18181610107422,
+    "letterSpacing": 0
+  },
+  "Inter__600__48": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 48,
+    "lineHeightPx": 58.09090805053711,
+    "letterSpacing": 0
+  },
+  "Inter__600__36": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 36,
+    "lineHeightPx": 9.731343269348145,
+    "letterSpacing": 0.20273631811141968
+  },
+  "Inter__700__32": {
+    "family": "Inter",
+    "weight": 700,
+    "size": 32,
+    "lineHeightPx": 40,
+    "letterSpacing": 0
+  },
+  "Inter__600__24": {
+    "family": "Inter",
+    "weight": 600,
+    "size": 24,
+    "lineHeightPx": 32,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__700__32": {
+    "family": "Noto Kufi Arabic",
+    "weight": 700,
+    "size": 32,
+    "lineHeightPx": 44,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__600__24": {
+    "family": "Noto Kufi Arabic",
+    "weight": 600,
+    "size": 24,
+    "lineHeightPx": 36,
+    "letterSpacing": 0
+  },
+  "Noto Kufi Arabic__400__14": {
+    "family": "Noto Kufi Arabic",
+    "weight": 400,
+    "size": 14,
+    "lineHeightPx": 22,
+    "letterSpacing": 0
+  }
+}

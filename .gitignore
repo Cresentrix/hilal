@@ -29,7 +29,7 @@ composer.lock
 !.vscode/extensions.json
 !.vscode/settings.json.example
 
-# figma sync working files (raw dumps are huge & contain implementation detail)
+# figma sync working files — keep extracted/ (small JSON snapshot of source of truth) but ignore raw dumps
 tools/figma-sync/mcp/raw/
 tools/figma-sync/api/raw/
 tools/figma-sync/api/report/

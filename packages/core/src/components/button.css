@@ -47,35 +47,35 @@
 }
 
 /* sizes */
-.hilal-btn--sm { block-size: 2rem;    padding-inline: var(--hilal-spacing-3); font-size: var(--hilal-font-size-sm); }
-.hilal-btn--md { block-size: 2.5rem;  padding-inline: var(--hilal-spacing-4); font-size: var(--hilal-font-size-base); }
-.hilal-btn--lg { block-size: 3rem;    padding-inline: var(--hilal-spacing-5); font-size: var(--hilal-font-size-lg); }
+.hilal-btn--sm { block-size: 2rem;    padding-inline: var(--hilal-spacing-3); font-size: var(--hilal-font-size-14); }
+.hilal-btn--md { block-size: 2.5rem;  padding-inline: var(--hilal-spacing-4); font-size: var(--hilal-font-size-16); }
+.hilal-btn--lg { block-size: 3rem;    padding-inline: var(--hilal-spacing-5); font-size: var(--hilal-font-size-20); }
 
 /* primary */
 .hilal-btn--primary {
-  background: var(--hilal-accent-default);
-  color: var(--hilal-fg-on-brand);
+  background: var(--hilal-button-primary-default);
+  color: var(--hilal-fg-inverse);
 }
-.hilal-btn--primary:hover:not(:disabled)   { background: var(--hilal-accent-hover); }
-.hilal-btn--primary:active:not(:disabled)  { background: var(--hilal-accent-pressed); }
+.hilal-btn--primary:hover:not(:disabled)   { background: var(--hilal-button-primary-hover); }
+.hilal-btn--primary:active:not(:disabled)  { background: var(--hilal-button-primary-pressed); }
 
 /* secondary */
 .hilal-btn--secondary {
-  background: var(--hilal-bg-default);
-  color: var(--hilal-accent-default);
-  border-color: var(--hilal-accent-default);
+  background: var(--hilal-button-secondary-bg);
+  color: var(--hilal-button-secondary-text);
+  border-color: var(--hilal-button-secondary-border);
 }
-.hilal-btn--secondary:hover:not(:disabled)  { background: var(--hilal-bg-muted); }
+.hilal-btn--secondary:hover:not(:disabled)  { background: var(--hilal-bg-raised); }
 .hilal-btn--secondary:active:not(:disabled) { background: var(--hilal-bg-subtle); }
 
 /* tertiary */
 .hilal-btn--tertiary {
-  background: transparent;
-  color: var(--hilal-accent-default);
-  border-color: transparent;
+  background: var(--hilal-button-tertiary-bg);
+  color: var(--hilal-button-tertiary-text);
+  border-color: var(--hilal-button-tertiary-border);
 }
-.hilal-btn--tertiary:hover:not(:disabled)  { background: var(--hilal-bg-muted); }
-.hilal-btn--tertiary:active:not(:disabled) { background: var(--hilal-bg-subtle); }
+.hilal-btn--tertiary:hover:not(:disabled)  { background: var(--hilal-bg-subtle); }
+.hilal-btn--tertiary:active:not(:disabled) { background: var(--hilal-bg-raised); }
 
 /* loading spinner — sibling element with class .hilal-btn__spinner */
 .hilal-btn__spinner {

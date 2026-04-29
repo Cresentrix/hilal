@@ -1,0 +1,11 @@
+{
+  "source": "tools/figma-sync/api/raw/nodes-pages.json",
+  "fileLastModified": "2026-04-29T09:48:01Z",
+  "counts": {
+    "candidateRowFrames": 455,
+    "uniqueTokenNames": 114,
+    "extractedColors": 106,
+    "extractedElevation": 8,
+    "distinctTypographyStyles": 32
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "lastSync": "2026-04-29",
+  "summary": "Discrepancies between Figma source-of-truth and the normalized token names used in the code.",
+  "naming": [
+    {
+      "figma": "base/nuetral/N0..N1000",
+      "code":  "color.neutral.0..1000",
+      "type":  "typo-fix",
+      "severity": "low",
+      "action": "Code uses 'neutral' (correct spelling). Update the Figma file to match — the typo is currently exposed in token names."
+    },
+    {
+      "figma": "base/brand/blue/B0, B10, B50, B100..B1000",
+      "code":  "color.brand.blue.0, 10, 50, 100..1000",
+      "type":  "prefix-strip",
+      "severity": "low",
+      "action": "Code drops the redundant 'B' letter prefix. Same numbering, less visual noise."
+    },
+    {
+      "figma": "base/orange/0 AND base/orange/O0 (both #fff8f1)",
+      "code":  "color.orange.0",
+      "type":  "duplicate",
+      "severity": "low",
+      "action": "Figma has both 'O0' and bare '0' for orange. Code keeps one. Recommend deleting 'base/orange/0' (bare) from Figma."
+    },
+    {
+      "figma": "base/brand/blue/300, 400, 500 (no B prefix, different values from B300/B400/B500)",
+      "code":  "—",
+      "type":  "orphan-token",
+      "severity": "medium",
+      "action": "Figma has loose 'base/brand/blue/300' (#0090c6), '400' (#0074ac), '500' (#006399) without the B prefix. These OVERLAP semantically with B300/B400/B500 but have different hexes. Looks like leftovers from an earlier scale. Recommend deleting from Figma."
+    }
+  ],
+  "values": [
+    {
+      "where": "elevation/base/{1..5}, inner",
+      "issue": "alpha-out-of-range",
+      "severity": "high",
+      "detail": "Figma stores shadow alpha as integer percentages (e.g. 'rgba(0, 0, 0, 25)' meaning 25% opacity). The CSS spec requires 0-1 for alpha; '25' is clamped to 1 (fully opaque) by browsers, producing visually-broken shadows.",
+      "fixedInCode": "Yes — divided by 100 in elevation.tokens.json (e.g. 25 → 0.25). The Figma values should be re-saved with proper alpha."
+    },
+    {
+      "where": "Inter / size 36 / weight 600",
+      "issue": "broken-line-height",
+      "severity": "high",
+      "detail": "Figma reports lineHeightPx = 9.73 for Inter 36px Semibold. That's a single-digit pixel line-height on a 36px font — almost certainly a corrupted value.",
+      "fixedInCode": "Yes — set to 2.75rem (44px) in typography.tokens.json. Designer should investigate the source style."
+    },
+    {
+      "where": "30 base/radius tokens (radius/base/0 ... radius/base/2900)",
+      "issue": "token-bloat",
+      "severity": "medium",
+      "detail": "Figma defines 30 base radius values in 100-unit increments. No design system needs this many. Real components likely use 4-6.",
+      "fixedInCode": "Yes — code keeps a 7-step semantic scale: none, sm, md, lg, xl, 2xl, full. Recommend pruning unused base radius values from Figma."
+    },
+    {
+      "where": "Arabic typography",
+      "issue": "missing-large-sizes",
+      "severity": "medium",
+      "detail": "Inter has 13 sizes (12-128). Noto Kufi Arabic has only 8 sizes (12-32). Display headings 36, 48, 64, 96, 128 have no Arabic counterpart.",
+      "fixedInCode": "No — code mirrors the gap. Decide whether to add Arabic display sizes in Figma, or restrict display headings to Latin contexts."
+    }
+  ],
+  "components": [
+    {
+      "where": "Web vs Mobile button states",
+      "issue": "inconsistent-state-coverage",
+      "severity": "medium",
+      "detail": "Web Primary button has 5 states (Default/Hover/Pressed/Focus/Disabled). Web Secondary/Tertiary have 4. Mobile buttons all have 4. State coverage should be uniform within each platform."
+    },
+    {
+      "where": "cmp/Buton/Primary/Web-Ar (and Secondary, tertiary)",
+      "issue": "typo-buton",
+      "severity": "low",
+      "detail": "Three Arabic Web button component sets are named 'Buton' instead of 'Button'. Only affects the Figma file."
+    },
+    {
+      "where": "cmp/Button/Primary//Mobile (and 5 other Mobile button sets)",
+      "issue": "double-slash",
+      "severity": "low",
+      "detail": "Six Mobile button component sets have '//' (double slash) in their path."
+    },
+    {
+      "where": "Mixed locale suffixes: Web-Ar, Web-Arabic, En-AR, Mob-Ar, Mob-Arabic",
+      "issue": "inconsistent-locale-naming",
+      "severity": "medium",
+      "detail": "Pick ONE convention. Recommend: drop locale suffixes entirely; treat Latin/Arabic as a runtime concern via 'dir=rtl' + 'lang=ar', not as separate components. The current code already does this."
+    },
+    {
+      "where": "Web page contains cmp/Modal/Mob, cmp/Slider/Mob",
+      "issue": "wrong-page-placement",
+      "severity": "medium",
+      "detail": "Mobile-prefixed components live on the Web components page."
+    },
+    {
+      "where": "Mobile page contains cmp/Dropdown/Web, cmp/Dropdown/Web-Ar",
+      "issue": "wrong-page-placement",
+      "severity": "medium",
+      "detail": "Web-prefixed components live on the Mobile components page."
+    },
+    {
+      "where": "04 Patterns page",
+      "issue": "empty-page",
+      "severity": "high",
+      "detail": "Figma page has 0 children. No patterns documented yet (form layouts, list patterns, empty/loading/error states)."
+    },
+    {
+      "where": "05 Templates page",
+      "issue": "empty-page",
+      "severity": "high",
+      "detail": "Figma page has only 1 frame. No real templates yet (auth screens, dashboard, settings)."
+    }
+  ],
+  "missingComponents": [
+    "Avatar", "Alert / Banner", "Toast / Snackbar", "Pagination", "Skeleton", "Progress",
+    "Spinner (standalone)", "Radio button", "Drawer / Sheet", "Popover", "Accordion",
+    "Stepper", "Calendar (separate from Datepicker)", "File upload", "Search input variant",
+    "Empty state", "Sidebar / Side navigation", "Bottom navigation (mobile)"
+  ]
+}
