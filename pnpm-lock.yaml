@@ -78,6 +78,37 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
+  packages/patterns:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+    devDependencies:
+      '@hilal/core':
+        specifier: workspace:*
+        version: link:../core
+      '@hilal/react':
+        specifier: workspace:*
+        version: link:../react
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      react:
+        specifier: ^19.0.0
+        version: 19.2.5
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.5(react@19.2.5)
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(postcss@8.5.12)(typescript@5.9.3)(yaml@2.8.3)
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+
   packages/react:
     dependencies:
       class-variance-authority:

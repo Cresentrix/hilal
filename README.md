@@ -24,6 +24,7 @@ It's also unusual in being genuinely multi-stack: the same tokens, the same CSS,
 | [`@hilal/react`](packages/react) | React 19 components | `npm i @hilal/react` |
 | [`@hilal/angular`](packages/angular) | Angular 19 standalone components | `npm i @hilal/angular` |
 | [`hilal/blade`](packages/blade) | Laravel Blade components + Alpine.js | `composer require hilal/blade` |
+| [`@hilal/patterns`](packages/patterns) | Composed React patterns (auth forms, page headers, lists) | `npm i @hilal/patterns` |
 
 ## Quick start (React)
 

@@ -1,0 +1,57 @@
+{
+  "name": "@hilal/patterns",
+  "version": "0.0.1",
+  "description": "Hilal patterns — opinionated, composed React building blocks (auth forms, page headers, lists, dialogs) built from @hilal/react primitives. Use as starting points; copy and customize.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/patterns",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cresentrix/hilal.git",
+    "directory": "packages/patterns"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --external react,react-dom,@hilal/react",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch --external react,react-dom,@hilal/react",
+    "clean": "rm -rf dist",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@hilal/core": "workspace:*",
+    "@hilal/react": "workspace:*",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@hilal/core": "workspace:*",
+    "@hilal/react": "workspace:*",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  }
+}

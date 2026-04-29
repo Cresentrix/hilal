@@ -110,3 +110,57 @@
   font-weight: var(--hilal-font-weight-semibold);
 }
 .hilal-calendar__day:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* range selection — middle days have flat sides, endpoints keep the rounded pill */
+.hilal-calendar__day--in-range {
+  background: var(--hilal-color-brand-blue-10);
+  color: var(--hilal-color-brand-blue-800);
+  border-radius: 0;
+}
+.hilal-calendar__day--range-start,
+.hilal-calendar__day--range-end {
+  background: var(--hilal-button-primary-default);
+  color: var(--hilal-fg-inverse);
+  font-weight: var(--hilal-font-weight-semibold);
+}
+.hilal-calendar__day--range-start { border-end-end-radius: 0; border-start-end-radius: 0; }
+.hilal-calendar__day--range-end   { border-end-start-radius: 0; border-start-start-radius: 0; }
+.hilal-calendar__day--range-start.hilal-calendar__day--range-end {
+  /* same day = single selection inside range mode */
+  border-radius: var(--hilal-radius-md);
+}
+
+/* year picker — title becomes a clickable button, opens a year grid */
+.hilal-calendar__title-btn {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: var(--hilal-font-weight-semibold);
+  color: var(--hilal-fg-primary);
+  cursor: pointer;
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: var(--hilal-spacing-1);
+  border-radius: var(--hilal-radius-sm);
+}
+.hilal-calendar__title-btn:hover         { background: var(--hilal-bg-raised); }
+.hilal-calendar__title-btn:focus-visible { outline: none; box-shadow: var(--hilal-elevation-focus); }
+
+.hilal-calendar__years {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--hilal-spacing-1);
+}
+.hilal-calendar__year {
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: var(--hilal-spacing-2);
+  border: 0;
+  border-radius: var(--hilal-radius-md);
+  background: transparent;
+  color: var(--hilal-fg-primary);
+  font-family: inherit;
+  font-size: var(--hilal-font-size-13);
+  cursor: pointer;
+}
+.hilal-calendar__year:hover                            { background: var(--hilal-bg-raised); }
+.hilal-calendar__year[aria-selected="true"]            { background: var(--hilal-button-primary-default); color: var(--hilal-fg-inverse); }
+.hilal-calendar__year:focus-visible                    { outline: none; box-shadow: var(--hilal-elevation-focus); }

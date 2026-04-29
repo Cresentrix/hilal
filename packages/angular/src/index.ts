@@ -75,7 +75,7 @@ export { HilalToastService, HilalToastRegionComponent } from './components/toast
 export type { HilalToast, HilalToastTone, HilalToastPosition } from './components/toast.component.js';
 
 export { HilalCalendarComponent } from './components/calendar.component.js';
-export type { HilalWeekday } from './components/calendar.component.js';
+export type { HilalWeekday, HilalCalendarMode, HilalDateRange } from './components/calendar.component.js';
 
 export { HilalComboboxComponent } from './components/combobox.component.js';
 export type { HilalComboboxOption } from './components/combobox.component.js';
