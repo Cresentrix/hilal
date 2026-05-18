@@ -1,4 +1,4 @@
-# @hilal/figma-sync
+# @hilal-ds/figma-sync
 
 Internal tool. Pulls token values from the Hilal Figma file and (eventually) writes them to `packages/tokens/src/`.
 

@@ -1,6 +1,6 @@
 {
   "name": "hilal/blade",
-  "description": "Hilal Blade components for Laravel — same DOM and CSS as @hilal/react and @hilal/angular, with Alpine.js for interactivity.",
+  "description": "Hilal Blade components for Laravel — same DOM and CSS as @hilal-ds/react and @hilal-ds/angular, with Alpine.js for interactivity.",
   "type": "library",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/blade",

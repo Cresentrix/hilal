@@ -1,6 +1,6 @@
 # hilal/blade
 
-Laravel Blade components for the Hilal design system. Same DOM and CSS as `@hilal/react` and `@hilal/angular`. Interactive bits use [Alpine.js](https://alpinejs.dev) (loaded automatically via `@hilalScripts`).
+Laravel Blade components for the Hilal design system. Same DOM and CSS as `@hilal-ds/react` and `@hilal-ds/angular`. Interactive bits use [Alpine.js](https://alpinejs.dev) (loaded automatically via `@hilalScripts`).
 
 ## Install
 
@@ -22,8 +22,8 @@ php artisan vendor:publish --tag=hilal-views
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://unpkg.com/@hilal/tokens/dist/css/tokens.css">
-    <link rel="stylesheet" href="https://unpkg.com/@hilal/core/dist/hilal.css">
+    <link rel="stylesheet" href="https://unpkg.com/@hilal-ds/tokens/dist/css/tokens.css">
+    <link rel="stylesheet" href="https://unpkg.com/@hilal-ds/core/dist/hilal.css">
     @hilalScripts
   </head>
   <body>
@@ -44,4 +44,4 @@ php artisan vendor:publish --tag=hilal-views
 
 ## Custom asset hosting
 
-If you'd rather bundle the CSS into your own pipeline, just import `@hilal/tokens/css` and `@hilal/core` from your `package.json` and skip the unpkg URLs.
+If you'd rather bundle the CSS into your own pipeline, just import `@hilal-ds/tokens/css` and `@hilal-ds/core` from your `package.json` and skip the unpkg URLs.

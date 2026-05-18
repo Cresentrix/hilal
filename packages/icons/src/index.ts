@@ -2,7 +2,7 @@
  * Re-export every Lucide icon. Tree-shaking still works — bundlers will only
  * include the icons you actually import.
  *
- *   import { Search, ChevronDown } from '@hilal/icons';
+ *   import { Search, ChevronDown } from '@hilal-ds/icons';
  *
  * Why re-export instead of just using lucide-react directly?
  *   - One import path across all Hilal docs and examples.

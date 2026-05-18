@@ -1,11 +1,11 @@
-# @hilal/patterns
+# @hilal-ds/patterns
 
-Opinionated React building blocks composed from `@hilal/react` primitives. Use them as starting points — they cover the common 80%, and you customize the remaining 20% by editing or wrapping.
+Opinionated React building blocks composed from `@hilal-ds/react` primitives. Use them as starting points — they cover the common 80%, and you customize the remaining 20% by editing or wrapping.
 
 ## Install
 
 ```bash
-pnpm add @hilal/patterns @hilal/react @hilal/core @hilal/tokens
+pnpm add @hilal-ds/patterns @hilal-ds/react @hilal-ds/core @hilal-ds/tokens
 ```
 
 ## Available patterns
@@ -16,7 +16,7 @@ import {
   PageHeader,      // page title + breadcrumbs + actions
   DataList,        // list of items with avatar / label / trailing
   ConfirmDialog,   // Modal preset (cancel / destructive confirm)
-} from '@hilal/patterns';
+} from '@hilal-ds/patterns';
 ```
 
 ## Philosophy

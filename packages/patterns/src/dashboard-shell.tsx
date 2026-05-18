@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 export interface DashboardShellProps {
-  /** Sidebar slot — usually <Sidebar> from @hilal/react. */
+  /** Sidebar slot — usually <Sidebar> from @hilal-ds/react. */
   sidebar: ReactNode;
   /** Topbar / header slot — title, actions, user menu. */
   topbar?: ReactNode;

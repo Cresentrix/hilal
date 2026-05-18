@@ -1,6 +1,6 @@
 /**
  * Hilal Button — framework-agnostic.
- * The same DOM is emitted by @hilal/react, @hilal/angular and hilal/blade.
+ * The same DOM is emitted by @hilal-ds/react, @hilal-ds/angular and hilal/blade.
  *
  *   <button class="hilal-btn hilal-btn--primary hilal-btn--md">Click me</button>
  *

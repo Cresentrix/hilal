@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import {
   Drawer, DrawerHeader, DrawerTitle, DrawerBody, DrawerFooter, DrawerClose,
   Avatar, Button, EmptyState,
-} from '@hilal/react';
+} from '@hilal-ds/react';
 import { cn } from './utils/cn.js';
 
 export interface NotificationItem {

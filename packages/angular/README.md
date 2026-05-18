@@ -1,25 +1,25 @@
-# @hilal/angular
+# @hilal-ds/angular
 
 Angular 19 standalone components for the Hilal design system.
 
 ## Install
 
 ```bash
-pnpm add @hilal/angular @hilal/core @hilal/tokens
+pnpm add @hilal-ds/angular @hilal-ds/core @hilal-ds/tokens
 ```
 
 In your global stylesheet:
 
 ```css
-@import '@hilal/tokens/css';
-@import '@hilal/core';
+@import '@hilal-ds/tokens/css';
+@import '@hilal-ds/core';
 ```
 
 ## Use
 
 ```ts
 import { Component } from '@angular/core';
-import { HilalButton } from '@hilal/angular';
+import { HilalButton } from '@hilal-ds/angular';
 
 @Component({
   selector: 'app-root',

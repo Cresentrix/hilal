@@ -1,7 +1,7 @@
 {
-  "name": "@hilal/angular",
-  "version": "0.1.0",
-  "description": "Hilal Angular 19 standalone components. Thin wrappers over @hilal/core CSS — same DOM as the React and Blade packages.",
+  "name": "@hilal-ds/angular",
+  "version": "0.1.1",
+  "description": "Hilal Angular 19 standalone components. Thin wrappers over @hilal-ds/core CSS — same DOM as the React and Blade packages.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/angular",
   "repository": {
@@ -38,12 +38,12 @@
   "peerDependencies": {
     "@angular/common": ">=19",
     "@angular/core": ">=19",
-    "@hilal/core": "workspace:*"
+    "@hilal-ds/core": "workspace:*"
   },
   "devDependencies": {
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0",
-    "@hilal/core": "workspace:*",
+    "@hilal-ds/core": "workspace:*",
     "rxjs": "^7.8.0",
     "tslib": "^2.6.0",
     "tsup": "^8.3.0",

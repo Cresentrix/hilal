@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, ModalClose, Button } from '@hilal/react';
+import { Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter, ModalClose, Button } from '@hilal-ds/react';
 
 export interface ConfirmDialogProps {
   open: boolean;

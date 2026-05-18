@@ -1,5 +1,5 @@
 import type { ChangeEvent, ReactNode } from 'react';
-import { Input, Badge } from '@hilal/react';
+import { Input, Badge } from '@hilal-ds/react';
 
 export interface SearchHeaderProps {
   query: string;

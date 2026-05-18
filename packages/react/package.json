@@ -1,7 +1,7 @@
 {
-  "name": "@hilal/react",
-  "version": "0.1.0",
-  "description": "Hilal React 19 component library. Thin wrappers over @hilal/core CSS — same DOM as the Angular and Blade packages.",
+  "name": "@hilal-ds/react",
+  "version": "0.1.1",
+  "description": "Hilal React 19 component library. Thin wrappers over @hilal-ds/core CSS — same DOM as the Angular and Blade packages.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/react",
   "repository": {
@@ -36,7 +36,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@hilal/core": "workspace:*",
+    "@hilal-ds/core": "workspace:*",
     "react": ">=18",
     "react-dom": ">=18"
   },
@@ -45,7 +45,7 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@hilal/core": "workspace:*",
+    "@hilal-ds/core": "workspace:*",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "react": "^19.0.0",

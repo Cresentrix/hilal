@@ -1,19 +1,19 @@
-# @hilal/react
+# @hilal-ds/react
 
-React 19 components for the Hilal design system. Thin wrappers over `@hilal/core` CSS — same DOM as the Angular and Blade packages.
+React 19 components for the Hilal design system. Thin wrappers over `@hilal-ds/core` CSS — same DOM as the Angular and Blade packages.
 
 ## Install
 
 ```bash
-pnpm add @hilal/react @hilal/core @hilal/tokens
+pnpm add @hilal-ds/react @hilal-ds/core @hilal-ds/tokens
 ```
 
 ## Use
 
 ```tsx
-import '@hilal/tokens/css';
-import '@hilal/core';
-import { Button } from '@hilal/react';
+import '@hilal-ds/tokens/css';
+import '@hilal-ds/core';
+import { Button } from '@hilal-ds/react';
 
 export function App() {
   return <Button variant="primary" size="md">Click me</Button>;

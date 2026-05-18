@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Skeleton, Badge } from '@hilal/react';
+import { Skeleton, Badge } from '@hilal-ds/react';
 import { cn } from './utils/cn.js';
 
 export type StatDeltaTrend = 'up' | 'down' | 'flat';

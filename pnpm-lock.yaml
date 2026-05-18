@@ -23,7 +23,7 @@ importers:
       '@angular/core':
         specifier: ^19.0.0
         version: 19.2.21(rxjs@7.8.2)(zone.js@0.15.1)
-      '@hilal/core':
+      '@hilal-ds/core':
         specifier: workspace:*
         version: link:../core
       rxjs:
@@ -43,7 +43,7 @@ importers:
 
   packages/core:
     devDependencies:
-      '@hilal/tokens':
+      '@hilal-ds/tokens':
         specifier: workspace:*
         version: link:../tokens
       cssnano:
@@ -84,10 +84,10 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      '@hilal/core':
+      '@hilal-ds/core':
         specifier: workspace:*
         version: link:../core
-      '@hilal/react':
+      '@hilal-ds/react':
         specifier: workspace:*
         version: link:../react
       '@types/react':
@@ -118,7 +118,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      '@hilal/core':
+      '@hilal-ds/core':
         specifier: workspace:*
         version: link:../core
       '@types/react':

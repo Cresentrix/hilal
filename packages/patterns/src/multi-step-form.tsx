@@ -1,7 +1,7 @@
 import {
   useState, type FormEvent, type ReactNode,
 } from 'react';
-import { Stepper, Button, type StepItem } from '@hilal/react';
+import { Stepper, Button, type StepItem } from '@hilal-ds/react';
 import { cn } from './utils/cn.js';
 
 export interface MultiStepFormStep {

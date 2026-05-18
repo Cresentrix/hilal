@@ -1,5 +1,5 @@
 /**
- * @hilal/core build script
+ * @hilal-ds/core build script
  * Compiles src/index.css → dist/hilal.css with PostCSS.
  * Plugins:
  *   - postcss-import     bundle @import statements

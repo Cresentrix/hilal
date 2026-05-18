@@ -4,8 +4,8 @@
  * Layered on top of the default tokens.css. Activate by setting
  * data-theme="dark" on any ancestor (typically <html> or <body>).
  *
- *   <link rel="stylesheet" href="@hilal/tokens/dist/css/tokens.css">
- *   <link rel="stylesheet" href="@hilal/tokens/dist/themes/dark.css">
+ *   <link rel="stylesheet" href="@hilal-ds/tokens/dist/css/tokens.css">
+ *   <link rel="stylesheet" href="@hilal-ds/tokens/dist/themes/dark.css">
  *
  * Overrides only the semantic alias layer; the base palette stays
  * the same so brand color references continue to resolve.

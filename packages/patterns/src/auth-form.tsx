@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from 'react';
-import { Button, Input, Card, CardHeader, CardBody, CardFooter, Alert } from '@hilal/react';
+import { Button, Input, Card, CardHeader, CardBody, CardFooter, Alert } from '@hilal-ds/react';
 
 export type AuthMode = 'sign-in' | 'sign-up';
 

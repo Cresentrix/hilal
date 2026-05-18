@@ -1,5 +1,5 @@
 import type { ReactNode, MouseEvent } from 'react';
-import { Avatar, EmptyState, Skeleton } from '@hilal/react';
+import { Avatar, EmptyState, Skeleton } from '@hilal-ds/react';
 import { cn } from './utils/cn.js';
 
 export interface DataListItem {

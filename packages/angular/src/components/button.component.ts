@@ -6,7 +6,7 @@ export type HilalButtonSize = 'sm' | 'md' | 'lg';
 
 /**
  * Hilal Button (Angular)
- * Emits the same DOM as @hilal/react and hilal/blade — relies on @hilal/core CSS.
+ * Emits the same DOM as @hilal-ds/react and hilal/blade — relies on @hilal-ds/core CSS.
  *
  *   <hilal-button variant="primary" size="md">Click me</hilal-button>
  */

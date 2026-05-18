@@ -1,5 +1,5 @@
 {
-  "name": "@hilal/figma-sync",
+  "name": "@hilal-ds/figma-sync",
   "version": "0.0.1",
   "private": true,
   "description": "Pulls token values from the Hilal Figma file and writes them to packages/tokens/src/",

@@ -1,5 +1,5 @@
 /**
- * @hilal/tokens build script
+ * @hilal-ds/tokens build script
  * Reads src/*.tokens.json (W3C DTCG format) and produces:
  *   dist/css/tokens.css
  *   dist/scss/tokens.scss

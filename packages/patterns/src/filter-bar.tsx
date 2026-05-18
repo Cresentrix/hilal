@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Button } from '@hilal/react';
+import { Button } from '@hilal-ds/react';
 
 export interface FilterPill {
   id: string;

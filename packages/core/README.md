@@ -1,12 +1,12 @@
-# @hilal/core
+# @hilal-ds/core
 
-Framework-agnostic CSS for every Hilal component. Used by `@hilal/react`, `@hilal/angular`, and `hilal/blade` — they emit the same DOM and inherit all styles from here.
+Framework-agnostic CSS for every Hilal component. Used by `@hilal-ds/react`, `@hilal-ds/angular`, and `hilal/blade` — they emit the same DOM and inherit all styles from here.
 
 ## Use directly (no framework)
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@hilal/tokens/dist/css/tokens.css">
-<link rel="stylesheet" href="https://unpkg.com/@hilal/core/dist/hilal.css">
+<link rel="stylesheet" href="https://unpkg.com/@hilal-ds/tokens/dist/css/tokens.css">
+<link rel="stylesheet" href="https://unpkg.com/@hilal-ds/core/dist/hilal.css">
 
 <button class="hilal-btn hilal-btn--primary hilal-btn--md">Click me</button>
 ```

@@ -2,7 +2,7 @@ import {
   useEffect, useMemo, useRef, useState,
   type KeyboardEvent, type ReactNode,
 } from 'react';
-import { Modal, ModalBody } from '@hilal/react';
+import { Modal, ModalBody } from '@hilal-ds/react';
 import { cn } from './utils/cn.js';
 
 export interface CommandItem {
