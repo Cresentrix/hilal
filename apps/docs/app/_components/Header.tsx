@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { DemoControls } from './DemoControls';
 import { SearchPalette } from './SearchPalette';
+import { MobileNav } from './MobileNav';
 
 export function Header() {
   const pathname = usePathname();
   const isDocs = pathname.startsWith('/docs');
   return (
     <header className="doc-header">
+      <MobileNav />
       <Link href="/" className="doc-header__brand">
         <span className="doc-header__logo" aria-hidden />
         <span>Hilal</span>

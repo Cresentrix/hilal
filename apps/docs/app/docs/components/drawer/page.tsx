@@ -6,6 +6,7 @@ import {
   Button, type DrawerSide,
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function DrawerPage() {
   const [openSide, setOpenSide] = useState<DrawerSide | null>(null);
@@ -81,10 +82,23 @@ onClose           () => void
 side              'start' | 'end' | 'top' | 'bottom'   default: 'end'
 size              'sm' | 'md' | 'lg'                   default: 'md'
 closeOnBackdrop   boolean                              default: true`}</code></pre>
+      <Accessibility
+        summary={<>Built on the native <code>{"<dialog>"}</code> element with <code>{"showModal()"}</code> — focus is trapped inside while open, and the rest of the page is inert.</>}
+        keys={[
+                {
+                        "keys": "Esc",
+                        "action": "Close the drawer"
+                },
+                {
+                        "keys": "Tab / Shift+Tab",
+                        "action": "Cycle focus within the drawer"
+                }
+        ]}
+        notes={[<>Backdrop click closes by default; pass <code>{"closeOnBackdrop={false}"}</code> to require an explicit dismiss.</>]}
+      />
     </>
   );
 }
-
 function FullDrawerDemo() {
   const [open, setOpen] = useState(false);
   return (

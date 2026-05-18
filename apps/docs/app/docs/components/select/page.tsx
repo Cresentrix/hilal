@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Select } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Select' };
 
@@ -111,6 +112,9 @@ hint      string
 error     string                overrides success
 success   string
 …         all native <select> attributes (name, value, defaultValue, …)`}</code></pre>
+      <Accessibility
+        summary={<>Native <code>{"<select>"}</code>. Inherits the platform-native dropdown, keyboard, and screen-reader behavior.</>}
+      />
     </>
   );
 }

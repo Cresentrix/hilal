@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Stepper } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Stepper' };
 
@@ -97,6 +98,9 @@ StepItem {
   status      'complete' | 'current' | 'upcoming'    default: 'upcoming'
   indicator   ReactNode                              overrides numeric/check
 }`}</code></pre>
+      <Accessibility
+        summary={<>Rendered as an <code>{"<ol>"}</code> with each step in <code>{"<li>"}</code>. The current step carries <code>{"aria-current=\"step\""}</code>.</>}
+      />
     </>
   );
 }

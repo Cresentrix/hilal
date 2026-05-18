@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Tooltip, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Tooltip' };
 
@@ -74,6 +75,15 @@ export default function TooltipPage() {
       <pre className="preview__code"><code>{`content   ReactNode                                          required
 side      'top' | 'bottom' | 'start' | 'end'                 default: 'top'
 children  ReactNode  the trigger element wrapped by Tooltip`}</code></pre>
+      <Accessibility
+        summary={<>Tooltip body uses <code>{"role=\"tooltip\""}</code> and is referenced by the trigger&rsquo;s <code>{"aria-describedby"}</code>. Appears on hover and on focus; closes on blur and Esc.</>}
+        keys={[
+                {
+                        "keys": "Esc",
+                        "action": "Dismiss while keyboard-focused"
+                }
+        ]}
+      />
     </>
   );
 }

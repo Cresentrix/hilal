@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Calendar, type DateRange } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function CalendarPage() {
   const [single, setSingle] = useState<string | undefined>(undefined);
@@ -165,6 +166,31 @@ maxDate          Date
 hideYearPicker   boolean                   default: false
 numberOfMonths   number                    default: 1
 presets          'default' | CalendarPreset[]`}</code></pre>
+      <Accessibility
+        summary={<>Uses <code>{"role=\"grid\""}</code> with <code>{"role=\"gridcell\""}</code> for each day. Disabled days set <code>{"aria-disabled"}</code>; the selected day sets <code>{"aria-selected"}</code>.</>}
+        keys={[
+                {
+                        "keys": "← / →",
+                        "action": "Previous / next day"
+                },
+                {
+                        "keys": "↑ / ↓",
+                        "action": "Previous / next week"
+                },
+                {
+                        "keys": "PgUp / PgDn",
+                        "action": "Previous / next month"
+                },
+                {
+                        "keys": "Home / End",
+                        "action": "Start / end of current row"
+                },
+                {
+                        "keys": "Enter",
+                        "action": "Select the focused day"
+                }
+        ]}
+      />
     </>
   );
 }

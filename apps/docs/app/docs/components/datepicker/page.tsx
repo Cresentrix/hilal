@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Datepicker } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Datepicker' };
 
@@ -98,6 +99,9 @@ label    string
 hint     string
 error    string
 …        all native <input> attributes (min, max, step, value, …)`}</code></pre>
+      <Accessibility
+        summary={<>Native <code>{"<input type=\"date\">"}</code> (and friends). Inherits the browser-native picker, keyboard, and validation behavior.</>}
+      />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Input } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Input' };
 
@@ -134,6 +135,9 @@ success        string                success message
 leadingIcon    ReactNode             inline element rendered before input
 trailingIcon   ReactNode             inline element rendered after input
 …              all native <input> attributes (type, name, value, etc.)`}</code></pre>
+      <Accessibility
+        summary={<>Label is associated with the input via <code>{"htmlFor"}</code>/<code>{"id"}</code>. Hint/error/success messages are linked through <code>{"aria-describedby"}</code>; <code>{"error"}</code> additionally sets <code>{"aria-invalid"}</code>.</>}
+      />
     </>
   );
 }

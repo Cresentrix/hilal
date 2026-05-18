@@ -3,6 +3,7 @@ import {
   Sidebar, SidebarHeader, SidebarNav, SidebarSection, SidebarItem, SidebarFooter, Avatar, Badge,
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Sidebar' };
 
@@ -147,6 +148,19 @@ export default function SidebarPage() {
   active      boolean      highlights as current
   trailing    ReactNode    e.g. badge or shortcut
   …           all native <a> attributes`}</code></pre>
+      <Accessibility
+        summary={<>Renders as <code>{"<aside>"}</code>. Sidebar items render as links; the active item carries <code>{"aria-current=\"page\""}</code>.</>}
+        keys={[
+                {
+                        "keys": "Tab",
+                        "action": "Move through items"
+                },
+                {
+                        "keys": "Enter",
+                        "action": "Activate the focused link"
+                }
+        ]}
+      />
     </>
   );
 }

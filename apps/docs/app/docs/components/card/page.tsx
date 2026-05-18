@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardBody, CardFooter, Button, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Card' };
 
@@ -131,6 +132,9 @@ export default function CardPage() {
       <pre className="preview__code"><code>{`variant       'default' | 'elevated' | 'outlined' | 'ghost'   default: 'default'
 padding       'none' | 'sm' | 'md' | 'lg'                     default: 'md'
 interactive   boolean   adds hover/focus styles for clickable cards`}</code></pre>
+      <Accessibility
+        summary={<>Non-interactive by default. Pass <code>{"interactive"}</code> and the card surfaces hover + focus styles; in that mode you should wrap it in an <code>{"<a>"}</code> or attach <code>{"onClick"}</code> + <code>{"role=\"button\""}</code>.</>}
+      />
     </>
   );
 }

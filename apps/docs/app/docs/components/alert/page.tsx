@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Alert, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function AlertPage() {
   const [open, setOpen] = useState(true);
@@ -109,6 +110,10 @@ description    ReactNode
 icon           ReactNode      override the default icon for the tone
 onDismiss      () => void     when provided, renders a dismiss button
 dismissLabel   string         aria-label for the dismiss button (default: 'Dismiss')`}</code></pre>
+      <Accessibility
+        summary={<>Renders with <code>{"role=\"status\""}</code> for info/success and <code>{"role=\"alert\""}</code> for danger so screen readers announce immediately.</>}
+        notes={[<>The dismiss button is keyboard-focusable and labelled by <code>{"dismissLabel"}</code>.</>]}
+      />
     </>
   );
 }

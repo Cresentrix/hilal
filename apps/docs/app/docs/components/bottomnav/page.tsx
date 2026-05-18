@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { BottomNav, BottomNavItem } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'BottomNav' };
 
@@ -78,6 +79,19 @@ export default function BottomNavPage() {
   label       ReactNode    required
   active      boolean
   …           all native <a> attributes`}</code></pre>
+      <Accessibility
+        summary={<>Renders as <code>{"<nav aria-label=\"Bottom navigation\">"}</code>. Active items expose <code>{"aria-current=\"page\""}</code>.</>}
+        keys={[
+                {
+                        "keys": "Tab",
+                        "action": "Move between nav items"
+                },
+                {
+                        "keys": "Enter",
+                        "action": "Activate the focused link"
+                }
+        ]}
+      />
     </>
   );
 }

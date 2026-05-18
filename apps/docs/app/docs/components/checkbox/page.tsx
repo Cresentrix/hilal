@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Checkbox } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function CheckboxPage() {
   const [agree, setAgree] = useState(false);
@@ -77,6 +78,15 @@ export default function CheckboxPage() {
 indeterminate   boolean       independent of checked
 children        ReactNode     label text rendered alongside
 …               all native <input type="checkbox"> attributes`}</code></pre>
+      <Accessibility
+        summary={<>Native <code>{"<input type=\"checkbox\">"}</code> wrapped with a label. <code>{"indeterminate"}</code> is mapped to the DOM property (not an attribute, per spec).</>}
+        keys={[
+                {
+                        "keys": "Space",
+                        "action": "Toggle the checkbox"
+                }
+        ]}
+      />
     </>
   );
 }

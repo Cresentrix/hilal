@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Accordion, AccordionItem } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Accordion' };
 
@@ -63,6 +64,19 @@ export default function AccordionPage() {
   title     ReactNode    summary row
   open      boolean      starts expanded
   …         all native <details> attributes`}</code></pre>
+      <Accessibility
+        summary={<>Built on the native &lt;details&gt; element. Each item announces its expanded state and works without JavaScript.</>}
+        keys={[
+                {
+                        "keys": "Enter / Space",
+                        "action": "Toggle the focused item"
+                },
+                {
+                        "keys": "Tab",
+                        "action": "Move between accordion items"
+                }
+        ]}
+      />
     </>
   );
 }

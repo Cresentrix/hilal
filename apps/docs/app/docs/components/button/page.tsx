@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Button' };
 
@@ -158,6 +159,16 @@ export default function ButtonPage() {
 size        'sm' | 'md' | 'lg'                     default: 'md'
 loading     boolean                                shows spinner; disables click
 disabled    boolean                                native disabled state`}</code></pre>
+      <Accessibility
+        summary={<>Native <code>{"<button>"}</code> — full keyboard, screen reader, and form-submit semantics.</>}
+        keys={[
+                {
+                        "keys": "Space / Enter",
+                        "action": "Activate the button"
+                }
+        ]}
+        notes={[<>Icon-only buttons must provide an <code>{"aria-label"}</code>. Loading buttons set <code>{"aria-busy"}</code> while the spinner is visible.</>]}
+      />
     </>
   );
 }

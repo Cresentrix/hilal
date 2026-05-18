@@ -2,6 +2,7 @@
 
 import { Tabs, TabList, Tab, TabPanel, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function TabsPage() {
   return (
@@ -138,6 +139,27 @@ export default function TabsPage() {
 
 <Tab value=…>      one item in TabList
 <TabPanel value=…> content shown when its value matches`}</code></pre>
+      <Accessibility
+        summary={<>Implements the WAI-ARIA tabs pattern. Tab list uses <code>{"role=\"tablist\""}</code>; each tab uses <code>{"role=\"tab\""}</code> with <code>{"aria-controls"}</code>; panels use <code>{"role=\"tabpanel\""}</code>.</>}
+        keys={[
+                {
+                        "keys": "← / →",
+                        "action": "Move between tabs (horizontal)"
+                },
+                {
+                        "keys": "↑ / ↓",
+                        "action": "Move between tabs (vertical)"
+                },
+                {
+                        "keys": "Home / End",
+                        "action": "Jump to first / last tab"
+                },
+                {
+                        "keys": "Enter / Space",
+                        "action": "Activate the focused tab"
+                }
+        ]}
+      />
     </>
   );
 }

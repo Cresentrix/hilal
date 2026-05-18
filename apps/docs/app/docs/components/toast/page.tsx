@@ -2,6 +2,7 @@
 
 import { ToastProvider, useToast, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 function ToastDemo() {
   const { toast } = useToast();
@@ -119,6 +120,19 @@ Toast {
   icon           ReactNode
   durationMs     number   per-toast override; 0 = persistent
 }`}</code></pre>
+      <Accessibility
+        summary={<>Toast region uses <code>{"role=\"region\""}</code> with <code>{"aria-label=\"Notifications\""}</code>. Each toast uses <code>{"role=\"status\""}</code> (assertive for <code>{"danger"}</code>) so screen readers announce new toasts as they arrive.</>}
+        keys={[
+                {
+                        "keys": "Tab",
+                        "action": "Focus the dismiss button on a visible toast"
+                },
+                {
+                        "keys": "Enter / Space",
+                        "action": "Dismiss the focused toast"
+                }
+        ]}
+      />
     </>
   );
 }

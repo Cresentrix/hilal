@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Badge' };
 
@@ -96,6 +97,9 @@ export default function BadgePage() {
       <pre className="preview__code"><code>{`tone   'neutral' | 'info' | 'success' | 'warning' | 'danger' | 'brand'   default: 'neutral'
 size   'sm' | 'md'                                                       default: 'sm'
 dot    boolean   render as a small dot only (children are ignored)`}</code></pre>
+      <Accessibility
+        summary={<>Decorative by default. For icon-only counts (e.g. notification dots), wrap in an element with an <code>{"aria-label"}</code>.</>}
+      />
     </>
   );
 }

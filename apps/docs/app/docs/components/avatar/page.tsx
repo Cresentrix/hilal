@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Avatar, AvatarGroup } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Avatar' };
 
@@ -127,6 +128,9 @@ alt        string                                       alt text when src is set
 initials   string                                       fallback when src is missing
 status     'online' | 'busy' | 'away' | 'offline'       small status dot
 fallback   ReactNode                                    custom fallback (replaces initials)`}</code></pre>
+      <Accessibility
+        summary={<>When <code>{"src"}</code> is set, pass <code>{"alt"}</code> for screen readers. Pure-decorative avatars (initials with no name to convey) should pass <code>{"alt=\"\""}</code>.</>}
+      />
     </>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Toggle } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function TogglePage() {
   const [on, setOn] = useState(false);
@@ -72,6 +73,15 @@ export default function TogglePage() {
       <pre className="preview__code"><code>{`size       'sm' | 'md'   default: 'md'
 children   ReactNode     inline label rendered next to the switch
 …          all native <input type="checkbox"> attributes`}</code></pre>
+      <Accessibility
+        summary={<>Rendered with <code>{"role=\"switch\""}</code> and <code>{"aria-checked"}</code> so screen readers announce on/off rather than checked/unchecked.</>}
+        keys={[
+                {
+                        "keys": "Space",
+                        "action": "Toggle the switch"
+                }
+        ]}
+      />
     </>
   );
 }

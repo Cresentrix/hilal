@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Pagination } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export default function PaginationPage() {
   const [pageA, setPageA] = useState(3);
@@ -69,6 +70,19 @@ size           'sm' | 'md'     default: 'md'
 prevLabel      string          default: 'Previous'
 nextLabel      string          default: 'Next'
 onChange       (page) => void`}</code></pre>
+      <Accessibility
+        summary={<>Rendered as <code>{"<nav aria-label=\"Pagination\">"}</code>. The current page button carries <code>{"aria-current=\"page\""}</code>; ellipsis is announced as such.</>}
+        keys={[
+                {
+                        "keys": "Tab",
+                        "action": "Move between page buttons"
+                },
+                {
+                        "keys": "Enter / Space",
+                        "action": "Go to the focused page"
+                }
+        ]}
+      />
     </>
   );
 }

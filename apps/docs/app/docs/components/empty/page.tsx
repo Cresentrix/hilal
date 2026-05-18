@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { EmptyState, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'EmptyState' };
 
@@ -127,6 +128,9 @@ icon          ReactNode               replaces the default illustration
 title         ReactNode               primary line
 description   ReactNode               secondary line
 actions       ReactNode               buttons / links below the description`}</code></pre>
+      <Accessibility
+        summary={<>Decorative wrapper; the heading inside uses an <code>{"h3"}</code> so it sits below any page-level <code>{"h1/h2"}</code>.</>}
+      />
     </>
   );
 }

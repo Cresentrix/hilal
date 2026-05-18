@@ -12,6 +12,7 @@ const LINKS: DocLink[] = [
   { group: 'Getting started', label: 'Why Hilal',    href: '/docs/about/why' },
   { group: 'Getting started', label: 'FAQ',          href: '/docs/about/faq' },
   { group: 'Getting started', label: 'Compared',     href: '/docs/about/compare' },
+  { group: 'Getting started', label: 'Changelog',    href: '/docs/changelog' },
   // Foundations
   { group: 'Foundations', label: 'Overview',    href: '/docs/foundations' },
   { group: 'Foundations', label: 'Colors',      href: '/docs/foundations/colors',     keywords: ['palette', 'swatch', 'tokens'] },

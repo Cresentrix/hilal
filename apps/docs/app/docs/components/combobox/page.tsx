@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Combobox, type ComboboxOption } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 const frameworks: ComboboxOption[] = [
   { value: 'react',   label: 'React' },
@@ -127,6 +128,27 @@ ComboboxOption {
   label      string    required
   disabled?  boolean
 }`}</code></pre>
+      <Accessibility
+        summary={<>Uses <code>{"role=\"combobox\""}</code> on the input with <code>{"aria-expanded"}</code>, <code>{"aria-controls"}</code>, and <code>{"aria-activedescendant"}</code>. Listbox uses <code>{"role=\"listbox\""}</code>; options use <code>{"role=\"option\""}</code> + <code>{"aria-selected"}</code>.</>}
+        keys={[
+                {
+                        "keys": "↑ / ↓",
+                        "action": "Move through options"
+                },
+                {
+                        "keys": "Enter",
+                        "action": "Commit the focused option"
+                },
+                {
+                        "keys": "Esc",
+                        "action": "Close the listbox"
+                },
+                {
+                        "keys": "Home / End",
+                        "action": "Jump to first / last option"
+                }
+        ]}
+      />
     </>
   );
 }

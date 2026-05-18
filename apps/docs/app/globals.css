@@ -269,6 +269,34 @@ code, pre, kbd { font-family: var(--hilal-font-family-mono, ui-monospace, SFMono
   font-size: var(--hilal-font-size-13);
 }
 
+/* ---------- Mobile nav trigger ---------- */
+.mobile-nav-trigger {
+  display: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-md);
+  inline-size: 2.25rem; block-size: 2.25rem;
+  align-items: center; justify-content: center;
+  color: var(--hilal-fg-primary);
+  cursor: pointer;
+  font-size: var(--hilal-font-size-16);
+  margin-inline-end: var(--hilal-spacing-2);
+}
+@media (max-width: 900px) {
+  .mobile-nav-trigger { display: inline-flex; }
+}
+/* Sidebar inside the mobile drawer: drop the sticky/scroll behavior
+   that's only meaningful in the desktop layout. */
+.mobile-nav-drawer .doc-sidebar {
+  display: block;
+  position: static;
+  inset-block-start: auto;
+  block-size: auto;
+  border-inline-end: none;
+  padding-block: 0;
+}
+
 /* ---------- Search trigger ---------- */
 .search-trigger {
   appearance: none;
@@ -397,6 +425,43 @@ code, pre, kbd { font-family: var(--hilal-font-family-mono, ui-monospace, SFMono
   transition: background-color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
 }
 .theme-toggle:hover { background: var(--hilal-bg-subtle); }
+
+/* ---------- Accessibility callout ---------- */
+.a11y { margin-block-start: var(--hilal-spacing-8); }
+.a11y__keys {
+  margin-block: var(--hilal-spacing-4);
+  border-collapse: collapse;
+  inline-size: 100%;
+  max-inline-size: 36rem;
+}
+.a11y__keys th, .a11y__keys td {
+  text-align: start;
+  padding: var(--hilal-spacing-2) var(--hilal-spacing-3);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+  font-size: var(--hilal-font-size-14);
+  vertical-align: top;
+}
+.a11y__keys th {
+  font-weight: var(--hilal-font-weight-semibold);
+  color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-12);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.a11y__keys kbd {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--hilal-font-family-mono, ui-monospace, monospace);
+  font-size: var(--hilal-font-size-12);
+  background: var(--hilal-bg-subtle);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-sm);
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: 2px;
+  color: var(--hilal-fg-primary);
+}
+.a11y__notes { padding-inline-start: var(--hilal-spacing-5); }
+.a11y__notes li { margin-block: var(--hilal-spacing-1); color: var(--hilal-fg-secondary); }
 
 /* ---------- Edit-on-GitHub footer ---------- */
 .doc-edit {

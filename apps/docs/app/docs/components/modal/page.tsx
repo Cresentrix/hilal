@@ -6,6 +6,7 @@ import {
   Button, Input,
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -105,10 +106,23 @@ closeOnBackdrop   boolean                     default: true`}</code></pre>
 <ModalBody>      scrollable body content
 <ModalFooter>    right-aligned action row
 <ModalClose>     icon-only close button`}</code></pre>
+      <Accessibility
+        summary={<>Built on the native <code>{"<dialog>"}</code> element with <code>{"showModal()"}</code> — focus is trapped inside while open, and the rest of the page is inert.</>}
+        keys={[
+                {
+                        "keys": "Esc",
+                        "action": "Close the modal"
+                },
+                {
+                        "keys": "Tab / Shift+Tab",
+                        "action": "Cycle focus within the modal"
+                }
+        ]}
+        notes={[<>Pair <code>{"ModalTitle"}</code> with the dialog so the modal is announced by name. <code>{"ModalClose"}</code> defaults to <code>{"aria-label=\"Close\""}</code>.</>]}
+      />
     </>
   );
 }
-
 function FormModalDemo() {
   const [open, setOpen] = useState(false);
   return (

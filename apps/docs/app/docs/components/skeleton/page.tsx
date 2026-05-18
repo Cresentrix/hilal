@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Skeleton } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { Accessibility } from '../../../_components/Accessibility';
 
 export const metadata: Metadata = { title: 'Skeleton' };
 
@@ -74,6 +75,9 @@ export default function SkeletonPage() {
 width     number | string                   any CSS length
 height    number | string                   any CSS length
 size      number | string                   convenience for circle variant`}</code></pre>
+      <Accessibility
+        summary={<>Rendered with <code>{"aria-hidden=\"true\""}</code> — assistive tech announces the real content once it loads, not the placeholder.</>}
+      />
     </>
   );
 }
