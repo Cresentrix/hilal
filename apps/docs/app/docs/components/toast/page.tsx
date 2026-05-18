@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { ToastProvider, useToast, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 
@@ -17,8 +16,6 @@ function ToastDemo() {
 }
 
 export default function ToastPage() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
   return (
     <>
       <h1>Toast</h1>
@@ -29,13 +26,9 @@ export default function ToastPage() {
 
       <FrameworkTabs
         preview={
-          mounted ? (
-            <ToastProvider position="top-end">
-              <ToastDemo />
-            </ToastProvider>
-          ) : (
-            <div style={{ minBlockSize: '2.5rem' }} />
-          )
+          <ToastProvider position="top-end">
+            <ToastDemo />
+          </ToastProvider>
         }
         react={`<ToastProvider position="top-end">
   <App />

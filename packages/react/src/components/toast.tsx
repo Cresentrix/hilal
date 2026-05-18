@@ -61,22 +61,30 @@ export function ToastProvider({
 
   useEffect(() => () => { timers.current.forEach(clearTimeout); }, []);
 
-  const region =
-    typeof document !== 'undefined' ? createPortal(
-      <div className="hilal-toast-region" data-position={position} role="region" aria-label="Notifications">
-        {toasts.map((t) => (
-          <div key={t.id} className={cn('hilal-toast', t.tone && `hilal-toast--${t.tone}`)} role="status">
-            {t.icon ? <span className="hilal-toast__icon" aria-hidden>{t.icon}</span> : null}
-            <div className="hilal-toast__body">
-              {t.title       ? <p className="hilal-toast__title">{t.title}</p> : null}
-              {t.description ? <p className="hilal-toast__desc">{t.description}</p> : null}
+  // Gate the portal on a mounted flag so SSR and the first client render
+  // both yield null (no DOM); the portal only appears after hydration.
+  // Without this, createPortal renders into document.body on the first
+  // client pass and React flags the mismatch against the server output.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  const region = mounted
+    ? createPortal(
+        <div className="hilal-toast-region" data-position={position} role="region" aria-label="Notifications">
+          {toasts.map((t) => (
+            <div key={t.id} className={cn('hilal-toast', t.tone && `hilal-toast--${t.tone}`)} role="status">
+              {t.icon ? <span className="hilal-toast__icon" aria-hidden>{t.icon}</span> : null}
+              <div className="hilal-toast__body">
+                {t.title       ? <p className="hilal-toast__title">{t.title}</p> : null}
+                {t.description ? <p className="hilal-toast__desc">{t.description}</p> : null}
+              </div>
+              <button type="button" className="hilal-toast__close" aria-label="Dismiss" onClick={() => dismiss(t.id)}>×</button>
             </div>
-            <button type="button" className="hilal-toast__close" aria-label="Dismiss" onClick={() => dismiss(t.id)}>×</button>
-          </div>
-        ))}
-      </div>,
-      document.body,
-    ) : null;
+          ))}
+        </div>,
+        document.body,
+      )
+    : null;
 
   return (
     <ToastContext.Provider value={{ toast, dismiss }}>
