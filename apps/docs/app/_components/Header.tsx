@@ -17,11 +17,17 @@ export function Header() {
         <Link href="/docs/getting-started" aria-current={pathname === '/docs/getting-started' ? 'page' : undefined}>
           Get started
         </Link>
+        <Link href="/docs/foundations" aria-current={isDocs && pathname.startsWith('/docs/foundations') ? 'page' : undefined}>
+          Foundations
+        </Link>
         <Link href="/docs/components" aria-current={isDocs && pathname.startsWith('/docs/components') ? 'page' : undefined}>
           Components
         </Link>
         <Link href="/docs/patterns" aria-current={isDocs && pathname.startsWith('/docs/patterns') ? 'page' : undefined}>
           Patterns
+        </Link>
+        <Link href="/docs/recipes" aria-current={isDocs && pathname.startsWith('/docs/recipes') ? 'page' : undefined}>
+          Recipes
         </Link>
         <a href="https://github.com/Cresentrix/hilal" target="_blank" rel="noreferrer">
           GitHub

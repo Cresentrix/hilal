@@ -203,6 +203,27 @@ code, pre, kbd { font-family: var(--hilal-font-family-mono, ui-monospace, SFMono
   color: var(--hilal-fg-primary);
   border-block-end-color: var(--hilal-bg-brand);
 }
+.copy-btn {
+  appearance: none;
+  border: 1px solid var(--hilal-border-subtle);
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-tertiary);
+  font: inherit;
+  font-size: var(--hilal-font-size-12);
+  padding: 0.15rem var(--hilal-spacing-2);
+  border-radius: var(--hilal-radius-sm);
+  cursor: pointer;
+  transition:
+    color var(--hilal-motion-duration-fast),
+    border-color var(--hilal-motion-duration-fast),
+    background-color var(--hilal-motion-duration-fast);
+}
+.copy-btn:hover { color: var(--hilal-fg-primary); border-color: var(--hilal-border-default); }
+.copy-btn[data-state="copied"] {
+  color: var(--hilal-status-success);
+  border-color: var(--hilal-status-success);
+}
+
 .preview__code {
   margin: 0;
   padding: var(--hilal-spacing-4);

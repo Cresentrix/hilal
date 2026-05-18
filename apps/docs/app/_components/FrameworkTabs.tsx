@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type ReactNode } from 'react';
+import { CopyButton } from './CopyButton';
 
 export type Framework = 'react' | 'angular' | 'blade';
 
@@ -38,6 +39,9 @@ export function FrameworkTabs({ preview, react, angular, blade }: FrameworkTabsP
             {LABELS[f]}
           </button>
         ))}
+        <div style={{ marginInlineStart: 'auto', paddingInlineEnd: 'var(--hilal-spacing-2)', display: 'flex', alignItems: 'center' }}>
+          <CopyButton value={code[active]} />
+        </div>
       </div>
       <pre className="preview__code" role="tabpanel">
         <code>{code[active]}</code>

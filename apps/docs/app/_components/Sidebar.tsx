@@ -14,6 +14,19 @@ const SECTIONS: SidebarSection[] = [
     ],
   },
   {
+    heading: 'Foundations',
+    items: [
+      { label: 'Overview',   href: '/docs/foundations' },
+      { label: 'Colors',     href: '/docs/foundations/colors' },
+      { label: 'Typography', href: '/docs/foundations/typography' },
+      { label: 'Spacing',    href: '/docs/foundations/spacing' },
+      { label: 'Radius',     href: '/docs/foundations/radius' },
+      { label: 'Elevation',  href: '/docs/foundations/elevation' },
+      { label: 'Motion',     href: '/docs/foundations/motion' },
+      { label: 'Iconography', href: '/docs/iconography' },
+    ],
+  },
+  {
     heading: 'Components',
     items: [
       { label: 'Overview',    href: '/docs/components' },
@@ -59,6 +72,16 @@ const SECTIONS: SidebarSection[] = [
       { label: 'PageHeader',          href: '/docs/patterns/page-header' },
       { label: 'SearchHeader',        href: '/docs/patterns/search-header' },
       { label: 'StatsGrid',           href: '/docs/patterns/stats-grid' },
+    ],
+  },
+  {
+    heading: 'Recipes',
+    items: [
+      { label: 'Overview',  href: '/docs/recipes' },
+      { label: 'Login',     href: '/docs/recipes/login' },
+      { label: 'Dashboard', href: '/docs/recipes/dashboard' },
+      { label: 'Pricing',   href: '/docs/recipes/pricing' },
+      { label: 'Settings',  href: '/docs/recipes/settings' },
     ],
   },
 ];
