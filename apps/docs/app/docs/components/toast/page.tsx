@@ -15,15 +15,25 @@ function ToastDemo() {
   );
 }
 
+function PersistentDemo() {
+  const { toast } = useToast();
+  return (
+    <Button onClick={() => toast({ tone: 'warning', title: 'Action required', description: 'Click the × to dismiss.', durationMs: 0 })}>
+      Show persistent toast
+    </Button>
+  );
+}
+
 export default function ToastPage() {
   return (
     <>
       <h1>Toast</h1>
       <p className="lede">
         Transient notification messages stacked in a corner of the viewport. Wrap your app in{' '}
-        <code>ToastProvider</code>; trigger via the <code>useToast</code> hook.
+        <code>ToastProvider</code> and call <code>useToast()</code> to enqueue messages.
       </p>
 
+      <h2>Tones</h2>
       <FrameworkTabs
         preview={
           <ToastProvider position="top-end">
@@ -36,21 +46,79 @@ export default function ToastPage() {
 
 // Inside any component:
 const { toast } = useToast();
-toast({ tone: 'success', title: 'Saved', description: 'Your changes are live.' });`}
-        angular={`// Provider lives at the app root:
-<hilal-toast-region position="top-end"></hilal-toast-region>
+toast({ tone: 'success', title: 'Saved', description: '…' });
+toast({ tone: 'info',    title: '…' });
+toast({ tone: 'warning', title: '…' });
+toast({ tone: 'danger',  title: '…' });`}
+        angular={`<hilal-toast-region position="top-end"></hilal-toast-region>
 
-// Inside any component:
-constructor(private toasts: HilalToastService) {}
-this.toasts.push({ tone: 'success', title: 'Saved', description: '…' });`}
-        blade={`{{-- Layout root --}}
-<x-hilal-toast-region position="top-end" />
+// In a component:
+this.toasts.push({ tone: 'success', title: 'Saved' });`}
+        blade={`<x-hilal-toast-region position="top-end" />
 
-{{-- Push via Alpine event or controller flash --}}
-@if (session()->has('flash'))
-  <script>window.dispatchEvent(new CustomEvent('hilal:toast', { detail: @json(session('flash')) }))</script>
+// Triggered via flash session
+@if (session('toast'))
+  <script>window.dispatchEvent(new CustomEvent('hilal:toast', { detail: @json(session('toast')) }))</script>
 @endif`}
       />
+
+      <h2>Position</h2>
+      <p>Six corners: <code>top-start</code>, <code>top</code>, <code>top-end</code>, <code>bottom-start</code>, <code>bottom</code>, <code>bottom-end</code>. Default is <code>bottom-end</code>.</p>
+      <pre className="preview__code"><code>{`<ToastProvider position="top-start">…</ToastProvider>
+<ToastProvider position="top">…</ToastProvider>
+<ToastProvider position="top-end">…</ToastProvider>
+<ToastProvider position="bottom-start">…</ToastProvider>
+<ToastProvider position="bottom">…</ToastProvider>
+<ToastProvider position="bottom-end">…</ToastProvider>`}</code></pre>
+
+      <h2>Persistent toasts</h2>
+      <p>Pass <code>durationMs=&#123;0&#125;</code> to skip auto-dismiss — the user closes it with the × button.</p>
+      <FrameworkTabs
+        preview={
+          <ToastProvider position="top-end">
+            <PersistentDemo />
+          </ToastProvider>
+        }
+        react={`toast({
+  tone: 'warning',
+  title: 'Action required',
+  description: 'Click the × to dismiss.',
+  durationMs: 0,   // persistent
+});`}
+        angular={`this.toasts.push({
+  tone: 'warning',
+  title: 'Action required',
+  durationMs: 0,
+});`}
+        blade={`session()->flash('toast', [
+  'tone' => 'warning',
+  'title' => 'Action required',
+  'durationMs' => 0,
+]);`}
+      />
+
+      <h2>Custom default duration</h2>
+      <pre className="preview__code"><code>{`<ToastProvider defaultDurationMs={8000}>
+  <App />
+</ToastProvider>`}</code></pre>
+
+      <h2>API</h2>
+      <pre className="preview__code"><code>{`<ToastProvider>
+  position             'top-start' | 'top' | 'top-end' | 'bottom-start' | 'bottom' | 'bottom-end'
+                       default: 'bottom-end'
+  defaultDurationMs    number   default: 5000   set 0 to disable auto-dismiss
+
+useToast()
+  toast(t)             enqueues a toast; returns its id
+  dismiss(id)          removes a toast by id
+
+Toast {
+  tone           'info' | 'success' | 'warning' | 'danger'
+  title          ReactNode
+  description    ReactNode
+  icon           ReactNode
+  durationMs     number   per-toast override; 0 = persistent
+}`}</code></pre>
     </>
   );
 }

@@ -9,11 +9,12 @@ export default function StepperPage() {
     <>
       <h1>Stepper</h1>
       <p className="lede">
-        Progress indicator for multi-step flows. Horizontal or vertical, with complete / current /
-        upcoming states. Used internally by the MultiStepForm pattern.
+        Progress indicator for multi-step flows. Horizontal or vertical, with three statuses
+        (complete, current, upcoming). Used internally by the MultiStepForm pattern.
       </p>
 
-      <h2>Horizontal</h2>
+      <h2>Statuses</h2>
+      <p>Each step accepts a <code>status</code> — <code>complete</code> shows a check, <code>current</code> gets the primary fill, <code>upcoming</code> is muted.</p>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -39,16 +40,18 @@ export default function StepperPage() {
         blade={`<x-hilal-stepper :steps="$steps" />`}
       />
 
-      <h2>Vertical</h2>
+      <h2>Vertical orientation</h2>
       <FrameworkTabs
         preview={
-          <div style={{ width: '100%', maxWidth: '20rem' }}>
+          <div style={{ width: '20rem' }}>
             <Stepper
               orientation="vertical"
               steps={[
-                { label: 'Plan',   status: 'complete' },
-                { label: 'Build',  status: 'current' },
-                { label: 'Ship',   status: 'upcoming' },
+                { label: 'Plan',          status: 'complete' },
+                { label: 'Design review', status: 'complete' },
+                { label: 'Build',         status: 'current' },
+                { label: 'QA',            status: 'upcoming' },
+                { label: 'Ship',          status: 'upcoming' },
               ]}
             />
           </div>
@@ -57,6 +60,43 @@ export default function StepperPage() {
         angular={`<hilal-stepper orientation="vertical" [steps]="steps"></hilal-stepper>`}
         blade={`<x-hilal-stepper orientation="vertical" :steps="$steps" />`}
       />
+
+      <h2>Custom indicators</h2>
+      <p>Override the numeric / check indicator per step.</p>
+      <FrameworkTabs
+        preview={
+          <Stepper
+            steps={[
+              { label: 'Cart',     status: 'complete', indicator: '★' },
+              { label: 'Shipping', status: 'current',  indicator: '⛟' },
+              { label: 'Payment',  status: 'upcoming', indicator: '$' },
+            ]}
+          />
+        }
+        react={`<Stepper steps={[
+  { label: 'Cart',     status: 'complete', indicator: '★' },
+  { label: 'Shipping', status: 'current',  indicator: '⛟' },
+  { label: 'Payment',  status: 'upcoming', indicator: '$' },
+]} />`}
+        angular={`steps = [
+  { label: 'Cart',     status: 'complete', indicator: '★' },
+  { label: 'Shipping', status: 'current',  indicator: '⛟' },
+];`}
+        blade={`$steps = [
+  ['label' => 'Cart',     'status' => 'complete', 'indicator' => '★'],
+  ['label' => 'Shipping', 'status' => 'current',  'indicator' => '⛟'],
+];`}
+      />
+
+      <h2>API</h2>
+      <pre className="preview__code"><code>{`steps         StepItem[]                             required
+orientation   'horizontal' | 'vertical'              default: 'horizontal'
+
+StepItem {
+  label       ReactNode                              required
+  status      'complete' | 'current' | 'upcoming'    default: 'upcoming'
+  indicator   ReactNode                              overrides numeric/check
+}`}</code></pre>
     </>
   );
 }

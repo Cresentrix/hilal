@@ -1,39 +1,38 @@
 import type { Metadata } from 'next';
 import {
-  Sidebar, SidebarHeader, SidebarNav, SidebarItem, SidebarFooter, Avatar,
+  Sidebar, SidebarHeader, SidebarNav, SidebarSection, SidebarItem, SidebarFooter, Avatar, Badge,
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 
 export const metadata: Metadata = { title: 'Sidebar' };
+
+const frame = {
+  border: '1px solid var(--hilal-border-subtle)',
+  borderRadius: 'var(--hilal-radius-lg)',
+  overflow: 'hidden',
+} as const;
 
 export default function SidebarPage() {
   return (
     <>
       <h1>Sidebar</h1>
       <p className="lede">
-        Vertical app navigation with header, scrollable nav, and footer slots. Pairs with
-        DashboardShell for full app layouts.
+        Vertical app navigation. Composes Header / Nav / Section / Item / Footer slots.
+        Pair with DashboardShell for a full app layout.
       </p>
 
+      <h2>Basic</h2>
       <FrameworkTabs
         preview={
-          <div style={{ inlineSize: '16rem', border: '1px solid var(--hilal-border-subtle)', borderRadius: 'var(--hilal-radius-lg)', overflow: 'hidden' }}>
+          <div style={{ inlineSize: '16rem', ...frame }}>
             <Sidebar>
-              <SidebarHeader>
-                <strong>Acme</strong>
-              </SidebarHeader>
+              <SidebarHeader><strong>Acme</strong></SidebarHeader>
               <SidebarNav>
                 <SidebarItem href="#" label="Dashboard" active />
                 <SidebarItem href="#" label="Projects" />
                 <SidebarItem href="#" label="Customers" />
                 <SidebarItem href="#" label="Settings" />
               </SidebarNav>
-              <SidebarFooter>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Avatar initials="SA" size="sm" />
-                  <span style={{ fontSize: 'var(--hilal-font-size-13)' }}>Sara A.</span>
-                </div>
-              </SidebarFooter>
             </Sidebar>
           </div>
         }
@@ -42,9 +41,9 @@ export default function SidebarPage() {
   <SidebarNav>
     <SidebarItem href="/" label="Dashboard" active />
     <SidebarItem href="/projects" label="Projects" />
+    <SidebarItem href="/customers" label="Customers" />
     <SidebarItem href="/settings" label="Settings" />
   </SidebarNav>
-  <SidebarFooter>…</SidebarFooter>
 </Sidebar>`}
         angular={`<hilal-sidebar>
   <hilal-sidebar-header><strong>Acme</strong></hilal-sidebar-header>
@@ -59,6 +58,95 @@ export default function SidebarPage() {
   <x-hilal-sidebar-item href="/projects" label="Projects" />
 </x-hilal-sidebar>`}
       />
+
+      <h2>With sections, icons, badges, and footer</h2>
+      <FrameworkTabs
+        preview={
+          <div style={{ inlineSize: '16rem', ...frame }}>
+            <Sidebar>
+              <SidebarHeader><strong>Acme</strong></SidebarHeader>
+              <SidebarNav>
+                <SidebarSection>
+                  <SidebarItem href="#" icon={<span aria-hidden>◧</span>} label="Dashboard" active />
+                  <SidebarItem href="#" icon={<span aria-hidden>◫</span>} label="Inbox" trailing={<Badge tone="brand" size="sm">12</Badge>} />
+                  <SidebarItem href="#" icon={<span aria-hidden>☷</span>} label="Projects" />
+                </SidebarSection>
+                <SidebarSection>
+                  <SidebarItem href="#" icon={<span aria-hidden>⚙</span>} label="Settings" />
+                  <SidebarItem href="#" icon={<span aria-hidden>?</span>} label="Help" />
+                </SidebarSection>
+              </SidebarNav>
+              <SidebarFooter>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Avatar initials="SA" size="sm" />
+                  <span style={{ fontSize: 'var(--hilal-font-size-13)' }}>Sara A.</span>
+                </div>
+              </SidebarFooter>
+            </Sidebar>
+          </div>
+        }
+        react={`<Sidebar>
+  <SidebarHeader><strong>Acme</strong></SidebarHeader>
+  <SidebarNav>
+    <SidebarSection>
+      <SidebarItem icon={<DashboardIcon />} label="Dashboard" href="/" active />
+      <SidebarItem icon={<InboxIcon />}     label="Inbox" trailing={<Badge tone="brand">12</Badge>} />
+    </SidebarSection>
+    <SidebarSection>
+      <SidebarItem icon={<SettingsIcon />}  label="Settings" />
+    </SidebarSection>
+  </SidebarNav>
+  <SidebarFooter>
+    <Avatar initials="SA" size="sm" />
+    <span>Sara A.</span>
+  </SidebarFooter>
+</Sidebar>`}
+        angular={`<hilal-sidebar>
+  <hilal-sidebar-nav>
+    <hilal-sidebar-item href="/" label="Dashboard" [active]="true">
+      <span hilalSidebarItemIcon>◧</span>
+    </hilal-sidebar-item>
+  </hilal-sidebar-nav>
+</hilal-sidebar>`}
+        blade={`<x-hilal-sidebar>
+  <x-hilal-sidebar-item href="/" label="Dashboard" :active="true" />
+</x-hilal-sidebar>`}
+      />
+
+      <h2>Collapsed</h2>
+      <FrameworkTabs
+        preview={
+          <div style={{ inlineSize: '5rem', ...frame }}>
+            <Sidebar collapsed>
+              <SidebarNav>
+                <SidebarItem href="#" icon={<span aria-hidden>◧</span>} label="Dashboard" active />
+                <SidebarItem href="#" icon={<span aria-hidden>◫</span>} label="Inbox" />
+                <SidebarItem href="#" icon={<span aria-hidden>☷</span>} label="Projects" />
+                <SidebarItem href="#" icon={<span aria-hidden>⚙</span>} label="Settings" />
+              </SidebarNav>
+            </Sidebar>
+          </div>
+        }
+        react={`<Sidebar collapsed>
+  <SidebarNav>
+    <SidebarItem icon={<DashboardIcon />} label="Dashboard" active />
+    <SidebarItem icon={<InboxIcon />}     label="Inbox" />
+  </SidebarNav>
+</Sidebar>`}
+        angular={`<hilal-sidebar [collapsed]="true">…</hilal-sidebar>`}
+        blade={`<x-hilal-sidebar :collapsed="true">…</x-hilal-sidebar>`}
+      />
+
+      <h2>API</h2>
+      <pre className="preview__code"><code>{`<Sidebar>
+  collapsed   boolean    icon-only mode (default: false)
+
+<SidebarItem>
+  icon        ReactNode
+  label       ReactNode    required
+  active      boolean      highlights as current
+  trailing    ReactNode    e.g. badge or shortcut
+  …           all native <a> attributes`}</code></pre>
     </>
   );
 }

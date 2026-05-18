@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Card, CardHeader, CardBody, CardFooter, Button } from '@hilal-ds/react';
+import { Card, CardHeader, CardBody, CardFooter, Button, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 
 export const metadata: Metadata = { title: 'Card' };
@@ -9,69 +9,128 @@ export default function CardPage() {
     <>
       <h1>Card</h1>
       <p className="lede">
-        Surface for grouping related content. Compose header, body, and footer slots.
+        Surface for grouping related content. Four variants, four paddings, and an optional
+        interactive state. Compose with the matching Header / Body / Footer slot components.
       </p>
 
+      <h2>Variants</h2>
       <FrameworkTabs
         preview={
-          <div style={{ minWidth: '20rem', maxWidth: '24rem' }}>
-            <Card>
-              <CardHeader>
-                <div style={{ fontWeight: 600 }}>Project starlight</div>
-                <div style={{ color: 'var(--hilal-fg-tertiary)', fontSize: 'var(--hilal-font-size-13)' }}>
-                  Updated yesterday
-                </div>
-              </CardHeader>
-              <CardBody>
-                Migrating the auth service to the new identity provider. Owner: Sara. Target: end of sprint.
-              </CardBody>
-              <CardFooter>
-                <Button size="sm">Open</Button>
-                <Button size="sm" variant="tertiary">Snooze</Button>
-              </CardFooter>
-            </Card>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.75rem', width: '100%' }}>
+            <Card variant="default"><CardBody>Default — soft fill.</CardBody></Card>
+            <Card variant="elevated"><CardBody>Elevated — shadow.</CardBody></Card>
+            <Card variant="outlined"><CardBody>Outlined — border only.</CardBody></Card>
+            <Card variant="ghost"><CardBody>Ghost — transparent.</CardBody></Card>
           </div>
         }
-        react={`<Card>
+        react={`<Card variant="default"><CardBody>Default</CardBody></Card>
+<Card variant="elevated"><CardBody>Elevated</CardBody></Card>
+<Card variant="outlined"><CardBody>Outlined</CardBody></Card>
+<Card variant="ghost"><CardBody>Ghost</CardBody></Card>`}
+        angular={`<hilal-card variant="default">…</hilal-card>
+<hilal-card variant="elevated">…</hilal-card>
+<hilal-card variant="outlined">…</hilal-card>
+<hilal-card variant="ghost">…</hilal-card>`}
+        blade={`<x-hilal-card variant="default">…</x-hilal-card>
+<x-hilal-card variant="elevated">…</x-hilal-card>
+<x-hilal-card variant="outlined">…</x-hilal-card>
+<x-hilal-card variant="ghost">…</x-hilal-card>`}
+      />
+
+      <h2>Padding</h2>
+      <FrameworkTabs
+        preview={
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.75rem', width: '100%' }}>
+            <Card padding="none" variant="outlined"><CardBody style={{ padding: 0 }}>none</CardBody></Card>
+            <Card padding="sm"   variant="outlined"><CardBody>sm</CardBody></Card>
+            <Card padding="md"   variant="outlined"><CardBody>md</CardBody></Card>
+            <Card padding="lg"   variant="outlined"><CardBody>lg</CardBody></Card>
+          </div>
+        }
+        react={`<Card padding="none">…</Card>
+<Card padding="sm">…</Card>
+<Card padding="md">…</Card>
+<Card padding="lg">…</Card>`}
+        angular={`<hilal-card padding="lg">…</hilal-card>`}
+        blade={`<x-hilal-card padding="lg">…</x-hilal-card>`}
+      />
+
+      <h2>Interactive</h2>
+      <p>Pass <code>interactive</code> when the whole card is clickable — surfaces hover + focus styles.</p>
+      <FrameworkTabs
+        preview={
+          <Card variant="outlined" interactive style={{ maxWidth: '24rem' }}>
+            <CardHeader>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                <strong>Project starlight</strong>
+                <Badge tone="success" size="sm">Live</Badge>
+              </div>
+            </CardHeader>
+            <CardBody>Click anywhere on this card to open the project.</CardBody>
+          </Card>
+        }
+        react={`<Card variant="outlined" interactive onClick={openProject}>
   <CardHeader>
-    <div>Project starlight</div>
-    <div>Updated yesterday</div>
+    <strong>Project starlight</strong>
+    <Badge tone="success">Live</Badge>
   </CardHeader>
-  <CardBody>
-    Migrating the auth service to the new identity provider.
-  </CardBody>
+  <CardBody>Click anywhere…</CardBody>
+</Card>`}
+        angular={`<hilal-card variant="outlined" [interactive]="true" (click)="open()">…</hilal-card>`}
+        blade={`<x-hilal-card variant="outlined" :interactive="true" x-on:click="open()">…</x-hilal-card>`}
+      />
+
+      <h2>Full anatomy</h2>
+      <FrameworkTabs
+        preview={
+          <Card variant="elevated" style={{ maxWidth: '26rem' }}>
+            <CardHeader>
+              <div>
+                <div style={{ fontWeight: 600 }}>Q2 retrospective</div>
+                <div style={{ color: 'var(--hilal-fg-tertiary)', fontSize: 'var(--hilal-font-size-13)' }}>Posted 3 days ago</div>
+              </div>
+              <Badge tone="info" size="sm">Draft</Badge>
+            </CardHeader>
+            <CardBody>
+              Three highlights and two regressions. Owners assigned for each follow-up. Ship-stop
+              criteria for Q3 are still under discussion.
+            </CardBody>
+            <CardFooter>
+              <Button size="sm" variant="tertiary">Discard</Button>
+              <Button size="sm">Publish</Button>
+            </CardFooter>
+          </Card>
+        }
+        react={`<Card variant="elevated">
+  <CardHeader>
+    <div>
+      <div>Q2 retrospective</div>
+      <div>Posted 3 days ago</div>
+    </div>
+    <Badge tone="info">Draft</Badge>
+  </CardHeader>
+  <CardBody>…</CardBody>
   <CardFooter>
-    <Button size="sm">Open</Button>
-    <Button size="sm" variant="tertiary">Snooze</Button>
+    <Button size="sm" variant="tertiary">Discard</Button>
+    <Button size="sm">Publish</Button>
   </CardFooter>
 </Card>`}
-        angular={`<hilal-card>
-  <hilal-card-header>
-    <div>Project starlight</div>
-    <div>Updated yesterday</div>
-  </hilal-card-header>
-  <hilal-card-body>
-    Migrating the auth service to the new identity provider.
-  </hilal-card-body>
-  <hilal-card-footer>
-    <hilal-button size="sm">Open</hilal-button>
-    <hilal-button size="sm" variant="tertiary">Snooze</hilal-button>
-  </hilal-card-footer>
+        angular={`<hilal-card variant="elevated">
+  <hilal-card-header>…</hilal-card-header>
+  <hilal-card-body>…</hilal-card-body>
+  <hilal-card-footer>…</hilal-card-footer>
 </hilal-card>`}
-        blade={`<x-hilal-card>
-  <x-hilal-card-header>
-    <div>Project starlight</div>
-    <div>Updated yesterday</div>
-  </x-hilal-card-header>
-  <x-hilal-card-body>
-    Migrating the auth service to the new identity provider.
-  </x-hilal-card-body>
-  <x-hilal-card-footer>
-    <x-hilal-button size="sm">Open</x-hilal-button>
-    <x-hilal-button size="sm" variant="tertiary">Snooze</x-hilal-button>
-  </x-hilal-card-footer>
+        blade={`<x-hilal-card variant="elevated">
+  <x-hilal-card-header>…</x-hilal-card-header>
+  <x-hilal-card-body>…</x-hilal-card-body>
+  <x-hilal-card-footer>…</x-hilal-card-footer>
 </x-hilal-card>`}
       />
+
+      <h2>API</h2>
+      <pre className="preview__code"><code>{`variant       'default' | 'elevated' | 'outlined' | 'ghost'   default: 'default'
+padding       'none' | 'sm' | 'md' | 'lg'                     default: 'md'
+interactive   boolean   adds hover/focus styles for clickable cards`}</code></pre>
     </>
   );
 }
