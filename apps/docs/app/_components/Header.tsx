@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ThemeToggle } from './ThemeToggle';
+import { DemoControls } from './DemoControls';
+import { SearchPalette } from './SearchPalette';
 
 export function Header() {
   const pathname = usePathname();
@@ -13,6 +14,7 @@ export function Header() {
         <span className="doc-header__logo" aria-hidden />
         <span>Hilal</span>
       </Link>
+      <SearchPalette />
       <nav className="doc-header__nav" aria-label="Primary">
         <Link href="/docs/getting-started" aria-current={pathname === '/docs/getting-started' ? 'page' : undefined}>
           Get started
@@ -32,7 +34,7 @@ export function Header() {
         <a href="https://github.com/Cresentrix/hilal" target="_blank" rel="noreferrer">
           GitHub
         </a>
-        <ThemeToggle />
+        <DemoControls />
       </nav>
     </header>
   );

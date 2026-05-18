@@ -11,6 +11,9 @@ const SECTIONS: SidebarSection[] = [
     heading: 'Getting started',
     items: [
       { label: 'Introduction', href: '/docs/getting-started' },
+      { label: 'Why Hilal',    href: '/docs/about/why' },
+      { label: 'FAQ',          href: '/docs/about/faq' },
+      { label: 'Compared',     href: '/docs/about/compare' },
     ],
   },
   {
@@ -77,11 +80,15 @@ const SECTIONS: SidebarSection[] = [
   {
     heading: 'Recipes',
     items: [
-      { label: 'Overview',  href: '/docs/recipes' },
-      { label: 'Login',     href: '/docs/recipes/login' },
-      { label: 'Dashboard', href: '/docs/recipes/dashboard' },
-      { label: 'Pricing',   href: '/docs/recipes/pricing' },
-      { label: 'Settings',  href: '/docs/recipes/settings' },
+      { label: 'Overview',           href: '/docs/recipes' },
+      { label: 'Marketing landing',  href: '/docs/recipes/landing' },
+      { label: 'Login',              href: '/docs/recipes/login' },
+      { label: 'Onboarding wizard',  href: '/docs/recipes/onboarding' },
+      { label: 'Dashboard',          href: '/docs/recipes/dashboard' },
+      { label: 'Inbox',              href: '/docs/recipes/inbox' },
+      { label: 'Pricing',            href: '/docs/recipes/pricing' },
+      { label: 'Settings',           href: '/docs/recipes/settings' },
+      { label: '404 page',           href: '/docs/recipes/not-found' },
     ],
   },
 ];

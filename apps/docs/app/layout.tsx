@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
 import { Header } from './_components/Header';
+import { Footer } from './_components/Footer';
 
 export const metadata: Metadata = {
   title: { default: 'Hilal — multi-framework design system', template: '%s · Hilal' },
@@ -11,9 +12,20 @@ export const metadata: Metadata = {
 
 const themeScript = `(() => {
   try {
+    const html = document.documentElement;
     const stored = localStorage.getItem('hilal-theme');
     const sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.dataset.theme = stored || sys;
+    html.dataset.theme = stored || sys;
+
+    const apply = (key, attr) => {
+      const v = localStorage.getItem(key);
+      if (v && v !== 'cozy' && v !== 'ltr') html.setAttribute('data-' + attr, v);
+    };
+    apply('hilal-density', 'density');
+    apply('hilal-motion', 'motion');
+
+    const dir = localStorage.getItem('hilal-dir');
+    if (dir === 'rtl') html.setAttribute('dir', 'rtl');
   } catch (_) {}
 })();`;
 
@@ -27,6 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="doc-shell">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
