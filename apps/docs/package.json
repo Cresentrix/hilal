@@ -1,0 +1,29 @@
+{
+  "name": "@hilal-ds/docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hilal docs site — Next.js 16 App Router. Dogfoods @hilal-ds/* packages.",
+  "scripts": {
+    "dev": "next dev --port 3030",
+    "build": "next build",
+    "start": "next start",
+    "lint": "echo 'no lint'",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hilal-ds/core": "workspace:*",
+    "@hilal-ds/icons": "workspace:*",
+    "@hilal-ds/patterns": "workspace:*",
+    "@hilal-ds/react": "workspace:*",
+    "@hilal-ds/tokens": "workspace:*",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

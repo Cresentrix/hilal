@@ -37,3 +37,7 @@ tools/figma-sync/api/report/
 # coverage
 coverage/
 .nyc_output/
+
+# playwright mcp scratch
+.playwright-mcp/
+apps/docs/.playwright-mcp/

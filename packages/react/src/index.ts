@@ -1,3 +1,5 @@
+'use client';
+
 export { Button } from './components/button.js';
 export type { ButtonProps } from './components/button.js';
 

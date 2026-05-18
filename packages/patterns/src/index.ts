@@ -1,3 +1,5 @@
+'use client';
+
 export { AuthForm } from './auth-form.js';
 export type { AuthFormProps, AuthFormValues, AuthMode } from './auth-form.js';
 
