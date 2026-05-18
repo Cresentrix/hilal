@@ -1,6 +1,6 @@
 {
   "name": "@hilal/tokens",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal design tokens — single source of truth, built to CSS variables, SCSS, JS, JSON (W3C DTCG), and a Tailwind preset.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/tokens",

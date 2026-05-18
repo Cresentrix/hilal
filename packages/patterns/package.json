@@ -1,6 +1,6 @@
 {
   "name": "@hilal/patterns",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal patterns — opinionated, composed React building blocks (auth forms, page headers, lists, dialogs) built from @hilal/react primitives. Use as starting points; copy and customize.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/patterns",

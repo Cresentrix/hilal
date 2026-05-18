@@ -1,6 +1,6 @@
 {
   "name": "@hilal/react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal React 19 component library. Thin wrappers over @hilal/core CSS — same DOM as the Angular and Blade packages.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/react",

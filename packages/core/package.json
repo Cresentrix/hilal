@@ -1,6 +1,6 @@
 {
   "name": "@hilal/core",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal core CSS — framework-agnostic component styles. Imported by every framework wrapper (@hilal/react, @hilal/angular, hilal/blade).",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/core",

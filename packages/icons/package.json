@@ -1,6 +1,6 @@
 {
   "name": "@hilal/icons",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal icons — curated re-exports of Lucide icons used across the design system. Importing this re-exports lucide-react under the @hilal namespace for naming consistency.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/icons",

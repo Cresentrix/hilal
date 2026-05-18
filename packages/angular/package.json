@@ -1,6 +1,6 @@
 {
   "name": "@hilal/angular",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hilal Angular 19 standalone components. Thin wrappers over @hilal/core CSS — same DOM as the React and Blade packages.",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Cresentrix/hilal/tree/main/packages/angular",
