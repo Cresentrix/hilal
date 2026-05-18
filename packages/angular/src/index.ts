@@ -102,3 +102,17 @@ export { HilalFilterBarComponent } from './patterns/filter-bar.component.js';
 export type { HilalFilterPill } from './patterns/filter-bar.component.js';
 
 export { HilalDashboardShellComponent } from './patterns/dashboard-shell.component.js';
+
+export { HilalStatsGridComponent } from './patterns/stats-grid.component.js';
+export type { HilalStatItem, HilalStatTrend } from './patterns/stats-grid.component.js';
+
+export { HilalCommandPaletteComponent } from './patterns/command-palette.component.js';
+export type { HilalCommandItem } from './patterns/command-palette.component.js';
+
+export { HilalNotificationCenterComponent } from './patterns/notification-center.component.js';
+export type { HilalNotificationItem } from './patterns/notification-center.component.js';
+
+export {
+  HilalMultiStepFormComponent,
+  HilalMultiStepStepDirective,
+} from './patterns/multi-step-form.component.js';

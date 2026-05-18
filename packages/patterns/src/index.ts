@@ -21,3 +21,17 @@ export type { FilterBarProps, FilterPill } from './filter-bar.js';
 
 export { DashboardShell } from './dashboard-shell.js';
 export type { DashboardShellProps } from './dashboard-shell.js';
+
+export { StatsGrid } from './stats-grid.js';
+export type { StatsGridProps, StatItem, StatDeltaTrend } from './stats-grid.js';
+
+export { CommandPalette } from './command-palette.js';
+export type { CommandPaletteProps, CommandItem } from './command-palette.js';
+
+export { NotificationCenter } from './notification-center.js';
+export type { NotificationCenterProps, NotificationItem } from './notification-center.js';
+
+export { MultiStepForm } from './multi-step-form.js';
+export type {
+  MultiStepFormProps, MultiStepFormStep, MultiStepFormFooterControls,
+} from './multi-step-form.js';
