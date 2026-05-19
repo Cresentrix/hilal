@@ -57,6 +57,7 @@ const SECTIONS: SidebarSection[] = [
       { label: 'Sidebar',     href: '/docs/components/sidebar' },
       { label: 'Skeleton',    href: '/docs/components/skeleton' },
       { label: 'Stepper',     href: '/docs/components/stepper' },
+      { label: 'Table',       href: '/docs/components/table' },
       { label: 'Tabs',        href: '/docs/components/tabs' },
       { label: 'Toast',       href: '/docs/components/toast' },
       { label: 'Toggle',      href: '/docs/components/toggle' },

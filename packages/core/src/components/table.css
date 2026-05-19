@@ -1,0 +1,109 @@
+/*
+ * Table — sortable, sizeable, themable data table.
+ * Same DOM is emitted by @hilal-ds/react, @hilal-ds/angular and hilal/blade.
+ */
+
+.hilal-table-wrap {
+  inline-size: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-lg);
+  background: var(--hilal-bg-page);
+}
+
+.hilal-table {
+  inline-size: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--hilal-font-size-14);
+  color: var(--hilal-fg-primary);
+}
+
+.hilal-table__head th {
+  font-weight: var(--hilal-font-weight-semibold);
+  text-align: start;
+  font-size: var(--hilal-font-size-12);
+  color: var(--hilal-fg-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--hilal-bg-subtle);
+  border-block-end: 1px solid var(--hilal-border-default);
+  padding-inline: var(--hilal-spacing-4);
+  padding-block: var(--hilal-spacing-3);
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.hilal-table--sticky .hilal-table__head th {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+}
+
+.hilal-table__sort {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hilal-spacing-1);
+  padding: 0;
+  transition: color var(--hilal-motion-duration-fast) var(--hilal-motion-easing-standard);
+}
+.hilal-table__sort:hover { color: var(--hilal-fg-primary); }
+.hilal-table__sort[aria-sort="ascending"],
+.hilal-table__sort[aria-sort="descending"] { color: var(--hilal-fg-primary); }
+.hilal-table__sort-arrow {
+  display: inline-block;
+  inline-size: 0.6em;
+  opacity: 0.5;
+  font-variant-numeric: tabular-nums;
+}
+.hilal-table__sort[aria-sort="ascending"]  .hilal-table__sort-arrow { opacity: 1; }
+.hilal-table__sort[aria-sort="descending"] .hilal-table__sort-arrow { opacity: 1; }
+
+.hilal-table__body td {
+  padding-inline: var(--hilal-spacing-4);
+  padding-block: var(--hilal-spacing-3);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+  vertical-align: middle;
+}
+.hilal-table__body tr:last-child td { border-block-end: 0; }
+
+.hilal-table__row--interactive { cursor: pointer; }
+.hilal-table__row--interactive:hover { background: var(--hilal-bg-subtle); }
+.hilal-table__row--selected { background: color-mix(in oklab, var(--hilal-bg-brand) 10%, transparent); }
+
+.hilal-table__cell--num {
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+.hilal-table__cell--center { text-align: center; }
+
+.hilal-table--sm .hilal-table__head th,
+.hilal-table--sm .hilal-table__body td {
+  padding-block: var(--hilal-spacing-2);
+  padding-inline: var(--hilal-spacing-3);
+  font-size: var(--hilal-font-size-13);
+}
+
+.hilal-table__empty,
+.hilal-table__loading {
+  padding-block: var(--hilal-spacing-8);
+  text-align: center;
+  color: var(--hilal-fg-tertiary);
+}
+.hilal-table__loading-row td { padding-block: var(--hilal-spacing-3); }
+
+.hilal-table__caption {
+  caption-side: top;
+  text-align: start;
+  padding-block-end: var(--hilal-spacing-2);
+  color: var(--hilal-fg-tertiary);
+  font-size: var(--hilal-font-size-13);
+}

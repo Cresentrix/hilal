@@ -5,7 +5,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hilal-ds.dev';
 const COMPONENTS = [
   'accordion', 'alert', 'avatar', 'badge', 'bottomnav', 'button', 'calendar', 'card',
   'checkbox', 'combobox', 'datepicker', 'drawer', 'empty', 'input', 'modal', 'pagination',
-  'select', 'sidebar', 'skeleton', 'stepper', 'tabs', 'toast', 'toggle', 'tooltip',
+  'select', 'sidebar', 'skeleton', 'stepper', 'table', 'tabs', 'toast', 'toggle', 'tooltip',
 ];
 
 const PATTERNS = [

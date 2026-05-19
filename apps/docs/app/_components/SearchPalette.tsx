@@ -28,7 +28,7 @@ const LINKS: DocLink[] = [
   // Components
   ...['Accordion', 'Alert', 'Avatar', 'Badge', 'BottomNav', 'Button', 'Calendar', 'Card', 'Checkbox',
       'Combobox', 'Datepicker', 'Drawer', 'EmptyState', 'Input', 'Modal', 'Pagination', 'Select',
-      'Sidebar', 'Skeleton', 'Stepper', 'Tabs', 'Toast', 'Toggle', 'Tooltip']
+      'Sidebar', 'Skeleton', 'Stepper', 'Table', 'Tabs', 'Toast', 'Toggle', 'Tooltip']
     .map((name): DocLink => {
       const slug = name === 'EmptyState' ? 'empty'
                  : name === 'BottomNav' ? 'bottomnav'

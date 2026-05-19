@@ -73,3 +73,8 @@ export type { CalendarProps, Weekday, CalendarMode, DateRange, CalendarPreset } 
 
 export { Combobox } from './components/combobox.js';
 export type { ComboboxProps, ComboboxOption } from './components/combobox.js';
+
+export { Table } from './components/table.js';
+export type {
+  TableProps, TableColumn, SortState, SortDirection,
+} from './components/table.js';

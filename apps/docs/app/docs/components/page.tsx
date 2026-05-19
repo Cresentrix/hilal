@@ -27,6 +27,7 @@ const COMPONENTS: Item[] = [
   { slug: 'sidebar',    name: 'Sidebar',    hint: 'Vertical nav with header / nav / footer slots.' },
   { slug: 'skeleton',   name: 'Skeleton',   hint: 'Loading placeholder shapes with shimmer.' },
   { slug: 'stepper',    name: 'Stepper',    hint: 'Horizontal / vertical progress steps.' },
+  { slug: 'table',      name: 'Table',      hint: 'Typed columns, sortable headers, sticky head, loading + empty.' },
   { slug: 'tabs',       name: 'Tabs',       hint: 'Tab list with panel switching.' },
   { slug: 'toast',      name: 'Toast',      hint: 'Transient notifications via context provider.' },
   { slug: 'toggle',     name: 'Toggle',     hint: 'Switch input for boolean state.' },

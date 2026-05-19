@@ -45,6 +45,7 @@ export const COMPONENT_STATUS: Record<string, Status> = {
   sidebar:    'stable',
   skeleton:   'stable',
   stepper:    'stable',
+  table:      'beta',
   tabs:       'stable',
   toast:      'stable',
   toggle:     'stable',

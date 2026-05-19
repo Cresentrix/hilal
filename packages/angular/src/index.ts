@@ -80,6 +80,9 @@ export type {
 } from './components/calendar.component.js';
 
 export { HilalComboboxComponent } from './components/combobox.component.js';
+
+export { HilalTableComponent } from './components/table.component.js';
+export type { HilalTableColumn, HilalSortState, HilalSortDirection } from './components/table.component.js';
 export type { HilalComboboxOption } from './components/combobox.component.js';
 
 // ---------- patterns ----------
