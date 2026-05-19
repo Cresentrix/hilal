@@ -1,120 +1,93 @@
-# Hilal — bilingual, multi-stack design system
+# Hilal — multi-framework design system
 
-> **هلال** _(hilal)_ — Arabic for "crescent". A design system designed Arabic-first, built once, used everywhere.
+> **هلال** _(hilal)_ — Arabic for "crescent". One DOM. One CSS. Three frameworks.
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/badge/npm-%40hilal--ds-cb3837.svg)](https://www.npmjs.com/org/hilal-ds)
 [![Made with pnpm](https://img.shields.io/badge/built%20with-pnpm-f69220.svg)](https://pnpm.io)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-Hilal is a production-ready design system with first-class **Latin + Arabic / RTL** support, designed in Figma and shipped across **React, Angular, and Laravel Blade** from a single source of tokens.
+Hilal ships pixel-identical components for **React, Angular, and Laravel Blade** from a single token system and one stylesheet. The same DOM, the same class names, the same Figma-synced tokens — across all three.
 
-## Why Hilal
+Built with **Latin + Arabic / RTL** as primary requirements, not afterthoughts. Logical CSS properties (`padding-inline`, `margin-block`) everywhere; toggle `dir="rtl"` and components flip without any conditional code.
 
-Most open-source design systems treat RTL as an afterthought — Hilal was designed with Arabic typography (Noto Kufi Arabic) and right-to-left layouts as primary requirements, alongside Latin (Inter). Components handle bidirectional text, mirrored layout, and locale-aware spacing out of the box.
+## Packages
 
-It's also unusual in being genuinely multi-stack: the same tokens, the same CSS, the same DOM contracts power React, Angular, and Blade components. Build it once in Figma, get it everywhere in code.
+All published to npm under the `@hilal-ds` scope:
 
-## What's inside
+| Package | Purpose |
+|---|---|
+| [`@hilal-ds/tokens`](packages/tokens)     | Tokens (W3C DTCG) → CSS / SCSS / JS / JSON / Tailwind preset |
+| [`@hilal-ds/core`](packages/core)         | Framework-agnostic CSS — every component's styles |
+| [`@hilal-ds/icons`](packages/icons)       | Curated Lucide icon re-exports |
+| [`@hilal-ds/react`](packages/react)       | React 19 components |
+| [`@hilal-ds/angular`](packages/angular)   | Angular 19 standalone components |
+| [`hilal/blade`](packages/blade)           | Laravel Blade components (via Packagist) |
+| [`@hilal-ds/patterns`](packages/patterns) | Composed React building blocks |
 
-| Package | Purpose | Install |
-|---|---|---|
-| [`@hilal/tokens`](packages/tokens) | Design tokens (W3C DTCG) → CSS vars, SCSS, JS, Tailwind preset | `npm i @hilal/tokens` |
-| [`@hilal/core`](packages/core) | Framework-agnostic CSS — every component's styles | `npm i @hilal/core` |
-| [`@hilal/icons`](packages/icons) | Curated Lucide icon re-exports | `npm i @hilal/icons` |
-| [`@hilal/react`](packages/react) | React 19 components | `npm i @hilal/react` |
-| [`@hilal/angular`](packages/angular) | Angular 19 standalone components | `npm i @hilal/angular` |
-| [`hilal/blade`](packages/blade) | Laravel Blade components + Alpine.js | `composer require hilal/blade` |
-| [`@hilal/patterns`](packages/patterns) | Composed React patterns (auth forms, page headers, lists) | `npm i @hilal/patterns` |
+## Quick start
 
-## Quick start (React)
-
-```bash
-pnpm add @hilal/react @hilal/core @hilal/tokens
+```sh
+npm install @hilal-ds/core @hilal-ds/react
 ```
 
 ```tsx
-import '@hilal/tokens/dist/tokens.css';   // CSS variables
-import '@hilal/core/dist/hilal.css';      // component styles
-import { Button } from '@hilal/react';
+import '@hilal-ds/core';                  // component styles
+import '@hilal-ds/tokens/themes/dark';    // (optional) dark theme
+
+import { Button } from '@hilal-ds/react';
 
 export default function App() {
-  return (
-    <div dir="ltr">
-      <Button variant="primary" size="md">Click me</Button>
-    </div>
-  );
+  return <Button>Click me</Button>;
 }
 ```
 
-For Arabic / RTL:
+Angular and Blade quick starts live in the [docs](#docs).
 
-```tsx
-<div dir="rtl" lang="ar">
-  <Button variant="primary" size="md">انقر هنا</Button>
-</div>
+## What's shipped (0.1)
+
+- **24 primitives**: Accordion, Alert, Avatar, Badge, BottomNav, Button, Calendar, Card, Checkbox, Combobox, Datepicker, Drawer, EmptyState, Input, Modal, Pagination, Select, Sidebar, Skeleton, Stepper, Tabs, Toast, Toggle, Tooltip.
+- **12 patterns**: AuthForm, CommandPalette, ConfirmDialog, DashboardShell, DataList, FilterBar, FormSection, MultiStepForm, NotificationCenter, PageHeader, SearchHeader, StatsGrid.
+- **Themes**: dark theme; density and motion presets, all swap-an-attribute.
+- **Calendar**: single, range, multi-month, presets, year picker, locale + week-starts-on, min/max.
+
+## Docs
+
+The docs site lives in [`apps/docs/`](apps/docs) — a Next.js 16 app that dogfoods the React + patterns packages.
+
+```sh
+pnpm --filter @hilal-ds/docs dev
 ```
 
-## Quick start (Blade)
-
-```bash
-composer require hilal/blade
-```
-
-```blade
-{{-- resources/views/layouts/app.blade.php --}}
-<!doctype html>
-<html dir="ltr">
-  <head>
-    <link rel="stylesheet" href="{{ asset('vendor/hilal/tokens.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/hilal/hilal.css') }}">
-    @hilalScripts
-  </head>
-  <body>
-    <x-hilal-button variant="primary" size="md">Click me</x-hilal-button>
-  </body>
-</html>
-```
+Sections:
+- **Foundations** — Colors, Typography, Spacing, Radius, Elevation, Motion, Theming, Iconography
+- **Components** — every primitive with variants, sizes, states, accessibility, and a playground for the rich ones
+- **Patterns** — every composed pattern with usage scenarios
+- **Recipes** — Login, Dashboard, Pricing, Settings, Marketing landing, Onboarding wizard, Inbox, 404
+- **About** — Why Hilal, FAQ, Compared (vs shadcn / Radix / Mantine), Roadmap, Showcase
+- **Changelog**
 
 ## Theming
 
-The default `base` theme is brand-neutral. Override CSS variables in your own stylesheet to apply your brand:
+The whole color system goes through semantic aliases. Override them in a `[data-theme="…"]` scope:
 
 ```css
-:root {
-  --hilal-color-accent: #6c47ff;
-  --hilal-radius-md: 0.5rem;
-  --hilal-font-sans: 'Inter', system-ui, sans-serif;
-  --hilal-font-arabic: 'Noto Kufi Arabic', sans-serif;
+[data-theme="acme"] {
+  --hilal-bg-brand: #ff5500;
+  --hilal-fg-link:  #ff5500;
 }
 ```
 
-Or load a complete theme:
-
-```ts
-import '@hilal/tokens/dist/themes/base.css';
+```html
+<html data-theme="acme">…</html>
 ```
 
-## Roadmap
-
-- [x] Foundations: colors, typography, spacing, radius, elevation, motion
-- [x] Core CSS layer
-- [x] React package — primitives
-- [ ] React package — composites (Modal, Dropdown, Tabs, Datepicker)
-- [ ] Angular package
-- [ ] Blade package
-- [ ] Patterns (form layouts, list patterns, empty/loading/error states)
-- [ ] Templates (auth, dashboard, settings)
-- [ ] Dark mode
-- [ ] React Native package
+The Theming foundation page has a live color picker that retunes the entire docs site in real time.
 
 ## Contributing
 
-PRs are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). All contributors agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Security
-
-Found a vulnerability? See [SECURITY.md](SECURITY.md).
+PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). All contributors follow the [Code of Conduct](CODE_OF_CONDUCT.md). Security issues go to [SECURITY.md](SECURITY.md).
 
 ## License
 
-[Apache-2.0](LICENSE) © Cresentrix and the Hilal contributors
+[Apache-2.0](LICENSE) © Cresentrix and the Hilal contributors.

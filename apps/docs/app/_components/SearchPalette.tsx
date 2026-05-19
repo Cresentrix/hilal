@@ -23,6 +23,7 @@ const LINKS: DocLink[] = [
   { group: 'Foundations', label: 'Radius',      href: '/docs/foundations/radius',     keywords: ['rounded', 'corner'] },
   { group: 'Foundations', label: 'Elevation',   href: '/docs/foundations/elevation',  keywords: ['shadow', 'depth'] },
   { group: 'Foundations', label: 'Motion',      href: '/docs/foundations/motion',     keywords: ['animation', 'duration', 'easing'] },
+  { group: 'Foundations', label: 'Theming',     href: '/docs/foundations/theming',    keywords: ['brand', 'color picker', 'data-theme', 'customize'] },
   { group: 'Foundations', label: 'Iconography', href: '/docs/iconography',            keywords: ['icons', 'lucide'] },
   // Components
   ...['Accordion', 'Alert', 'Avatar', 'Badge', 'BottomNav', 'Button', 'Calendar', 'Card', 'Checkbox',

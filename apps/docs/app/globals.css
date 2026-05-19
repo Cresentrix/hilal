@@ -426,6 +426,141 @@ code, pre, kbd { font-family: var(--hilal-font-family-mono, ui-monospace, SFMono
 }
 .theme-toggle:hover { background: var(--hilal-bg-subtle); }
 
+/* ---------- Anatomy ---------- */
+.anatomy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--hilal-spacing-5);
+  margin-block: var(--hilal-spacing-4);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-lg);
+  padding: var(--hilal-spacing-4);
+  background: var(--hilal-bg-page);
+}
+@media (max-width: 720px) {
+  .anatomy { grid-template-columns: 1fr; }
+}
+.anatomy__diagram {
+  margin: 0;
+  padding: var(--hilal-spacing-4);
+  background: var(--hilal-bg-subtle);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-md);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--hilal-fg-primary);
+  white-space: pre;
+  overflow-x: auto;
+}
+.anatomy__parts {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-2);
+  font-size: var(--hilal-font-size-14);
+}
+.anatomy__parts li { display: flex; gap: var(--hilal-spacing-3); align-items: baseline; }
+.anatomy__name {
+  font-family: var(--hilal-font-family-mono, ui-monospace, monospace);
+  font-size: var(--hilal-font-size-13);
+  background: var(--hilal-bg-subtle);
+  border: 1px solid var(--hilal-border-subtle);
+  padding-inline: var(--hilal-spacing-2);
+  padding-block: 1px;
+  border-radius: var(--hilal-radius-sm);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* ---------- Playground ---------- */
+.playground {
+  margin-block: var(--hilal-spacing-4);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-lg);
+  overflow: hidden;
+  background: var(--hilal-bg-page);
+}
+.playground__stage {
+  padding: var(--hilal-spacing-6);
+  min-block-size: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--hilal-fg-tertiary) 18%, transparent) 1px, transparent 0)
+    0 0 / 16px 16px,
+    var(--hilal-bg-page);
+}
+.playground__split {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  border-block-start: 1px solid var(--hilal-border-subtle);
+}
+@media (max-width: 720px) {
+  .playground__split { grid-template-columns: 1fr; }
+}
+.playground__controls {
+  padding: var(--hilal-spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hilal-spacing-3);
+  background: var(--hilal-bg-subtle);
+}
+.playground__row { display: flex; flex-direction: column; gap: var(--hilal-spacing-1); }
+.playground__label {
+  font-size: var(--hilal-font-size-12);
+  font-weight: var(--hilal-font-weight-semibold);
+  color: var(--hilal-fg-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.playground__select,
+.playground__input {
+  appearance: none;
+  font: inherit;
+  font-size: var(--hilal-font-size-14);
+  padding: var(--hilal-spacing-2) var(--hilal-spacing-3);
+  border: 1px solid var(--hilal-border-subtle);
+  border-radius: var(--hilal-radius-sm);
+  background: var(--hilal-bg-page);
+  color: var(--hilal-fg-primary);
+}
+.playground__switch {
+  display: inline-flex; align-items: center;
+  gap: var(--hilal-spacing-2);
+  font-size: var(--hilal-font-size-14);
+  color: var(--hilal-fg-primary);
+}
+.playground__switch input { inline-size: 1rem; block-size: 1rem; cursor: pointer; }
+.playground__code {
+  background: var(--hilal-bg-page);
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+.playground__code-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--hilal-spacing-2) var(--hilal-spacing-3);
+  border-block-end: 1px solid var(--hilal-border-subtle);
+}
+.playground__code-label {
+  font-size: var(--hilal-font-size-12);
+  font-weight: var(--hilal-font-weight-medium);
+  color: var(--hilal-fg-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.playground__code pre {
+  margin: 0;
+  padding: var(--hilal-spacing-4);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
 /* ---------- Server-rendered heading anchors ---------- */
 .doc-heading { scroll-margin-block-start: var(--hilal-spacing-8); }
 .doc-heading__anchor {

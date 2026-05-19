@@ -18,7 +18,7 @@ const RECIPES = [
   'landing', 'login', 'onboarding', 'dashboard', 'inbox', 'pricing', 'settings', 'not-found',
 ];
 
-const FOUNDATIONS = ['colors', 'typography', 'spacing', 'radius', 'elevation', 'motion'];
+const FOUNDATIONS = ['colors', 'typography', 'spacing', 'radius', 'elevation', 'motion', 'theming'];
 
 const ABOUT = ['why', 'faq', 'compare', 'roadmap', 'showcase'];
 

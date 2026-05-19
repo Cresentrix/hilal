@@ -3,6 +3,7 @@ import { Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { BadgePlayground } from '../../../_components/playgrounds/BadgePlayground';
 
 export const metadata: Metadata = { title: 'Badge' };
 
@@ -14,6 +15,9 @@ export default function BadgePage() {
         Compact label for counts, statuses, and tags. Six tones, two sizes, and an optional
         dot-only variant.
       </p>
+
+      <H2>Playground</H2>
+      <BadgePlayground />
 
       <H2>Tones</H2>
       <FrameworkTabs

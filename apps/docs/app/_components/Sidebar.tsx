@@ -29,6 +29,7 @@ const SECTIONS: SidebarSection[] = [
       { label: 'Radius',     href: '/docs/foundations/radius' },
       { label: 'Elevation',  href: '/docs/foundations/elevation' },
       { label: 'Motion',     href: '/docs/foundations/motion' },
+      { label: 'Theming',    href: '/docs/foundations/theming' },
       { label: 'Iconography', href: '/docs/iconography' },
     ],
   },

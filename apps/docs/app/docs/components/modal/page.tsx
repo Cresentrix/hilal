@@ -8,6 +8,7 @@ import {
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { Anatomy } from '../../../_components/Anatomy';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -94,6 +95,24 @@ export default function ModalPage() {
       <H2>Disable backdrop close</H2>
       <p>Pass <code>closeOnBackdrop=&#123;false&#125;</code> when the modal contains irreversible work that shouldn&rsquo;t close on a stray click.</p>
       <pre className="preview__code"><code>{`<Modal open={open} onClose={close} closeOnBackdrop={false}>…</Modal>`}</code></pre>
+
+      <H2>Anatomy</H2>
+      <Anatomy
+        diagram={`Modal
+├─ ModalHeader
+│  ├─ ModalTitle
+│  └─ ModalClose
+├─ ModalBody
+└─ ModalFooter`}
+        parts={[
+          { label: 'Modal',       description: 'The <dialog> wrapper. Owns the open state and the backdrop.' },
+          { label: 'ModalHeader', description: 'Top row — title + close button.' },
+          { label: 'ModalTitle',  description: 'h2-styled title. Wired as aria-labelledby on the dialog.' },
+          { label: 'ModalClose',  description: 'Icon-only close button. Defaults to aria-label="Close".' },
+          { label: 'ModalBody',   description: 'Scrollable content area.' },
+          { label: 'ModalFooter', description: 'Right-aligned action row. Convention: Cancel · Primary.' },
+        ]}
+      />
 
       <H2>API</H2>
       <pre className="preview__code"><code>{`open              boolean    controlled open state

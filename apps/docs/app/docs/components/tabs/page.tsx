@@ -4,6 +4,7 @@ import { Tabs, TabList, Tab, TabPanel, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { Anatomy } from '../../../_components/Anatomy';
 
 export default function TabsPage() {
   return (
@@ -127,6 +128,24 @@ export default function TabsPage() {
 <button hilalTab="spam" [disabled]="true">Spam</button>`}
         blade={`<button data-value="inbox">Inbox <x-hilal-badge tone="brand">12</x-hilal-badge></button>
 <button data-value="spam" disabled>Spam</button>`}
+      />
+
+      <H2>Parts</H2>
+      <Anatomy
+        diagram={`Tabs
+├─ TabList
+│  ├─ Tab value="…"
+│  ├─ Tab value="…"
+│  └─ Tab value="…" disabled
+├─ TabPanel value="…"
+├─ TabPanel value="…"
+└─ TabPanel value="…"`}
+        parts={[
+          { label: 'Tabs',     description: 'Root container. Owns the active value (controlled or uncontrolled) and orientation.' },
+          { label: 'TabList',  description: 'Horizontal or vertical strip of Tab buttons.' },
+          { label: 'Tab',      description: 'A single tab trigger. Matched to a panel by its value prop.' },
+          { label: 'TabPanel', description: 'Content area. Shown only when its value matches Tabs’ active value.' },
+        ]}
       />
 
       <H2>API</H2>

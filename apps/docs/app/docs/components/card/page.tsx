@@ -3,6 +3,8 @@ import { Card, CardHeader, CardBody, CardFooter, Button, Badge } from '@hilal-ds
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { CardPlayground } from '../../../_components/playgrounds/CardPlayground';
+import { Anatomy } from '../../../_components/Anatomy';
 
 export const metadata: Metadata = { title: 'Card' };
 
@@ -14,6 +16,9 @@ export default function CardPage() {
         Surface for grouping related content. Four variants, four paddings, and an optional
         interactive state. Compose with the matching Header / Body / Footer slot components.
       </p>
+
+      <H2>Playground</H2>
+      <CardPlayground />
 
       <H2>Variants</H2>
       <FrameworkTabs
@@ -127,6 +132,20 @@ export default function CardPage() {
   <x-hilal-card-body>…</x-hilal-card-body>
   <x-hilal-card-footer>…</x-hilal-card-footer>
 </x-hilal-card>`}
+      />
+
+      <H2>Parts</H2>
+      <Anatomy
+        diagram={`Card
+├─ CardHeader   (optional)
+├─ CardBody
+└─ CardFooter   (optional)`}
+        parts={[
+          { label: 'Card',       description: 'The surface. Variants control fill / shadow; interactive adds hover state.' },
+          { label: 'CardHeader', description: 'Title row. Convention: name on the left, status / actions on the right.' },
+          { label: 'CardBody',   description: 'Main content. Inherits the card padding.' },
+          { label: 'CardFooter', description: 'Actions row. Typically right-aligned buttons.' },
+        ]}
       />
 
       <H2>API</H2>

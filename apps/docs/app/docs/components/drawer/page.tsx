@@ -8,6 +8,7 @@ import {
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { Anatomy } from '../../../_components/Anatomy';
 
 export default function DrawerPage() {
   const [openSide, setOpenSide] = useState<DrawerSide | null>(null);
@@ -76,6 +77,24 @@ export default function DrawerPage() {
 
       <H2>Full anatomy</H2>
       <FullDrawerDemo />
+
+      <H2>Parts</H2>
+      <Anatomy
+        diagram={`Drawer
+├─ DrawerHeader
+│  ├─ DrawerTitle
+│  └─ DrawerClose
+├─ DrawerBody
+└─ DrawerFooter`}
+        parts={[
+          { label: 'Drawer',       description: 'The <dialog> wrapper. Owns open state, side, and size.' },
+          { label: 'DrawerHeader', description: 'Top row — title + close button. Stays in place while body scrolls.' },
+          { label: 'DrawerTitle',  description: 'h2-styled title; wire as aria-labelledby on the dialog.' },
+          { label: 'DrawerClose',  description: 'Icon-only close button. Defaults to aria-label="Close".' },
+          { label: 'DrawerBody',   description: 'Scrollable content area.' },
+          { label: 'DrawerFooter', description: 'Right-aligned action row.' },
+        ]}
+      />
 
       <H2>API</H2>
       <pre className="preview__code"><code>{`open              boolean

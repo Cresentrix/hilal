@@ -3,6 +3,7 @@ import { Avatar, AvatarGroup } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { AvatarPlayground } from '../../../_components/playgrounds/AvatarPlayground';
 
 export const metadata: Metadata = { title: 'Avatar' };
 
@@ -14,6 +15,9 @@ export default function AvatarPage() {
         User avatar with image, initials fallback, five sizes, four status indicators, and a
         group stacking variant.
       </p>
+
+      <H2>Playground</H2>
+      <AvatarPlayground />
 
       <H2>Sizes</H2>
       <FrameworkTabs

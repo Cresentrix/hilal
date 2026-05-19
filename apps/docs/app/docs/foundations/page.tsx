@@ -10,6 +10,7 @@ const ITEMS = [
   { slug: 'radius',     name: 'Radius',     hint: 'Corner-radius scale, from sm to full.' },
   { slug: 'elevation',  name: 'Elevation',  hint: 'Box-shadow stack and a dedicated focus ring.' },
   { slug: 'motion',     name: 'Motion',     hint: 'Duration and easing curves used across components.' },
+  { slug: 'theming',    name: 'Theming',    hint: 'Brand customization with a live color picker.' },
 ];
 
 export default function FoundationsIndex() {

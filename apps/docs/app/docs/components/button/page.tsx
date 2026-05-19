@@ -3,6 +3,7 @@ import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
 import { H2, H3 } from '../../../_components/Heading';
+import { ButtonPlayground } from '../../../_components/playgrounds/ButtonPlayground';
 
 export const metadata: Metadata = { title: 'Button' };
 
@@ -14,6 +15,9 @@ export default function ButtonPage() {
         Standard button with three variants, three sizes, and built-in loading and disabled
         states. Renders a native <code>&lt;button&gt;</code> with full ARIA + keyboard support.
       </p>
+
+      <H2>Playground</H2>
+      <ButtonPlayground />
 
       <H2>Variants</H2>
       <p>Three visual weights: <code>primary</code> for the main action, <code>secondary</code> for an alternate action, <code>tertiary</code> for a quiet inline action.</p>
