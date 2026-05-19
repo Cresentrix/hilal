@@ -15,8 +15,10 @@ const PATTERNS = [
 ];
 
 const RECIPES = [
-  'landing', 'login', 'onboarding', 'dashboard', 'inbox', 'pricing', 'settings', 'not-found',
+  'landing', 'login', 'onboarding', 'dashboard', 'inbox', 'pricing', 'settings', 'forms', 'not-found',
 ];
+
+const GUIDES = ['build-your-own'];
 
 const FOUNDATIONS = ['colors', 'typography', 'spacing', 'radius', 'elevation', 'motion', 'theming'];
 
@@ -31,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/docs/components`,          lastModified: now, priority: 0.9 },
     { url: `${SITE}/docs/patterns`,            lastModified: now, priority: 0.9 },
     { url: `${SITE}/docs/recipes`,             lastModified: now, priority: 0.7 },
+    { url: `${SITE}/docs/guides`,              lastModified: now, priority: 0.6 },
     { url: `${SITE}/docs/iconography`,         lastModified: now, priority: 0.6 },
     { url: `${SITE}/docs/changelog`,           lastModified: now, priority: 0.6 },
     { url: `${SITE}/docs/about`,               lastModified: now, priority: 0.5 },
@@ -39,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const slug of COMPONENTS)  entries.push({ url: `${SITE}/docs/components/${slug}`,  lastModified: now, priority: 0.8 });
   for (const slug of PATTERNS)    entries.push({ url: `${SITE}/docs/patterns/${slug}`,    lastModified: now, priority: 0.8 });
   for (const slug of RECIPES)     entries.push({ url: `${SITE}/docs/recipes/${slug}`,     lastModified: now, priority: 0.6 });
+  for (const slug of GUIDES)      entries.push({ url: `${SITE}/docs/guides/${slug}`,      lastModified: now, priority: 0.6 });
   for (const slug of ABOUT)       entries.push({ url: `${SITE}/docs/about/${slug}`,       lastModified: now, priority: 0.5 });
   return entries;
 }

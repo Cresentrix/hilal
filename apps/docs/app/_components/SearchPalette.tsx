@@ -50,7 +50,10 @@ const LINKS: DocLink[] = [
   { group: 'Recipes', label: 'Inbox',              href: '/docs/recipes/inbox' },
   { group: 'Recipes', label: 'Pricing',            href: '/docs/recipes/pricing' },
   { group: 'Recipes', label: 'Settings',           href: '/docs/recipes/settings' },
+  { group: 'Recipes', label: 'Forms with validation', href: '/docs/recipes/forms', keywords: ['react-hook-form', 'rhf', 'validation', 'errors'] },
   { group: 'Recipes', label: '404 page',           href: '/docs/recipes/not-found' },
+  // Guides
+  { group: 'Guides',  label: 'Build your own component', href: '/docs/guides/build-your-own', keywords: ['custom', 'extend', 'tokens', 'naming', 'compose', 'rtl'] },
 ];
 
 const GROUP_ORDER = ['Getting started', 'Foundations', 'Components', 'Patterns', 'Recipes'];

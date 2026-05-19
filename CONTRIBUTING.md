@@ -7,7 +7,7 @@ Thanks for considering a contribution. The goal of this guide is to get you prod
 - Be kind. See the [Code of Conduct](CODE_OF_CONDUCT.md).
 - Discuss large changes in an issue before opening a PR.
 - One logical change per PR; small PRs land faster.
-- Keep RTL/bilingual support in mind for any visual change.
+- Keep RTL / bilingual support in mind for any visual change — Hilal uses CSS logical properties (`padding-inline`, `margin-block`, `inset-inline-start`) instead of left/right anywhere it matters.
 
 ## Setup
 
@@ -16,40 +16,62 @@ git clone https://github.com/Cresentrix/hilal.git
 cd hilal
 pnpm install
 pnpm build
-pnpm test
 ```
 
-Requires Node 22+ and pnpm 10+.
+Requires Node 22+ and pnpm 10+ (see `.nvmrc`).
 
 ## Repository layout
 
 ```
 packages/
-  tokens/      design tokens (single source of truth)
+  tokens/      design tokens (single source of truth, synced from Figma)
   core/        framework-agnostic CSS
   icons/       Lucide re-exports
   react/       React 19 components
   angular/     Angular 19 standalone components
-  blade/       Laravel Blade components (Composer package)
+  blade/       Laravel Blade components (Composer / Packagist)
+  patterns/    composed React building blocks
 apps/
-  docs/        documentation site
+  docs/        Next.js 16 documentation site
 tools/
   figma-sync/  pulls token values from the design Figma file
 ```
 
 Read the per-package READMEs for package-specific guides.
 
+## Common commands
+
+```bash
+# Run the docs site locally (http://localhost:3030)
+pnpm --filter @hilal-ds/docs dev
+
+# Watch-build a single package (rebuilds on save)
+pnpm --filter @hilal-ds/react dev
+
+# Typecheck everything
+pnpm -r typecheck
+
+# Build everything (in dependency order via turbo)
+pnpm build
+
+# Run a single package's typecheck
+pnpm --filter @hilal-ds/react typecheck
+```
+
 ## Working on a component
 
-A typical component change touches:
+A typical component change touches four places — they all need to stay in sync so the cross-framework parity story holds:
 
 1. `packages/core/src/components/<name>.css` — the actual styles
 2. `packages/react/src/components/<name>.tsx` — React wrapper
-3. `packages/angular/projects/hilal/src/lib/<name>/` — Angular wrapper
-4. `packages/blade/resources/views/components/<name>.blade.php` — Blade view
-5. `apps/docs/stories/<name>.stories.tsx` — visual stories
+3. `packages/angular/src/components/<name>.component.ts` — Angular wrapper
+4. `packages/blade/src/Components/<Name>.php` + `packages/blade/resources/views/components/<name>.blade.php` — Blade component
 
-If a change is web-first (CSS only), submit just (1) and we'll backport the wrappers.
+Plus a docs page at `apps/docs/app/docs/components/<name>/page.tsx` and an export in each package's `index.ts`.
+
+Patterns follow the same shape but live in `packages/patterns/src/<name>.tsx` plus a CSS block appended to `packages/core/src/components/patterns.css`.
+
+If a change is CSS-only (e.g. a hover state tweak), you can submit just (1) and a maintainer will roll the rest.
 
 ## Commit conventions
 
@@ -62,24 +84,39 @@ docs(tokens): document the spacing scale
 chore(deps): bump turbo to 2.5.1
 ```
 
-Allowed scopes: `tokens`, `core`, `icons`, `react`, `angular`, `blade`, `docs`, `tools`, `deps`.
+Allowed scopes: `tokens`, `core`, `icons`, `react`, `angular`, `blade`, `patterns`, `docs`, `tools`, `deps`, `release`.
 
-## Testing
+No need to add an AI / "co-authored-by" trailer.
 
-- `pnpm test` runs unit tests across the workspace.
-- Visual changes require an updated Storybook story.
-- Accessibility regressions are blocked in CI (`@storybook/addon-a11y`).
+## Pull request checklist
 
-## Releasing
+- [ ] `pnpm -r typecheck` passes locally.
+- [ ] `pnpm -r build` succeeds.
+- [ ] If you touched a component, the matching docs page renders without console errors (`pnpm --filter @hilal-ds/docs dev`).
+- [ ] If you changed a public API, you updated the relevant docs page and the changelog.
+- [ ] If you renamed a public export, you flagged it in the PR description.
 
-Maintainers ship via [Changesets](https://github.com/changesets/changesets):
+## Releasing (maintainers)
+
+Versions are bumped manually for now. To cut a release:
 
 ```bash
-pnpm changeset    # describe your change
-git commit -am "chore: changeset"
+# 1. Bump versions in the packages you're shipping.
+# 2. Commit and tag.
+git commit -am "chore(release): 0.1.x"
+git tag -a v0.1.x -m "v0.1.x"
+git push --follow-tags
+
+# 3. Publish (npm).
+pnpm -r --filter "@hilal-ds/*" --filter "!@hilal-ds/docs" publish --no-git-checks
+
+# 4. Cut the GitHub release.
+gh release create v0.1.x --title "v0.1.x" --notes "<release notes>"
 ```
 
-The release workflow opens a "Version Packages" PR; merging it publishes to npm + Packagist.
+The Blade package on Packagist updates automatically from the git tag.
+
+A Changesets-based flow is on the roadmap — once it lands, this section will get a lot shorter.
 
 ## License
 

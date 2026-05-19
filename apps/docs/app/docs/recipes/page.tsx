@@ -11,6 +11,7 @@ const ITEMS = [
   { slug: 'inbox',      name: 'Inbox',             hint: 'Search + filter pills + a DataList of messages.' },
   { slug: 'pricing',    name: 'Pricing',           hint: 'Three-column plan comparison with feature lists.' },
   { slug: 'settings',   name: 'Settings page',     hint: 'Tabs + FormSection compositions for an account screen.' },
+  { slug: 'forms',      name: 'Forms + validation', hint: 'Field-level errors with plain state or react-hook-form.' },
   { slug: 'not-found',  name: '404 page',          hint: 'Friendly not-found screen built on EmptyState.' },
 ];
 

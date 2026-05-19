@@ -1,0 +1,40 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/docs/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'apps/docs/**'
+      - 'packages/**'
+
+concurrency:
+  group: docs-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: install
+        run: pnpm install --frozen-lockfile
+      - name: build dependent packages
+        run: pnpm -r --filter "@hilal-ds/*" --filter "!@hilal-ds/docs" build
+      - name: typecheck docs
+        run: pnpm --filter "@hilal-ds/docs" typecheck
+      - name: build docs
+        run: pnpm --filter "@hilal-ds/docs" build

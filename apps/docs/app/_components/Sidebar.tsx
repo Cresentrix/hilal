@@ -92,7 +92,15 @@ const SECTIONS: SidebarSection[] = [
       { label: 'Inbox',              href: '/docs/recipes/inbox' },
       { label: 'Pricing',            href: '/docs/recipes/pricing' },
       { label: 'Settings',           href: '/docs/recipes/settings' },
+      { label: 'Forms + validation', href: '/docs/recipes/forms' },
       { label: '404 page',           href: '/docs/recipes/not-found' },
+    ],
+  },
+  {
+    heading: 'Guides',
+    items: [
+      { label: 'Overview',                 href: '/docs/guides' },
+      { label: 'Build your own component', href: '/docs/guides/build-your-own' },
     ],
   },
 ];
