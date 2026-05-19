@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Button, Badge, Card, CardHeader, CardBody, CardFooter } from '@hilal-ds/react';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Pricing' };
 
@@ -97,7 +98,7 @@ export default function PricingRecipe() {
         ))}
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`<div className="plans">
   {plans.map((p) => (
     <Card variant={p.featured ? 'elevated' : 'outlined'}>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Combobox, type ComboboxOption } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 const frameworks: ComboboxOption[] = [
   { value: 'react',   label: 'React' },
@@ -28,7 +29,7 @@ export default function ComboboxPage() {
         message.
       </p>
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '22rem' }}>
@@ -44,7 +45,7 @@ export default function ComboboxPage() {
         blade={`<x-hilal-combobox size="sm" label="…" :options="$opts" />`}
       />
 
-      <h2>Hint, error, disabled</h2>
+      <H2>Hint, error, disabled</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '22rem' }}>
@@ -60,7 +61,7 @@ export default function ComboboxPage() {
         blade={`<x-hilal-combobox label="…" hint="…" />`}
       />
 
-      <h2>Disabled options</h2>
+      <H2>Disabled options</H2>
       <p>Mark an option <code>disabled: true</code> — it&rsquo;s rendered but not selectable. <code>Astro</code> below is disabled.</p>
       <FrameworkTabs
         preview={
@@ -84,14 +85,14 @@ export default function ComboboxPage() {
 ];`}
       />
 
-      <h2>Custom filter</h2>
+      <H2>Custom filter</H2>
       <p>Default filter is case-insensitive substring on <code>label</code>. Pass a custom function for fuzzy match or scoped filtering.</p>
       <pre className="preview__code"><code>{`<Combobox
   options={options}
   filter={(opt, query) => opt.value.includes(query.toLowerCase())}
 />`}</code></pre>
 
-      <h2>Empty state</h2>
+      <H2>Empty state</H2>
       <FrameworkTabs
         preview={
           <div style={{ minWidth: '20rem' }}>
@@ -110,7 +111,7 @@ export default function ComboboxPage() {
         blade={`<x-hilal-combobox :options="[]" empty-message="No options yet" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size           'sm' | 'md' | 'lg'                                 default: 'md'
 options        ComboboxOption[]                                   required
 value          string                                             controlled selection

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Colors' };
 
@@ -90,7 +91,7 @@ function SwatchCard({ s, swatchStyle }: { s: Swatch; swatchStyle?: React.CSSProp
 function Ramp({ name, prefix }: { name: string; prefix: string }) {
   return (
     <div>
-      <h3>{name}</h3>
+      <H3>{name}</H3>
       <div
         style={{
           display: 'grid',
@@ -132,27 +133,27 @@ export default function ColorsPage() {
         scopes to retheme everything without touching component code.
       </p>
 
-      <h2>Foreground</h2>
+      <H2>Foreground</H2>
       <div style={swatchGrid}>
         {FG.map((s) => <SwatchCard key={s.varName} s={s} />)}
       </div>
 
-      <h2>Background</h2>
+      <H2>Background</H2>
       <div style={swatchGrid}>
         {BG.map((s) => <SwatchCard key={s.varName} s={s} />)}
       </div>
 
-      <h2>Border</h2>
+      <H2>Border</H2>
       <div style={swatchGrid}>
         {BORDER.map((s) => <SwatchCard key={s.varName} s={s} />)}
       </div>
 
-      <h2>Status</h2>
+      <H2>Status</H2>
       <div style={swatchGrid}>
         {STATUS.map((s) => <SwatchCard key={s.varName} s={s} />)}
       </div>
 
-      <h2>Palette ramps</h2>
+      <H2>Palette ramps</H2>
       <p>Raw palette. Aliases above are mapped from these; you usually shouldn&rsquo;t reference them directly in components.</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--hilal-spacing-5)' }}>
         <Ramp name="Brand blue" prefix="brand-blue" />
@@ -162,7 +163,7 @@ export default function ColorsPage() {
         <Ramp name="Red"        prefix="red" />
       </div>
 
-      <h2>Theming</h2>
+      <H2>Theming</H2>
       <p>Hilal switches themes via a single <code>data-theme</code> attribute. The bundled dark theme is one example — define your own brand themes the same way.</p>
       <pre className="preview__code"><code>{`/* Activate by setting on <html> or any ancestor. */
 document.documentElement.dataset.theme = 'dark';

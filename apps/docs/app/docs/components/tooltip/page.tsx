@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Tooltip, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Tooltip' };
 
@@ -14,7 +15,7 @@ export default function TooltipPage() {
         positions and follows ARIA <code>tooltip</code> semantics.
       </p>
 
-      <h2>Sides</h2>
+      <H2>Sides</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -43,7 +44,7 @@ export default function TooltipPage() {
 </x-hilal-tooltip>`}
       />
 
-      <h2>On any element</h2>
+      <H2>On any element</H2>
       <p>Tooltip is purely a wrapper — it works on buttons, links, icons, even text spans.</p>
       <FrameworkTabs
         preview={
@@ -71,7 +72,7 @@ export default function TooltipPage() {
 </x-hilal-tooltip>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`content   ReactNode                                          required
 side      'top' | 'bottom' | 'start' | 'end'                 default: 'top'
 children  ReactNode  the trigger element wrapped by Tooltip`}</code></pre>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Radius' };
 
@@ -21,7 +22,7 @@ export default function RadiusPage() {
         values so a single override re-rounds the whole UI.
       </p>
 
-      <h2>Scale</h2>
+      <H2>Scale</H2>
       <div
         style={{
           display: 'grid',
@@ -60,7 +61,7 @@ export default function RadiusPage() {
         ))}
       </div>
 
-      <h2>Where each is used</h2>
+      <H2>Where each is used</H2>
       <pre className="preview__code"><code>{`--hilal-radius-sm    chips, keyboard kbd
 --hilal-radius-md    inputs, selects, alerts
 --hilal-radius-lg    cards, modals, drawers

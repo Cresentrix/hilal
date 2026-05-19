@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { FrameworkTabs } from '../../_components/FrameworkTabs';
 import { Button } from '@hilal-ds/react';
+import { H2, H3 } from '../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Getting started' };
 
@@ -61,14 +62,14 @@ export default function GettingStartedPage() {
         blade={installBlade}
       />
 
-      <h2>Theming</h2>
+      <H2>Theming</H2>
       <p>
         Hilal&rsquo;s tokens are vanilla CSS variables, so you switch themes by toggling a{' '}
         <code>data-theme</code> attribute on any ancestor (usually <code>&lt;html&gt;</code>):
       </p>
       <pre className="preview__code"><code>{`document.documentElement.dataset.theme = 'dark';`}</code></pre>
 
-      <h2>Density &amp; motion presets</h2>
+      <H2>Density &amp; motion presets</H2>
       <p>
         Layer either of the preset CSS files on top of the base tokens to compress spacing,
         slow / disable motion, etc.
@@ -76,7 +77,7 @@ export default function GettingStartedPage() {
       <pre className="preview__code"><code>{`@import '@hilal-ds/tokens/dist/themes/density.css';
 @import '@hilal-ds/tokens/dist/themes/motion.css';`}</code></pre>
 
-      <h2>Next steps</h2>
+      <H2>Next steps</H2>
       <p>
         Head over to <a href="/docs/components" style={{ textDecoration: 'underline' }}>Components</a>{' '}
         for the primitive catalog or <a href="/docs/patterns" style={{ textDecoration: 'underline' }}>Patterns</a>{' '}

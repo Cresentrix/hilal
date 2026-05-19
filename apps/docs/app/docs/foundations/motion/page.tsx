@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@hilal-ds/react';
+import { H2, H3 } from '../../../_components/Heading';
 
 const DURATIONS = [
   { name: 'instant', value: '0ms',   hint: 'Reduced-motion fallback.' },
@@ -42,7 +43,7 @@ export default function MotionPage() {
         values, so the motion preset can globally calm or accelerate the whole UI.
       </p>
 
-      <h2>Duration</h2>
+      <H2>Duration</H2>
       <p>Click the button to replay each duration on the same property.</p>
       <Button onClick={() => setPing((p) => p + 1)} variant="secondary">Replay animations</Button>
       <div style={{ marginBlockStart: 'var(--hilal-spacing-4)' }}>
@@ -64,7 +65,7 @@ export default function MotionPage() {
         ))}
       </div>
 
-      <h2>Easing</h2>
+      <H2>Easing</H2>
       <div style={{ marginBlockStart: 'var(--hilal-spacing-4)' }}>
         {EASINGS.map((e) => (
           <div key={e.name} style={row}>
@@ -84,7 +85,7 @@ export default function MotionPage() {
         ))}
       </div>
 
-      <h2>Motion preset</h2>
+      <H2>Motion preset</H2>
       <p>Layer the motion preset to globally slow / disable animations — respects the user&rsquo;s reduced-motion preference.</p>
       <pre className="preview__code"><code>{`@import '@hilal-ds/tokens/themes/motion';
 

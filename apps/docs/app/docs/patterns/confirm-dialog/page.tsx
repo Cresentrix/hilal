@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ConfirmDialog } from '@hilal-ds/patterns';
 import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function ConfirmDialogPage() {
   const [open, setOpen] = useState<'safe' | 'destructive' | null>(null);
@@ -18,7 +19,7 @@ export default function ConfirmDialogPage() {
         irreversible actions.
       </p>
 
-      <h2>Default</h2>
+      <H2>Default</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
@@ -60,7 +61,7 @@ export default function ConfirmDialogPage() {
 />`}
       />
 
-      <h2>Destructive</h2>
+      <H2>Destructive</H2>
       <FrameworkTabs
         preview={
           <>
@@ -102,7 +103,7 @@ export default function ConfirmDialogPage() {
 />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`open            boolean
 onClose         () => void
 title           ReactNode

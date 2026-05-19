@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Stepper } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Stepper' };
 
@@ -14,7 +15,7 @@ export default function StepperPage() {
         (complete, current, upcoming). Used internally by the MultiStepForm pattern.
       </p>
 
-      <h2>Statuses</h2>
+      <H2>Statuses</H2>
       <p>Each step accepts a <code>status</code> — <code>complete</code> shows a check, <code>current</code> gets the primary fill, <code>upcoming</code> is muted.</p>
       <FrameworkTabs
         preview={
@@ -41,7 +42,7 @@ export default function StepperPage() {
         blade={`<x-hilal-stepper :steps="$steps" />`}
       />
 
-      <h2>Vertical orientation</h2>
+      <H2>Vertical orientation</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '20rem' }}>
@@ -62,7 +63,7 @@ export default function StepperPage() {
         blade={`<x-hilal-stepper orientation="vertical" :steps="$steps" />`}
       />
 
-      <h2>Custom indicators</h2>
+      <H2>Custom indicators</H2>
       <p>Override the numeric / check indicator per step.</p>
       <FrameworkTabs
         preview={
@@ -89,7 +90,7 @@ export default function StepperPage() {
 ];`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`steps         StepItem[]                             required
 orientation   'horizontal' | 'vertical'              default: 'horizontal'
 

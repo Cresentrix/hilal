@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Input } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Input' };
 
@@ -14,7 +15,7 @@ export default function InputPage() {
         rest of the field family (Select, Datepicker, Combobox).
       </p>
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '20rem' }}>
@@ -34,7 +35,7 @@ export default function InputPage() {
 <x-hilal-input size="lg" label="Large" />`}
       />
 
-      <h2>Label, hint, error, success</h2>
+      <H2>Label, hint, error, success</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '24rem' }}>
@@ -54,7 +55,7 @@ export default function InputPage() {
 <x-hilal-input label="Password" type="password" error="Must be at least 8 characters." />`}
       />
 
-      <h2>Leading &amp; trailing icons</h2>
+      <H2>Leading &amp; trailing icons</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '24rem' }}>
@@ -89,7 +90,7 @@ export default function InputPage() {
 </x-hilal-input>`}
       />
 
-      <h2>Disabled &amp; readonly</h2>
+      <H2>Disabled &amp; readonly</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '20rem' }}>
@@ -105,7 +106,7 @@ export default function InputPage() {
 <x-hilal-input label="Readonly" :readonly="true" value="Read-only value" />`}
       />
 
-      <h2>Input types</h2>
+      <H2>Input types</H2>
       <p>Any native <code>type</code> works — <code>text</code>, <code>email</code>, <code>password</code>, <code>number</code>, <code>tel</code>, <code>url</code>, <code>search</code>.</p>
       <FrameworkTabs
         preview={
@@ -126,7 +127,7 @@ export default function InputPage() {
 <x-hilal-input label="Phone" type="tel" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size           'sm' | 'md' | 'lg'    default: 'md'
 label          string                accessible label rendered above
 hint           string                helper text (neutral)

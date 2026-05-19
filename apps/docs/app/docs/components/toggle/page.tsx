@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Toggle } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function TogglePage() {
   const [on, setOn] = useState(false);
@@ -15,7 +16,7 @@ export default function TogglePage() {
         use for &ldquo;turn this on/off&rdquo; settings rather than &ldquo;select this option&rdquo;.
       </p>
 
-      <h2>States</h2>
+      <H2>States</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -37,7 +38,7 @@ export default function TogglePage() {
 <x-hilal-toggle :disabled="true">Disabled</x-hilal-toggle>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -53,7 +54,7 @@ export default function TogglePage() {
 <x-hilal-toggle size="md" :checked="true">Medium</x-hilal-toggle>`}
       />
 
-      <h2>Controlled</h2>
+      <H2>Controlled</H2>
       <FrameworkTabs
         preview={
           <Toggle checked={on} onChange={(e) => setOn(e.currentTarget.checked)}>
@@ -69,7 +70,7 @@ export default function TogglePage() {
         blade={`<x-hilal-toggle name="email_notifications" :checked="(bool) old('email_notifications')">Email notifications</x-hilal-toggle>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size       'sm' | 'md'   default: 'md'
 children   ReactNode     inline label rendered next to the switch
 …          all native <input type="checkbox"> attributes`}</code></pre>

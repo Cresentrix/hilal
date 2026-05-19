@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Datepicker } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Datepicker' };
 
@@ -15,7 +16,7 @@ export default function DatepickerPage() {
         <code>week</code>. Use Calendar for an inline popover-style picker.
       </p>
 
-      <h2>Kinds</h2>
+      <H2>Kinds</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.75rem', minWidth: '32rem' }}>
@@ -37,7 +38,7 @@ export default function DatepickerPage() {
 <x-hilal-datepicker label="Time" kind="time" />`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '20rem' }}>
@@ -53,7 +54,7 @@ export default function DatepickerPage() {
         blade={`<x-hilal-datepicker size="sm" label="Small" />`}
       />
 
-      <h2>Validation states</h2>
+      <H2>Validation states</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '22rem' }}>
@@ -69,7 +70,7 @@ export default function DatepickerPage() {
 <x-hilal-datepicker label="Start date" error="…" />`}
       />
 
-      <h2>Min/max constraints</h2>
+      <H2>Min/max constraints</H2>
       <p>Pass native <code>min</code> and <code>max</code> attributes — the browser handles validation.</p>
       <FrameworkTabs
         preview={
@@ -92,7 +93,7 @@ export default function DatepickerPage() {
         blade={`<x-hilal-datepicker label="…" min="2026-01-01" max="2026-12-31" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`kind     'date' | 'datetime-local' | 'time' | 'month' | 'week'   default: 'date'
 size     'sm' | 'md' | 'lg'                                      default: 'md'
 label    string

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { StatusBadge, COMPONENT_STATUS } from '../../_components/StatusBadge';
 
 export const metadata: Metadata = { title: 'Components' };
 
@@ -43,7 +44,10 @@ export default function ComponentsIndex() {
       <div className="card-grid">
         {COMPONENTS.map((c) => (
           <Link key={c.slug} href={`/docs/components/${c.slug}`}>
-            <div className="card-grid__title">{c.name}</div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--hilal-spacing-2)' }}>
+              <div className="card-grid__title">{c.name}</div>
+              <StatusBadge status={COMPONENT_STATUS[c.slug] ?? 'stable'} />
+            </div>
             <div className="card-grid__hint">{c.hint}</div>
           </Link>
         ))}

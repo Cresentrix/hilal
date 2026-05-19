@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { EmptyState, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'EmptyState' };
 
@@ -14,7 +15,7 @@ export default function EmptyStatePage() {
         description, and action slots.
       </p>
 
-      <h2>Default</h2>
+      <H2>Default</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -38,7 +39,7 @@ export default function EmptyStatePage() {
 </x-hilal-empty-state>`}
       />
 
-      <h2>Compact</h2>
+      <H2>Compact</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -58,7 +59,7 @@ export default function EmptyStatePage() {
         blade={`<x-hilal-empty-state size="compact" title="No results" description="…" />`}
       />
 
-      <h2>With custom icon</h2>
+      <H2>With custom icon</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -82,7 +83,7 @@ export default function EmptyStatePage() {
 </x-hilal-empty-state>`}
       />
 
-      <h2>Multiple actions</h2>
+      <H2>Multiple actions</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -122,7 +123,7 @@ export default function EmptyStatePage() {
 </x-hilal-empty-state>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size          'default' | 'compact'   default: 'default'
 icon          ReactNode               replaces the default illustration
 title         ReactNode               primary line

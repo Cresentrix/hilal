@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { AuthForm, type AuthMode } from '@hilal-ds/patterns';
 import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function AuthFormPage() {
   const [mode, setMode] = useState<AuthMode>('sign-in');
@@ -16,7 +17,7 @@ export default function AuthFormPage() {
         and configurable slots for social buttons and footer links.
       </p>
 
-      <h2>Modes</h2>
+      <H2>Modes</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%', maxWidth: '28rem' }}>
@@ -55,7 +56,7 @@ export default function AuthFormPage() {
 <x-hilal-auth-form mode="forgot-password"  title="Reset password" action="/forgot" />`}
       />
 
-      <h2>With footer links</h2>
+      <H2>With footer links</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%', maxWidth: '28rem' }}>
@@ -97,7 +98,7 @@ export default function AuthFormPage() {
 </x-hilal-auth-form>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`mode             'sign-in' | 'sign-up' | 'forgot-password'   default: 'sign-in'
 title            ReactNode
 description      ReactNode

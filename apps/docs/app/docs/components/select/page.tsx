@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Select } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Select' };
 
@@ -25,7 +26,7 @@ export default function SelectPage() {
         when you need filtering, multi-select, or custom item rendering.
       </p>
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '20rem' }}>
@@ -41,7 +42,7 @@ export default function SelectPage() {
         blade={`<x-hilal-select size="sm" label="Small">…</x-hilal-select>`}
       />
 
-      <h2>Label, hint, error, success</h2>
+      <H2>Label, hint, error, success</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', minWidth: '22rem' }}>
@@ -57,7 +58,7 @@ export default function SelectPage() {
         blade={`<x-hilal-select label="Country" hint="…">…</x-hilal-select>`}
       />
 
-      <h2>Disabled</h2>
+      <H2>Disabled</H2>
       <FrameworkTabs
         preview={
           <div style={{ minWidth: '20rem' }}>
@@ -69,7 +70,7 @@ export default function SelectPage() {
         blade={`<x-hilal-select label="Country" :disabled="true">…</x-hilal-select>`}
       />
 
-      <h2>With option groups</h2>
+      <H2>With option groups</H2>
       <FrameworkTabs
         preview={
           <div style={{ minWidth: '22rem' }}>
@@ -105,7 +106,7 @@ export default function SelectPage() {
 </x-hilal-select>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size      'sm' | 'md' | 'lg'   default: 'md'
 label     string
 hint      string

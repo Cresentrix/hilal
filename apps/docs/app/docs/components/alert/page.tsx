@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Alert, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function AlertPage() {
   const [open, setOpen] = useState(true);
@@ -15,7 +16,7 @@ export default function AlertPage() {
         dismiss action.
       </p>
 
-      <h2>Tones</h2>
+      <H2>Tones</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
@@ -35,7 +36,7 @@ export default function AlertPage() {
 <x-hilal-alert tone="success" title="Saved" description="…" />`}
       />
 
-      <h2>Title only / description only</h2>
+      <H2>Title only / description only</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
@@ -51,7 +52,7 @@ export default function AlertPage() {
 <x-hilal-alert tone="warning" description="This action can't be undone." />`}
       />
 
-      <h2>Custom icon</h2>
+      <H2>Custom icon</H2>
       <FrameworkTabs
         preview={
           <Alert
@@ -75,7 +76,7 @@ export default function AlertPage() {
 </x-hilal-alert>`}
       />
 
-      <h2>Dismissible</h2>
+      <H2>Dismissible</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -103,7 +104,7 @@ export default function AlertPage() {
         blade={`<x-hilal-alert tone="info" title="…" description="…" :dismissible="true" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`tone           'info' | 'success' | 'warning' | 'danger'    default: 'info'
 title          ReactNode
 description    ReactNode

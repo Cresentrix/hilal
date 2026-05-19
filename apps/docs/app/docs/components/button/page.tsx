@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Button' };
 
@@ -14,7 +15,7 @@ export default function ButtonPage() {
         states. Renders a native <code>&lt;button&gt;</code> with full ARIA + keyboard support.
       </p>
 
-      <h2>Variants</h2>
+      <H2>Variants</H2>
       <p>Three visual weights: <code>primary</code> for the main action, <code>secondary</code> for an alternate action, <code>tertiary</code> for a quiet inline action.</p>
       <FrameworkTabs
         preview={
@@ -35,7 +36,7 @@ export default function ButtonPage() {
 <x-hilal-button variant="tertiary">Tertiary</x-hilal-button>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <p>Three sizes scale padding and font size proportionally. Default is <code>md</code>.</p>
       <FrameworkTabs
         preview={
@@ -56,7 +57,7 @@ export default function ButtonPage() {
 <x-hilal-button size="lg">Large</x-hilal-button>`}
       />
 
-      <h2>States</h2>
+      <H2>States</H2>
       <p>
         <code>loading</code> swaps the label for a spinner and locks the button. <code>disabled</code>{' '}
         greys it out and removes pointer events.
@@ -84,7 +85,7 @@ export default function ButtonPage() {
 <x-hilal-button :disabled="true">Disabled</x-hilal-button>`}
       />
 
-      <h2>With icons</h2>
+      <H2>With icons</H2>
       <p>Pass any inline element alongside text — Button doesn&rsquo;t care about icon libraries.</p>
       <FrameworkTabs
         preview={
@@ -124,7 +125,7 @@ export default function ButtonPage() {
 </x-hilal-button>`}
       />
 
-      <h2>Composition: button group</h2>
+      <H2>Composition: button group</H2>
       <p>Group related actions side-by-side; the rightmost is usually the primary commit.</p>
       <FrameworkTabs
         preview={
@@ -151,7 +152,7 @@ export default function ButtonPage() {
 </div>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <p>
         Inherits all native <code>&lt;button&gt;</code> attributes. Hilal-specific props:
       </p>

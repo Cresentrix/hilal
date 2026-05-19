@@ -3,6 +3,7 @@
 import { ToastProvider, useToast, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 function ToastDemo() {
   const { toast } = useToast();
@@ -34,7 +35,7 @@ export default function ToastPage() {
         <code>ToastProvider</code> and call <code>useToast()</code> to enqueue messages.
       </p>
 
-      <h2>Tones</h2>
+      <H2>Tones</H2>
       <FrameworkTabs
         preview={
           <ToastProvider position="top-end">
@@ -63,7 +64,7 @@ this.toasts.push({ tone: 'success', title: 'Saved' });`}
 @endif`}
       />
 
-      <h2>Position</h2>
+      <H2>Position</H2>
       <p>Six corners: <code>top-start</code>, <code>top</code>, <code>top-end</code>, <code>bottom-start</code>, <code>bottom</code>, <code>bottom-end</code>. Default is <code>bottom-end</code>.</p>
       <pre className="preview__code"><code>{`<ToastProvider position="top-start">…</ToastProvider>
 <ToastProvider position="top">…</ToastProvider>
@@ -72,7 +73,7 @@ this.toasts.push({ tone: 'success', title: 'Saved' });`}
 <ToastProvider position="bottom">…</ToastProvider>
 <ToastProvider position="bottom-end">…</ToastProvider>`}</code></pre>
 
-      <h2>Persistent toasts</h2>
+      <H2>Persistent toasts</H2>
       <p>Pass <code>durationMs=&#123;0&#125;</code> to skip auto-dismiss — the user closes it with the × button.</p>
       <FrameworkTabs
         preview={
@@ -98,12 +99,12 @@ this.toasts.push({ tone: 'success', title: 'Saved' });`}
 ]);`}
       />
 
-      <h2>Custom default duration</h2>
+      <H2>Custom default duration</H2>
       <pre className="preview__code"><code>{`<ToastProvider defaultDurationMs={8000}>
   <App />
 </ToastProvider>`}</code></pre>
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`<ToastProvider>
   position             'top-start' | 'top' | 'top-end' | 'bottom-start' | 'bottom' | 'bottom-end'
                        default: 'bottom-end'

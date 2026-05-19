@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Accordion, AccordionItem } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Accordion' };
 
@@ -20,7 +21,7 @@ export default function AccordionPage() {
         without JavaScript; three visual variants for different contexts.
       </p>
 
-      <h2>Variants</h2>
+      <H2>Variants</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', width: '100%' }}>
@@ -43,7 +44,7 @@ export default function AccordionPage() {
         blade={`<x-hilal-accordion variant="bordered">…</x-hilal-accordion>`}
       />
 
-      <h2>Default open</h2>
+      <H2>Default open</H2>
       <FrameworkTabs
         preview={
           <Accordion variant="bordered" style={{ width: '100%' }}>
@@ -56,7 +57,7 @@ export default function AccordionPage() {
         blade={`<x-hilal-accordion-item title="…" :open="true">Starts expanded</x-hilal-accordion-item>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`<Accordion>
   variant   'default' | 'bordered' | 'separated'   default: 'default'
 

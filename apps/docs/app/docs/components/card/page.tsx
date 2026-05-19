@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Card, CardHeader, CardBody, CardFooter, Button, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Card' };
 
@@ -14,7 +15,7 @@ export default function CardPage() {
         interactive state. Compose with the matching Header / Body / Footer slot components.
       </p>
 
-      <h2>Variants</h2>
+      <H2>Variants</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.75rem', width: '100%' }}>
@@ -38,7 +39,7 @@ export default function CardPage() {
 <x-hilal-card variant="ghost">…</x-hilal-card>`}
       />
 
-      <h2>Padding</h2>
+      <H2>Padding</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '0.75rem', width: '100%' }}>
@@ -56,7 +57,7 @@ export default function CardPage() {
         blade={`<x-hilal-card padding="lg">…</x-hilal-card>`}
       />
 
-      <h2>Interactive</h2>
+      <H2>Interactive</H2>
       <p>Pass <code>interactive</code> when the whole card is clickable — surfaces hover + focus styles.</p>
       <FrameworkTabs
         preview={
@@ -81,7 +82,7 @@ export default function CardPage() {
         blade={`<x-hilal-card variant="outlined" :interactive="true" x-on:click="open()">…</x-hilal-card>`}
       />
 
-      <h2>Full anatomy</h2>
+      <H2>Full anatomy</H2>
       <FrameworkTabs
         preview={
           <Card variant="elevated" style={{ maxWidth: '26rem' }}>
@@ -128,7 +129,7 @@ export default function CardPage() {
 </x-hilal-card>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`variant       'default' | 'elevated' | 'outlined' | 'ghost'   default: 'default'
 padding       'none' | 'sm' | 'md' | 'lg'                     default: 'md'
 interactive   boolean   adds hover/focus styles for clickable cards`}</code></pre>

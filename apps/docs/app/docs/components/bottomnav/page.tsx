@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { BottomNav, BottomNavItem } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'BottomNav' };
 
@@ -21,7 +22,7 @@ export default function BottomNavPage() {
         active state. Two visual variants.
       </p>
 
-      <h2>Default</h2>
+      <H2>Default</H2>
       <FrameworkTabs
         preview={
           <div style={{ inlineSize: '24rem', ...frame }}>
@@ -51,7 +52,7 @@ export default function BottomNavPage() {
 </x-hilal-bottom-nav>`}
       />
 
-      <h2>Floating variant</h2>
+      <H2>Floating variant</H2>
       <FrameworkTabs
         preview={
           <div style={{ position: 'relative', inlineSize: '24rem', blockSize: '8rem', background: 'var(--hilal-bg-subtle)', borderRadius: 'var(--hilal-radius-lg)' }}>
@@ -69,7 +70,7 @@ export default function BottomNavPage() {
         blade={`<x-hilal-bottom-nav variant="floating">…</x-hilal-bottom-nav>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`<BottomNav>
   variant     'default' | 'floating'   default: 'default'
   ariaLabel   string                   passed through to aria-label

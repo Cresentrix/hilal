@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Badge, Button, Avatar, Input } from '@hilal-ds/react';
 import { DataList, type DataListItem, FilterBar, type FilterPill, SearchHeader } from '@hilal-ds/patterns';
+import { H2, H3 } from '../../../_components/Heading';
 
 interface Msg {
   id: string;
@@ -99,7 +100,7 @@ export default function InboxRecipe() {
         />
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`<SearchHeader query={query} onQueryChange={setQuery} totalCount={filtered.length} />
 <FilterBar filters={filters} onToggle={setActive} />
 <DataList items={filtered.map(toItem)} />`}</code></pre>

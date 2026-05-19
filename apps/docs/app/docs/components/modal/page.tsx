@@ -7,6 +7,7 @@ import {
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl';
 
@@ -21,7 +22,7 @@ export default function ModalPage() {
         click + Escape close by default, and full focus trapping for free.
       </p>
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <>
@@ -53,7 +54,7 @@ export default function ModalPage() {
         blade={`<x-hilal-modal name="confirm" size="md" title="…">…</x-hilal-modal>`}
       />
 
-      <h2>With form body</h2>
+      <H2>With form body</H2>
       <FrameworkTabs
         preview={
           <FormModalDemo />
@@ -90,17 +91,17 @@ export default function ModalPage() {
 </x-hilal-modal>`}
       />
 
-      <h2>Disable backdrop close</h2>
+      <H2>Disable backdrop close</H2>
       <p>Pass <code>closeOnBackdrop=&#123;false&#125;</code> when the modal contains irreversible work that shouldn&rsquo;t close on a stray click.</p>
       <pre className="preview__code"><code>{`<Modal open={open} onClose={close} closeOnBackdrop={false}>…</Modal>`}</code></pre>
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`open              boolean    controlled open state
 onClose           () => void
 size              'sm' | 'md' | 'lg' | 'xl'   default: 'md'
 closeOnBackdrop   boolean                     default: true`}</code></pre>
 
-      <h3>Subcomponents</h3>
+      <H3>Subcomponents</H3>
       <pre className="preview__code"><code>{`<ModalHeader>    header row, typically Title + Close
 <ModalTitle>     h2 styled title
 <ModalBody>      scrollable body content

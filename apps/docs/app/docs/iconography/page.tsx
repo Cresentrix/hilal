@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { Input } from '@hilal-ds/react';
+import { H2, H3 } from '../../_components/Heading';
 import {
   Home, Search, Inbox, Bell, User, Users, Settings, LogOut, LogIn, Plus, Minus, X, Check,
   ChevronDown, ChevronUp, ChevronLeft, ChevronRight, ArrowRight, ArrowLeft, ArrowUp, ArrowDown,
@@ -102,13 +103,13 @@ export default function IconographyPage() {
         <p style={{ color: 'var(--hilal-fg-tertiary)' }}>No icons match &ldquo;{query}&rdquo;.</p>
       ) : null}
 
-      <h2>Usage</h2>
+      <H2>Usage</H2>
       <pre className="preview__code"><code>{`import { Search, Home, ChevronDown } from '@hilal-ds/icons';
 
 <Search size={20} aria-hidden />
 <Home size={24} strokeWidth={1.5} />`}</code></pre>
 
-      <h2>Full set</h2>
+      <H2>Full set</H2>
       <p>The full Lucide catalog (1,500+ icons) is available — see <a href="https://lucide.dev" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>lucide.dev</a> for the complete index.</p>
     </>
   );

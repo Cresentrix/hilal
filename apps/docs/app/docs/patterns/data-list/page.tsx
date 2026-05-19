@@ -3,6 +3,7 @@
 import { DataList, type DataListItem } from '@hilal-ds/patterns';
 import { Badge, Button } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { H2, H3 } from '../../../_components/Heading';
 
 const members: DataListItem[] = [
   { id: '1', label: 'Sara Al-Mutairi', meta: 'sara@acme.com',    initials: 'SA', trailing: <Badge tone="success" size="sm">Owner</Badge> },
@@ -20,7 +21,7 @@ export default function DataListPage() {
         action / badge. Handles loading skeletons and empty states out of the box.
       </p>
 
-      <h2>Basic</h2>
+      <H2>Basic</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><DataList items={members} /></div>}
         react={`const members = [
@@ -33,7 +34,7 @@ export default function DataListPage() {
         blade={`<x-hilal-data-list :items="$members" />`}
       />
 
-      <h2>Clickable rows</h2>
+      <H2>Clickable rows</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -48,7 +49,7 @@ export default function DataListPage() {
         blade={`<x-hilal-data-list :items="$members" />`}
       />
 
-      <h2>Loading state</h2>
+      <H2>Loading state</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><DataList items={[]} loading loadingRows={4} /></div>}
         react={`<DataList items={[]} loading loadingRows={4} />`}
@@ -56,7 +57,7 @@ export default function DataListPage() {
         blade={`<x-hilal-data-list :loading="true" :loading-rows="4" />`}
       />
 
-      <h2>Empty state</h2>
+      <H2>Empty state</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -82,7 +83,7 @@ export default function DataListPage() {
 </x-hilal-data-list>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`items                 DataListItem[]
 loading               boolean
 loadingRows           number         default: 4

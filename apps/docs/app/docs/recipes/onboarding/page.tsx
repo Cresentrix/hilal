@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Input, Select, Checkbox, Alert } from '@hilal-ds/react';
 import { MultiStepForm } from '@hilal-ds/patterns';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function OnboardingRecipe() {
   const [done, setDone] = useState(false);
@@ -81,7 +82,7 @@ export default function OnboardingRecipe() {
         </div>
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`<MultiStepForm
   onSubmit={async () => createWorkspace(state)}
   steps={[

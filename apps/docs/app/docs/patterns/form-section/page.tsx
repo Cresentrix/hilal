@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { FormSection } from '@hilal-ds/patterns';
 import { Input, Toggle } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'FormSection' };
 
@@ -14,7 +15,7 @@ export default function FormSectionPage() {
         optional two-column layout for label-on-left, fields-on-right pages.
       </p>
 
-      <h2>Stacked</h2>
+      <H2>Stacked</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>
@@ -44,7 +45,7 @@ export default function FormSectionPage() {
 </x-hilal-form-section>`}
       />
 
-      <h2>Two-column</h2>
+      <H2>Two-column</H2>
       <FrameworkTabs
         preview={
           <div style={{ width: '100%' }}>

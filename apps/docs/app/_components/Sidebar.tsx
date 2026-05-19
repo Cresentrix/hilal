@@ -14,6 +14,8 @@ const SECTIONS: SidebarSection[] = [
       { label: 'Why Hilal',    href: '/docs/about/why' },
       { label: 'FAQ',          href: '/docs/about/faq' },
       { label: 'Compared',     href: '/docs/about/compare' },
+      { label: 'Roadmap',      href: '/docs/about/roadmap' },
+      { label: 'Showcase',     href: '/docs/about/showcase' },
       { label: 'Changelog',    href: '/docs/changelog' },
     ],
   },

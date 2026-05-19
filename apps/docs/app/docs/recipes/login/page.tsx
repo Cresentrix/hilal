@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AuthForm } from '@hilal-ds/patterns';
 import { Button } from '@hilal-ds/react';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Login page' };
 
@@ -50,7 +51,7 @@ export default function LoginRecipe() {
         </div>
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`import { AuthForm } from '@hilal-ds/patterns';
 import { Button } from '@hilal-ds/react';
 

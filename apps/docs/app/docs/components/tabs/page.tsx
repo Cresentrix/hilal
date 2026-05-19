@@ -3,6 +3,7 @@
 import { Tabs, TabList, Tab, TabPanel, Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function TabsPage() {
   return (
@@ -13,7 +14,7 @@ export default function TabsPage() {
         orientation. Built on ARIA tab semantics — Home/End/arrow keys move focus.
       </p>
 
-      <h2>Variants</h2>
+      <H2>Variants</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
@@ -43,7 +44,7 @@ export default function TabsPage() {
         blade={`<x-hilal-tabs default-value="overview" variant="pill">…</x-hilal-tabs>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%' }}>
@@ -75,7 +76,7 @@ export default function TabsPage() {
         blade={`<x-hilal-tabs size="sm">…</x-hilal-tabs>`}
       />
 
-      <h2>Vertical orientation</h2>
+      <H2>Vertical orientation</H2>
       <FrameworkTabs
         preview={
           <Tabs defaultValue="profile" orientation="vertical" style={{ width: '100%' }}>
@@ -103,7 +104,7 @@ export default function TabsPage() {
         blade={`<x-hilal-tabs orientation="vertical" default-value="profile">…</x-hilal-tabs>`}
       />
 
-      <h2>With counts &amp; disabled tabs</h2>
+      <H2>With counts &amp; disabled tabs</H2>
       <FrameworkTabs
         preview={
           <Tabs defaultValue="inbox" style={{ width: '100%' }}>
@@ -128,7 +129,7 @@ export default function TabsPage() {
 <button data-value="spam" disabled>Spam</button>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`<Tabs>
   variant        'line' | 'enclosed' | 'pill'   default: 'line'
   size           'sm' | 'md'                    default: 'md'

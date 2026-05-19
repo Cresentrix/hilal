@@ -3,6 +3,7 @@ import {
   Tabs, TabList, Tab, TabPanel, Input, Select, Toggle, Avatar, Button,
 } from '@hilal-ds/react';
 import { FormSection, PageHeader } from '@hilal-ds/patterns';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Settings page' };
 
@@ -97,7 +98,7 @@ export default function SettingsRecipe() {
         </div>
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`<PageHeader title="Settings" description="Manage your account." />
 
 <Tabs orientation="vertical" defaultValue="profile">

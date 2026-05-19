@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Typography' };
 
@@ -47,7 +48,7 @@ export default function TypographyPage() {
         for visual rhythm parity across scripts.
       </p>
 
-      <h2>Size scale</h2>
+      <H2>Size scale</H2>
       <div>
         {SIZES.map((s) => (
           <div key={s.token} style={row}>
@@ -60,7 +61,7 @@ export default function TypographyPage() {
         ))}
       </div>
 
-      <h2>Weights</h2>
+      <H2>Weights</H2>
       <div>
         {WEIGHTS.map((w) => (
           <div key={w.varName} style={row}>
@@ -73,7 +74,7 @@ export default function TypographyPage() {
         ))}
       </div>
 
-      <h2>Line heights</h2>
+      <H2>Line heights</H2>
       <p>Each size has a paired line-height token. Arabic variants live under <code>--hilal-font-line-height-arabic-*</code> for the same numeric size.</p>
       <pre className="preview__code"><code>{`--hilal-font-line-height-12 → 1rem
 --hilal-font-line-height-13 → 1.25rem
@@ -87,7 +88,7 @@ export default function TypographyPage() {
 --hilal-font-line-height-48 → 3.625rem
 --hilal-font-line-height-64 → 4.875rem`}</code></pre>
 
-      <h2>Font families</h2>
+      <H2>Font families</H2>
       <pre className="preview__code"><code>{`--hilal-font-family-sans     # Latin UI stack
 --hilal-font-family-arabic   # Arabic UI stack
 --hilal-font-family-mono     # Code / numeric tabular`}</code></pre>

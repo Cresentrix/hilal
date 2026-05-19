@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Calendar, type DateRange } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function CalendarPage() {
   const [single, setSingle] = useState<string | undefined>(undefined);
@@ -18,7 +19,7 @@ export default function CalendarPage() {
         picker, and configurable locale / first day of week.
       </p>
 
-      <h2>Single date</h2>
+      <H2>Single date</H2>
       <FrameworkTabs
         preview={<Calendar mode="single" value={single} onSelect={(iso) => setSingle(iso)} />}
         react={`const [date, setDate] = useState<string | undefined>();
@@ -28,7 +29,7 @@ export default function CalendarPage() {
         blade={`<x-hilal-calendar mode="single" :value="$date" />`}
       />
 
-      <h2>Date range</h2>
+      <H2>Date range</H2>
       <FrameworkTabs
         preview={
           <Calendar
@@ -46,7 +47,7 @@ export default function CalendarPage() {
         blade={`<x-hilal-calendar mode="range" :range-value="$range" />`}
       />
 
-      <h2>Multi-month</h2>
+      <H2>Multi-month</H2>
       <p>Show two or three months side-by-side. Great for booking-style range selection.</p>
       <FrameworkTabs
         preview={
@@ -62,7 +63,7 @@ export default function CalendarPage() {
         blade={`<x-hilal-calendar mode="range" :number-of-months="2" />`}
       />
 
-      <h2>Presets</h2>
+      <H2>Presets</H2>
       <p>Pass <code>presets=&quot;default&quot;</code> for built-ins (Today / Yesterday / Last 7 days / etc.), or your own array.</p>
       <FrameworkTabs
         preview={
@@ -92,7 +93,7 @@ const presets = [
         blade={`<x-hilal-calendar mode="range" presets="default" :number-of-months="2" />`}
       />
 
-      <h2>Min / max constraints</h2>
+      <H2>Min / max constraints</H2>
       <FrameworkTabs
         preview={
           <Calendar
@@ -112,7 +113,7 @@ const presets = [
         blade={`<x-hilal-calendar mode="single" min="2026-01-01" max="2026-12-31" />`}
       />
 
-      <h2>Disabled days</h2>
+      <H2>Disabled days</H2>
       <p>Pass <code>isDisabled</code> for fine-grained per-day disabling — e.g. weekends, holidays.</p>
       <FrameworkTabs
         preview={
@@ -129,7 +130,7 @@ const presets = [
         blade={`{{-- Use a JS-side filter: weekend blocking has no PHP equivalent --}}`}
       />
 
-      <h2>Week start &amp; locale</h2>
+      <H2>Week start &amp; locale</H2>
       <FrameworkTabs
         preview={
           <Calendar
@@ -143,7 +144,7 @@ const presets = [
         blade={`<x-hilal-calendar mode="single" :week-starts-on="6" locale="ar" />`}
       />
 
-      <h2>Hide the year picker</h2>
+      <H2>Hide the year picker</H2>
       <FrameworkTabs
         preview={<Calendar mode="single" hideYearPicker />}
         react={`<Calendar mode="single" hideYearPicker />`}
@@ -151,7 +152,7 @@ const presets = [
         blade={`<x-hilal-calendar mode="single" :hide-year-picker="true" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`mode             'single' | 'range'        default: 'single'
 value            string | Date             single-mode selection
 rangeValue       { start, end }            range-mode selection

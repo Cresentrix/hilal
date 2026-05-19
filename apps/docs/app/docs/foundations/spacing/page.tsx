@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Spacing' };
 
@@ -47,7 +48,7 @@ export default function SpacingPage() {
         to support RTL without conditionals.
       </p>
 
-      <h2>Scale</h2>
+      <H2>Scale</H2>
       <div>
         {SCALE.map((s) => (
           <div key={s.token} style={row}>
@@ -66,7 +67,7 @@ export default function SpacingPage() {
         ))}
       </div>
 
-      <h2>Density preset</h2>
+      <H2>Density preset</H2>
       <p>
         Layer the density preset CSS to compress the scale globally. Useful for high-density data
         screens.

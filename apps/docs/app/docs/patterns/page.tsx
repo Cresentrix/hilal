@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { StatusBadge, PATTERN_STATUS } from '../../_components/StatusBadge';
 
 export const metadata: Metadata = { title: 'Patterns' };
 
@@ -31,7 +32,10 @@ export default function PatternsIndex() {
       <div className="card-grid">
         {PATTERNS.map((p) => (
           <Link key={p.slug} href={`/docs/patterns/${p.slug}`}>
-            <div className="card-grid__title">{p.name}</div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--hilal-spacing-2)' }}>
+              <div className="card-grid__title">{p.name}</div>
+              <StatusBadge status={PATTERN_STATUS[p.slug] ?? 'stable'} />
+            </div>
             <div className="card-grid__hint">{p.hint}</div>
           </Link>
         ))}

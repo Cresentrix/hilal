@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { StatsGrid, type StatItem } from '@hilal-ds/patterns';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'StatsGrid' };
 
@@ -32,7 +33,7 @@ export default function StatsGridPage() {
         delta badges, trend coloring, optional icons, and clickable cards.
       </p>
 
-      <h2>Default</h2>
+      <H2>Default</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><StatsGrid items={fourItems} /></div>}
         react={`const items = [
@@ -47,7 +48,7 @@ export default function StatsGridPage() {
         blade={`<x-hilal-stats-grid :items="$items" />`}
       />
 
-      <h2>With icons</h2>
+      <H2>With icons</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><StatsGrid items={withIcons} /></div>}
         react={`const items = [
@@ -58,7 +59,7 @@ export default function StatsGridPage() {
         blade={`$items = [['id' => '1', 'label' => 'Sales', 'value' => '$128k', 'delta' => '8.2%', 'trend' => 'up']];`}
       />
 
-      <h2>Clickable cards</h2>
+      <H2>Clickable cards</H2>
       <p>Pass <code>href</code> or <code>onClick</code> on each item and the card surfaces hover styles.</p>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><StatsGrid items={linked} /></div>}
@@ -70,7 +71,7 @@ export default function StatsGridPage() {
         blade={`<x-hilal-stats-grid :items="$items" />`}
       />
 
-      <h2>Custom column width</h2>
+      <H2>Custom column width</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><StatsGrid items={fourItems} minColumnWidth="10rem" /></div>}
         react={`<StatsGrid items={items} minColumnWidth="10rem" />`}
@@ -78,7 +79,7 @@ export default function StatsGridPage() {
         blade={`<x-hilal-stats-grid :items="$items" min-column-width="10rem" />`}
       />
 
-      <h2>Loading skeleton</h2>
+      <H2>Loading skeleton</H2>
       <FrameworkTabs
         preview={<div style={{ width: '100%' }}><StatsGrid items={[]} loading loadingCount={4} /></div>}
         react={`<StatsGrid items={[]} loading loadingCount={4} />`}
@@ -86,7 +87,7 @@ export default function StatsGridPage() {
         blade={`<x-hilal-stats-grid :loading="true" :loading-count="4" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`items            StatItem[]
 minColumnWidth   string         default: '14rem'
 loading          boolean

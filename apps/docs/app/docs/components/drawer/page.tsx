@@ -7,6 +7,7 @@ import {
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function DrawerPage() {
   const [openSide, setOpenSide] = useState<DrawerSide | null>(null);
@@ -20,7 +21,7 @@ export default function DrawerPage() {
         focus trap, and Escape close — all without external dependencies.
       </p>
 
-      <h2>Sides</h2>
+      <H2>Sides</H2>
       <FrameworkTabs
         preview={
           <>
@@ -48,7 +49,7 @@ export default function DrawerPage() {
         blade={`<x-hilal-drawer name="filters" side="end">…</x-hilal-drawer>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <>
@@ -73,10 +74,10 @@ export default function DrawerPage() {
         blade={`<x-hilal-drawer name="x" side="end" size="lg">…</x-hilal-drawer>`}
       />
 
-      <h2>Full anatomy</h2>
+      <H2>Full anatomy</H2>
       <FullDrawerDemo />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`open              boolean
 onClose           () => void
 side              'start' | 'end' | 'top' | 'bottom'   default: 'end'

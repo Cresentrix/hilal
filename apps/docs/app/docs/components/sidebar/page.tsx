@@ -4,6 +4,7 @@ import {
 } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Sidebar' };
 
@@ -22,7 +23,7 @@ export default function SidebarPage() {
         Pair with DashboardShell for a full app layout.
       </p>
 
-      <h2>Basic</h2>
+      <H2>Basic</H2>
       <FrameworkTabs
         preview={
           <div style={{ inlineSize: '16rem', ...frame }}>
@@ -60,7 +61,7 @@ export default function SidebarPage() {
 </x-hilal-sidebar>`}
       />
 
-      <h2>With sections, icons, badges, and footer</h2>
+      <H2>With sections, icons, badges, and footer</H2>
       <FrameworkTabs
         preview={
           <div style={{ inlineSize: '16rem', ...frame }}>
@@ -114,7 +115,7 @@ export default function SidebarPage() {
 </x-hilal-sidebar>`}
       />
 
-      <h2>Collapsed</h2>
+      <H2>Collapsed</H2>
       <FrameworkTabs
         preview={
           <div style={{ inlineSize: '5rem', ...frame }}>
@@ -138,7 +139,7 @@ export default function SidebarPage() {
         blade={`<x-hilal-sidebar :collapsed="true">…</x-hilal-sidebar>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`<Sidebar>
   collapsed   boolean    icon-only mode (default: false)
 

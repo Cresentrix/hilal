@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@hilal-ds/react';
 import { FrameworkTabs } from './_components/FrameworkTabs';
+import { HeroCarousel } from './_components/HeroCarousel';
 
 const reactCode = `import { Button } from '@hilal-ds/react';
 
@@ -52,6 +53,10 @@ export default function HomePage() {
           <span className="snippet__prompt">$</span>
           <code>npm install @hilal-ds/core @hilal-ds/react</code>
         </div>
+      </section>
+
+      <section style={{ paddingInline: 'var(--hilal-spacing-6)', paddingBlockEnd: 'var(--hilal-spacing-8)' }}>
+        <HeroCarousel />
       </section>
 
       <section style={{ maxWidth: '56rem', margin: '0 auto', padding: '0 1.5rem 4rem' }}>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Button, EmptyState } from '@hilal-ds/react';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: '404 page' };
 
@@ -34,7 +35,7 @@ export default function NotFoundRecipe() {
         />
       </div>
 
-      <h2>Source</h2>
+      <H2>Source</H2>
       <pre className="preview__code"><code>{`// app/not-found.tsx (Next.js)
 import { EmptyState, Button } from '@hilal-ds/react';
 

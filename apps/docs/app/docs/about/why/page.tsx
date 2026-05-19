@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Why Hilal' };
 
@@ -11,7 +12,7 @@ export default function WhyPage() {
         DOM in three — so the same stylesheet covers everywhere your product ships.
       </p>
 
-      <h2>The problem</h2>
+      <H2>The problem</H2>
       <p>
         Component libraries are bought into a single framework. Teams that ship a React app and a
         Laravel marketing site end up rebuilding the same buttons twice — and discovering that
@@ -19,7 +20,7 @@ export default function WhyPage() {
         Dark mode behaves differently. A change in Figma takes a sprint to land in production.
       </p>
 
-      <h2>The Hilal approach</h2>
+      <H2>The Hilal approach</H2>
       <p>
         Hilal flips the order of operations. CSS is the source of truth. The framework packages
         (<code>@hilal-ds/react</code>, <code>@hilal-ds/angular</code>, <code>hilal/blade</code>)
@@ -34,7 +35,7 @@ export default function WhyPage() {
         <li><strong>Composed patterns, not just primitives</strong> — AuthForm, CommandPalette, DashboardShell, and friends ship with the same parity.</li>
       </ul>
 
-      <h2>When Hilal isn&rsquo;t a fit</h2>
+      <H2>When Hilal isn&rsquo;t a fit</H2>
       <p>If you only ship React and want a copy-paste catalog you can fork wholesale, shadcn/ui is excellent and you should use it.</p>
       <p>If you need a fully accessible primitives library with serious focus management research behind it and don&rsquo;t care about cross-framework, Radix UI is the gold standard.</p>
       <p>Hilal is for teams that ship in more than one stack, or expect to.</p>

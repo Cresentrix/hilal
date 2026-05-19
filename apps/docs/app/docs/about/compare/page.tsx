@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Compare' };
 
@@ -69,7 +70,7 @@ export default function ComparePage() {
         </table>
       </div>
 
-      <h2>Quick rules of thumb</h2>
+      <H2>Quick rules of thumb</H2>
       <ul>
         <li><strong>Ship in more than one stack?</strong> Hilal — the multi-framework parity is the whole point.</li>
         <li><strong>React-only, Tailwind-only, want to own the code?</strong> shadcn/ui.</li>

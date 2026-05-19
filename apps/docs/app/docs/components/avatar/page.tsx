@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Avatar, AvatarGroup } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Avatar' };
 
@@ -14,7 +15,7 @@ export default function AvatarPage() {
         group stacking variant.
       </p>
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
@@ -42,7 +43,7 @@ export default function AvatarPage() {
 <x-hilal-avatar size="xl" initials="RT" />`}
       />
 
-      <h2>Image, initials, fallback</h2>
+      <H2>Image, initials, fallback</H2>
       <p>
         If <code>src</code> loads successfully it&rsquo;s shown. Otherwise initials render — and if
         no initials are given, a generic fallback shape is rendered.
@@ -66,7 +67,7 @@ export default function AvatarPage() {
 <x-hilal-avatar />`}
       />
 
-      <h2>Status</h2>
+      <H2>Status</H2>
       <p>Four states map to colored dots: <code>online</code>, <code>busy</code>, <code>away</code>, <code>offline</code>.</p>
       <FrameworkTabs
         preview={
@@ -91,7 +92,7 @@ export default function AvatarPage() {
 <x-hilal-avatar initials="OF" status="offline" />`}
       />
 
-      <h2>Group</h2>
+      <H2>Group</H2>
       <FrameworkTabs
         preview={
           <AvatarGroup>
@@ -121,7 +122,7 @@ export default function AvatarPage() {
 </x-hilal-avatar-group>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size       'xs' | 'sm' | 'md' | 'lg' | 'xl'            default: 'md'
 src        string                                       image URL
 alt        string                                       alt text when src is set

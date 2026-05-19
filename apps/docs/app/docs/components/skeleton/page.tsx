@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Skeleton } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Skeleton' };
 
@@ -14,7 +15,7 @@ export default function SkeletonPage() {
         (text, rectangle, circle) and free-form sizing.
       </p>
 
-      <h2>Variants</h2>
+      <H2>Variants</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -34,7 +35,7 @@ export default function SkeletonPage() {
 <x-hilal-skeleton variant="text" width="12rem" />`}
       />
 
-      <h2>Card skeleton</h2>
+      <H2>Card skeleton</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', width: '100%' }}>
@@ -70,7 +71,7 @@ export default function SkeletonPage() {
 </div>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`variant   'rectangle' | 'text' | 'circle'   default: 'rectangle'
 width     number | string                   any CSS length
 height    number | string                   any CSS length

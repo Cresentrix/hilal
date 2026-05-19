@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Checkbox } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function CheckboxPage() {
   const [agree, setAgree] = useState(false);
@@ -15,7 +16,7 @@ export default function CheckboxPage() {
         semantics (works with submit, FormData, and form validation).
       </p>
 
-      <h2>States</h2>
+      <H2>States</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -41,7 +42,7 @@ export default function CheckboxPage() {
 <x-hilal-checkbox :disabled="true">Disabled</x-hilal-checkbox>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -57,7 +58,7 @@ export default function CheckboxPage() {
 <x-hilal-checkbox size="md" :checked="true">Medium</x-hilal-checkbox>`}
       />
 
-      <h2>Controlled</h2>
+      <H2>Controlled</H2>
       <FrameworkTabs
         preview={
           <Checkbox checked={agree} onChange={(e) => setAgree(e.currentTarget.checked)}>
@@ -73,7 +74,7 @@ export default function CheckboxPage() {
         blade={`<x-hilal-checkbox name="agree" :checked="old('agree')">I agree</x-hilal-checkbox>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`size            'sm' | 'md'   default: 'md'
 indeterminate   boolean       independent of checked
 children        ReactNode     label text rendered alongside

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Badge } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export const metadata: Metadata = { title: 'Badge' };
 
@@ -14,7 +15,7 @@ export default function BadgePage() {
         dot-only variant.
       </p>
 
-      <h2>Tones</h2>
+      <H2>Tones</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -42,7 +43,7 @@ export default function BadgePage() {
 <x-hilal-badge tone="danger">Danger</x-hilal-badge>`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
@@ -58,7 +59,7 @@ export default function BadgePage() {
 <x-hilal-badge tone="brand" size="md">Medium</x-hilal-badge>`}
       />
 
-      <h2>Dot</h2>
+      <H2>Dot</H2>
       <p>For status indicators where text would be noise, pair a tone with <code>dot</code>.</p>
       <FrameworkTabs
         preview={
@@ -77,7 +78,7 @@ export default function BadgePage() {
 <x-hilal-badge tone="warning" :dot="true" />`}
       />
 
-      <h2>Composition: counts</h2>
+      <H2>Composition: counts</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -93,7 +94,7 @@ export default function BadgePage() {
         blade={`<span>Inbox <x-hilal-badge tone="brand">12</x-hilal-badge></span>`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`tone   'neutral' | 'info' | 'success' | 'warning' | 'danger' | 'brand'   default: 'neutral'
 size   'sm' | 'md'                                                       default: 'sm'
 dot    boolean   render as a small dot only (children are ignored)`}</code></pre>

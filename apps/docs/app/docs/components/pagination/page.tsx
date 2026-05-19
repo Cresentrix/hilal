@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Pagination } from '@hilal-ds/react';
 import { FrameworkTabs } from '../../../_components/FrameworkTabs';
 import { Accessibility } from '../../../_components/Accessibility';
+import { H2, H3 } from '../../../_components/Heading';
 
 export default function PaginationPage() {
   const [pageA, setPageA] = useState(3);
@@ -17,7 +18,7 @@ export default function PaginationPage() {
         arrows. Two sizes.
       </p>
 
-      <h2>Basic</h2>
+      <H2>Basic</H2>
       <FrameworkTabs
         preview={<Pagination page={pageA} total={8} onChange={setPageA} />}
         react={`const [page, setPage] = useState(1);
@@ -27,7 +28,7 @@ export default function PaginationPage() {
         blade={`<x-hilal-pagination :page="$page" :total="8" />`}
       />
 
-      <h2>Long range with ellipses</h2>
+      <H2>Long range with ellipses</H2>
       <FrameworkTabs
         preview={<Pagination page={pageB} total={50} siblingCount={1} onChange={setPageB} />}
         react={`<Pagination page={page} total={50} siblingCount={1} onChange={setPage} />`}
@@ -35,7 +36,7 @@ export default function PaginationPage() {
         blade={`<x-hilal-pagination :page="$page" :total="50" :sibling-count="1" />`}
       />
 
-      <h2>Sizes</h2>
+      <H2>Sizes</H2>
       <FrameworkTabs
         preview={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -49,7 +50,7 @@ export default function PaginationPage() {
         blade={`<x-hilal-pagination size="sm" :page="$page" :total="50" />`}
       />
 
-      <h2>Custom labels</h2>
+      <H2>Custom labels</H2>
       <FrameworkTabs
         preview={<Pagination page={pageA} total={8} prevLabel="Previous" nextLabel="Next" onChange={setPageA} />}
         react={`<Pagination
@@ -62,7 +63,7 @@ export default function PaginationPage() {
         blade={`<x-hilal-pagination :page="$page" :total="8" prev-label="Previous" next-label="Next" />`}
       />
 
-      <h2>API</h2>
+      <H2>API</H2>
       <pre className="preview__code"><code>{`page           number          1-based current page
 total          number          total page count
 siblingCount   number          max numeric buttons either side of current (default: 1)
